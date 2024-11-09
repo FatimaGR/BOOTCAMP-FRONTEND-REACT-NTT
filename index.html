@@ -3,10 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My market</title>
+  <link rel="icon" href="assets/images/my-market-logo.png" type="image/png">
+  <title>My Market</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <header>
+    <div class="my-market-logo">
+      <img src="/assets/images/my-market-logo.png" alt="My Market logo">
+      <p>My Market</p>
+    </div>
+    <button class="cart">
+      <img src="assets/icons/cart.svg" alt="Cart">
+      <p>Cart</p>
+      <p class="counter">0</p>
+    </button>
+  </header>
+  <main>
+    <section class="products-list-options">
+      <form action="" class="search-form">
+        <input type="text" name="search" id="search" placeholder="Search products...">
+        <button class="search-button">
+          <img src="assets/icons/search.svg" alt="Search">
+        </button>
+      </form>
+      <select name="categories" id="categories">
+        <option value="all categories" selected>All categories</option>
+        <option value="vetegables">Vetegables</option>
+        <option value="groceries">Groceries</option>
+      </select>
+    </section>
+    <section class="products-list">
+      <div class="product-card">
+        <img src="assets/images/cooking-oil.png" alt="Cooking oil">
+        <div class="product-description">
+          <p class="categorie">Vetegables</p>
+          <p class="name">Cooking Oil</p>
+          <p class="description">Versatile cooking oil suitable for frying, sautéing, and various culinary applications.</p>
+          <div>
+            <button>Agregar al carrito</button>
+            <p class="price">S/ 4.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="assets/images/eggs.png" alt="Eggs">
+        <div class="product-description">
+          <p class="categorie">Groceries</p>
+          <p class="name">Eggs</p>
+          <p class="description">Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.</p>
+          <div>
+            <button>Agregar al carrito</button>
+            <p class="price">S/ 2.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="assets/images/fish-steak.png" alt="Fish steak">
+        <div class="product-description">
+          <p class="categorie">Groceries</p>
+          <p class="name">Fish Steak</p>
+          <p class="description">Quality fish steak, suitable for grilling, baking, or pan-searing.</p>
+          <div>
+            <button>Agregar al carrito</button>
+            <p class="price">S/ 14.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="assets/images/honey-jar.png" alt="Honey Jar">
+        <div class="product-description">
+          <p class="categorie">Groceries</p>
+          <p class="name">Honey Jar</p>
+          <p class="description">Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.</p>
+          <div>
+            <button>Agregar al carrito</button>
+            <p class="price">S/ 6.99</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="social-media">
+      <a href="https://twitter.com/">
+        <img src="assets/icons/twitter.svg" alt="twitter">
+      </a>
+      <a href="https://instagram.com/">
+        <img src="assets/icons/instagram.svg" alt="instagram">
+      </a>
+      <a href="https://tiktok.com/">
+        <img src="assets/icons/tiktok.svg" alt="tiktok">
+      </a>
+    </div>
+    <p>My Market. All rights reserved.</p>
+    <p>Privacy Policy | Terms of Service | Contact Us</p>
+  </footer>
 </body>
 </html>
