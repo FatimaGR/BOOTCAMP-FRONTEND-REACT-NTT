@@ -1,8 +1,8 @@
-<div style="text-align: center;">
+<p align="center">
   <img src="assets/images/my-market-logo.png" width="50" height="50">
-  <h1>My Market</h1>
-  <p>Una tienda amigable que crece contigo, asegurando una experiencia única en cada compra.</p>
-</div>
+</p>
+<h1 align="center">My Market</h1>
+<p align="center">Una tienda amigable que crece contigo, asegurando una experiencia única en cada compra.</p>
 
 ## Progreso y Tecnologías
 Entrega de la semana **Diseños y Estilos** del proyecto My Market, en la que se usaron las siguientes tecnologías:
