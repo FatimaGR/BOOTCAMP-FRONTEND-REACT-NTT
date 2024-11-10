@@ -36,9 +36,13 @@ body{
   font-size: var(--font-size-s);
   color: var(--primary-color);
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 a{
   text-decoration: none;
+  color: var(--primary-color);
 }
 button,
 select{
@@ -47,12 +51,13 @@ select{
 
 /*Header styles*/
 header{
-  display: flex;
-  justify-content: space-between;
-  border-radius: 1.667rem;
   background: var(--gray-1);
   padding: 1.111rem 2.222rem;
-  font-size: var(--font-size-m);
+  border-radius: 1.667rem;
+}
+.header-content{
+  display: flex;
+  justify-content: space-between;
 }
 .header-item{
   display: flex;
@@ -61,6 +66,7 @@ header{
 }
 .my-market-logo{
   font-weight: 500;
+  font-size: var(--font-size-m);
 }
 .my-market-logo img{
   width: 2.5rem;
@@ -70,14 +76,10 @@ header{
   background: none;
   border: none;
   font-family: "Poppins", serif;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
   color: var(--primary-color);
   position: relative;
   padding: 0.278rem;
-}
-.cart svg{
-  color: var(--primary-color);
-  font-size: 1.889rem;
 }
 .counter{
   height: 1.389rem;
@@ -90,8 +92,9 @@ header{
   background-color: var(--red);
   border-radius: 100%;
   position: absolute;
-  right: -1.389rem;
+  right: -1.1rem;
   top: -0.278rem;
+  z-index: 1;
 }
 
 /*Main styles*/
@@ -99,26 +102,28 @@ main{
   border-radius: 1.667rem;
   background: var(--sky-blue);
   padding: 2.222rem;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
   margin-top: 1.111rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2.222rem;
+  flex: 1;
 }
 
 /* Products list options styles*/
 .products-list-options{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.556rem;
-  width: 45%;
 }
 .search-form{
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 15.556rem;
+  height: 2.278rem;
   background: var(--white);
   border-radius: 0.833rem;
   padding: 0.444rem 0.889rem;
@@ -144,7 +149,8 @@ main{
   outline: none;
   border-radius: 0.833rem;
   padding: 0.444rem 0.889rem;
-  width: 45%;
+  width: 15.556rem;
+  height: 2.278rem;
   /*arrow styles*/
   background-image: url("assets/icons/down-arrow.svg");
   background-repeat: no-repeat;
@@ -158,7 +164,7 @@ main{
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.111rem;
-  width: 100%;
+  max-width: 100%;
 }
 .product-card{
   background: #ffffff80;
@@ -229,13 +235,14 @@ footer{
   border-radius: 1.667rem;
   background: var(--white);
   padding: 1.111rem;
-  margin-bottom: 20px;
-  font-size: 0.667rem;
+  margin-bottom: 1.111rem;
+  font-size: var(--font-size-xs);
   position: absolute;
-  bottom: -3.889rem;
+  bottom: 0;
   left: 0.833rem;
   right: 0.833rem;
   width: auto;
+  text-align: center;
 }
 .social-media{
   display: flex;
@@ -249,4 +256,34 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.legal-links{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.278rem;
+}
+
+@media(max-width: 830px){
+  html{
+    font-size: 16px;
+  }
+  header{
+    padding: 0.625rem;
+    padding-right: 1.875rem;
+  }
+  .my-market-logo{
+    width: 2.188rem;
+    height: 2.188rem;
+  }
+  .header-item{
+    font-size: var(--font-size-s);
+    width: fit-content;
+  }
+  .counter{
+    font-size: 0.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
