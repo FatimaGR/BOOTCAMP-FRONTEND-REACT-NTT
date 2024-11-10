@@ -21,6 +21,10 @@ html{
   --font-size-s: 1rem;
   --font-size-xs: 0.889rem;
   --font-size-2xs: 0.778rem;
+
+  /*shadows*/
+  --shadow-1: 0 0.222rem 0.444rem #0000001a;
+  --shadow-2: 0 0.444rem 0.889rem #00000033;
 }
 
 /*General styles*/
@@ -52,21 +56,30 @@ select{
 /*Header styles*/
 header{
   background: var(--gray-1);
-  padding: 1.111rem 2.222rem;
+  padding: 0.833rem 1.667rem;
   border-radius: 1.667rem;
+  box-shadow: var(--shadow-1);
 }
 .header-content{
   display: flex;
   justify-content: space-between;
 }
+.my-market-logo,
 .header-item{
   display: flex;
   align-items: center;
   gap: 0.278rem;
+  border-radius: 1.111rem;
+}
+.header-item:hover{
+  box-shadow: 0 0.222rem 0.444rem #00000026, 0 0.111rem 0.167rem #0000001a;
 }
 .my-market-logo{
   font-weight: 500;
   font-size: var(--font-size-m);
+}
+.my-market-logo a:hover{
+  color: var(--red);
 }
 .my-market-logo img{
   width: 2.5rem;
@@ -79,7 +92,7 @@ header{
   font-size: var(--font-size-s);
   color: var(--primary-color);
   position: relative;
-  padding: 0.278rem;
+  padding: 0.5rem 0.9rem;
 }
 .counter{
   height: 1.389rem;
@@ -92,8 +105,8 @@ header{
   background-color: var(--red);
   border-radius: 100%;
   position: absolute;
-  right: -1.1rem;
-  top: -0.278rem;
+  right: -0.7rem;
+  top: -0.3rem;
   z-index: 1;
 }
 
@@ -142,6 +155,10 @@ main{
   background: none;
   outline: none;
 }
+.search-form:hover,
+.categories-select:hover {
+  box-shadow: var(--shadow-2);
+}
 .categories-select{
   appearance: none;
   background: var(--white);
@@ -167,7 +184,7 @@ main{
   max-width: 100%;
 }
 .product-card{
-  background: #ffffff80;
+  background: #ffffff4d;
   border-radius: 1.111rem;
   width: 15.556rem;
   height: fit-content;
@@ -175,6 +192,13 @@ main{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  box-shadow: var(--shadow-1);
+  transition: all 0.3s ease-in-out;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+  background: #ffffff66;
 }
 .product-card img{
   height: 10.833rem;
@@ -184,7 +208,7 @@ main{
 .product-description{
   background: var(--white);
   border-radius: 0.833rem;
-  padding: 0.556rem;
+  padding: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.556rem;
@@ -194,22 +218,23 @@ main{
   justify-content: space-between;
   align-items: center;
 }
-.categorie{
+.category{
   width: fit-content;
   background: var(--yellow);
   padding: 0.278rem 0.556rem;
   border-radius: 0.556rem;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2xs);
 }
 .name{
   font-size: var(--font-size-s);
   color: var(--secondary-color);
+  font-weight: 500;
 }
 .description{
   font-size: var(--font-size-xs);
   color: var(--secondary-color);
   min-height: 5rem;
-  width: 100%;
+  max-width: 100%;
 }
 .buy-button{
   font-size: var(--font-size-s);
@@ -221,9 +246,13 @@ main{
   border-radius: 0.444rem;
   padding: 0.444rem 0.556rem;
 }
+.buy-button:hover{
+  box-shadow: 0 0.222rem 0.444rem #ff6b6b99;
+}
 .price{
   font-size: var(--font-size-m);
   color: var(--secondary-color);
+  font-weight: 500;
 }
 
 /*Footer styles*/
@@ -243,6 +272,7 @@ footer{
   right: 0.833rem;
   width: auto;
   text-align: center;
+  box-shadow: var(--shadow-1);
 }
 .social-media{
   display: flex;
@@ -257,12 +287,19 @@ footer{
   align-items: center;
   justify-content: center;
 }
+.social-media a:hover{
+  background: var(--yellow);
+  transform: scale(1.2);
+}
 .legal-links{
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.278rem;
+}
+.legal-links a:hover{
+  color: var(--red);
 }
 
 @media(max-width: 830px){
@@ -276,6 +313,8 @@ footer{
   .my-market-logo{
     width: 2.188rem;
     height: 2.188rem;
+    font-size: var(--font-size-s);
+    width: fit-content;
   }
   .header-item{
     font-size: var(--font-size-s);
