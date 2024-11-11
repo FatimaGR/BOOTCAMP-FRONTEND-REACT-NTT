@@ -14,6 +14,10 @@
 - Inicio de sesión y recuperación de contraseña
 - Interfaz responsiva y amigable
 
+<br>
+
+![](my-market-ui-design.png)
+
 ## Tecnologías
 Las tecnologías con las que se realizará el proyecto serán las siguientes:
 
