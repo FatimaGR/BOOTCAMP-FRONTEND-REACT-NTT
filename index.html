@@ -5,51 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="assets/images/my-market-logo.png" type="image/png">
   <title>My Market</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
   <header>
     <div class="header-content">
       <div class="my-market-logo">
-        <img src="/assets/images/my-market-logo.png" alt="My Market logo">
+        <img src="src/assets/images/my-market-logo.png" alt="My Market logo">
         <a href="#" aria-label="Go to My Market homepage">My Market</a>
       </div>
       <button class="header-item cart">
-        <img src="assets/icons/cart.svg" alt="Go to shopping cart">
+        <img src="src/assets/icons/cart.svg" alt="Go to shopping cart">
         <p>Cart</p>
-        <p class="counter">0</p>
+        <span class="counter" id="counter">0</span>
       </button>
     </div>
   </header>
-  <main>
-    <section class="products-list-options">
-      <form action="" class="search-form">
-        <input type="text" name="search" id="search" placeholder="Search products...">
-        <button type="submit" class="search-button" aria-label="Search for products">
-          <img src="assets/icons/search.svg" alt="Search icon">
-        </button>
-      </form>
-      <select name="categories" id="categories" class="categories-select">
+  <main id="main">
+    <section class="products-list-options" id="products-list-options">
+      <!-- <div class="search-form" id="search-form">
+        <input type="text" name="search-input" id="search-input" placeholder="Search products...">
+        <img src="assets/icons/search.svg" alt="Search icon">
+      </div> -->
+      <!-- <select name="categories" id="categories-select" class="categories-select">
         <option value="all categories" selected>All categories</option>
         <option value="vegetables">Vegetables</option>
         <option value="groceries">Groceries</option>
-      </select>
+      </select> -->
     </section>
-    <section class="products-list">
+    <!-- <section class="products-list">
       <div class="product-card">
-        <img src="assets/images/cooking-oil.png" alt="Cooking oil">
+        <img src="src/assets/images/cooking-oil.png" alt="Cooking oil">
         <div class="product-description">
           <p class="category">Vegetables</p>
           <p class="name">Cooking Oil</p>
           <p class="description">Versatile cooking oil suitable for frying, sautéing, and various culinary applications.</p>
           <div class="buy-section">
             <button class="buy-button">Add to cart</button>
-            <span class="price">S/ 4.99</span>
+            <p class="price">S/ 4.99</p>
           </div>
         </div>
       </div>
       <div class="product-card">
-        <img src="assets/images/eggs.png" alt="Eggs">
+        <img src="src/assets/images/eggs.png" alt="Eggs">
         <div class="product-description">
           <p class="category">Groceries</p>
           <p class="name">Eggs</p>
@@ -61,7 +59,7 @@
         </div>
       </div>
       <div class="product-card">
-        <img src="assets/images/fish-steak.png" alt="Fish steak">
+        <img src="src/assets/images/fish-steak.png" alt="Fish steak">
         <div class="product-description">
           <p class="category">Groceries</p>
           <p class="name">Fish Steak</p>
@@ -73,7 +71,7 @@
         </div>
       </div>
       <div class="product-card">
-        <img src="assets/images/honey-jar.png" alt="Honey Jar">
+        <img src="src/assets/images/honey-jar.png" alt="Honey Jar">
         <div class="product-description">
           <p class="category">Groceries</p>
           <p class="name">Honey Jar</p>
@@ -84,18 +82,18 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
   <footer>
     <div class="social-media">
       <a href="https://twitter.com/" aria-label="Go to My Market's Twitter">
-        <img src="assets/icons/twitter.svg" alt="twitter icon">
+        <img src="src/assets/icons/twitter.svg" alt="twitter icon">
       </a>
       <a href="https://instagram.com/" aria-label="Go to My Market's Instagram">
-        <img src="assets/icons/instagram.svg" alt="instagram icon">
+        <img src="src/assets/icons/instagram.svg" alt="instagram icon">
       </a>
       <a href="https://tiktok.com/" aria-label="Go to My Market's Tiktok">
-        <img src="assets/icons/tiktok.svg" alt="tiktok icon">
+        <img src="src/assets/icons/tiktok.svg" alt="tiktok icon">
       </a>
     </div>
     <p>My Market. All rights reserved.</p>
@@ -107,5 +105,8 @@
       <li><a href="#">Contact Us</a></li>
     </ul>
   </footer>
+
+  <!-- JavaScript files -->
+  <script type="module" src="src/main.js"></script>
 </body>
 </html>
