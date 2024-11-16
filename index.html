@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="assets/images/my-market-logo.png" type="image/png">
+  <link rel="icon" href="src/assets/images/my-market-logo.png" type="image/png">
   <title>My Market</title>
   <link rel="stylesheet" href="src/styles/style.css">
 </head>
@@ -14,15 +14,20 @@
         <img src="src/assets/images/my-market-logo.png" alt="My Market logo">
         <a href="#" aria-label="Go to My Market homepage">My Market</a>
       </div>
-      <button class="header-item cart">
-        <img src="src/assets/icons/cart.svg" alt="Go to shopping cart">
-        <p>Cart</p>
-        <span class="counter" id="counter">0</span>
+      <button class="header-item menu-button" id="menu-button" aria-label="Display menu options">
+        <img src="src/assets/icons/menu.svg" alt="Menu icon">
       </button>
+      <nav class="navbar" id="navbar">
+        <button class="header-item cart">
+          <img src="src/assets/icons/cart.svg" alt="Go to shopping cart">
+          <p>Cart</p>
+          <span class="counter" id="counter">0</span>
+        </button>
+      </nav>
     </div>
   </header>
   <main id="main">
-    <section class="products-list-options" id="products-list-options">
+    <!-- <section class="products-list-options" id="products-list-options"> -->
       <!-- <div class="search-form" id="search-form">
         <input type="text" name="search-input" id="search-input" placeholder="Search products...">
         <img src="assets/icons/search.svg" alt="Search icon">
@@ -32,7 +37,7 @@
         <option value="vegetables">Vegetables</option>
         <option value="groceries">Groceries</option>
       </select> -->
-    </section>
+    <!-- </section> -->
     <!-- <section class="products-list">
       <div class="product-card">
         <img src="src/assets/images/cooking-oil.png" alt="Cooking oil">

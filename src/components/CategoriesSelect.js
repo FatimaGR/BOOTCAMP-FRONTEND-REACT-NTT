@@ -1,32 +1,31 @@
 import { createElement } from "../utils/utils.js";
 import { categoryOption } from "./CategoryOption.js";
-import { productsData, productsListOptions } from "../main.js";
 
-export async function createCategoriesSelect(categoriesList){
+export async function createCategoriesSelect(categoriesList, filterByCategory){
+  // elements variables
+  const productsListOptions = document.querySelector(".products-list-options");
   const categoriesSelect = createElement("select", "categories-select");
-  const categoriesData = await categoriesList;
-  const initialProductsData = (await productsData.getProducts()) || [];
 
-  const defaultOption = categoryOption("all categories", "All categories", true);
-  categoriesSelect.append(defaultOption);
-
-  let categorySelected;
-
-  categoriesSelect.addEventListener("change", function(){
-    categorySelected = categoriesSelect.value.toLowerCase();
-
-    if (categorySelected === "all categories"){
-      productsData.updateProducts(initialProductsData);
-    } else {
-      const filteredProducts = initialProductsData.filter(product => product.category == categorySelected);
-      productsData.updateProducts(filteredProducts);
-    }
-  });
-
-  categoriesData.map((categoryData) => {
-    const option = categoryOption(categoryData.name, categoryData.name)
-    categoriesSelect.append(option);
-  })
-
-  productsListOptions.append(categoriesSelect);
+  try{
+    const categoriesData = await categoriesList;
+  
+    // select options
+    const defaultOption = categoryOption("all categories", "All categories", true);
+    categoriesSelect.append(defaultOption);
+    
+    categoriesData.map((categoryData) => {
+      const option = categoryOption(categoryData.name, categoryData.name)
+      categoriesSelect.append(option);
+    })
+  
+    // elements events
+    categoriesSelect.addEventListener("change", function(){
+      const categorySelected = categoriesSelect.value.toLowerCase();
+      filterByCategory(categorySelected);
+    });
+  
+    productsListOptions.append(categoriesSelect);
+  } catch (error){
+    console.log("Error when obtaining the categories:", error);
+  }
 }

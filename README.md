@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/my-market-logo.png" width="50" height="50">
+  <img src="src/assets/images/my-market-logo.png" width="50" height="50">
 </p>
 <h1 align="center">My Market</h1>
 <p align="center">Una tienda amigable que crece contigo, asegurando una experiencia única en cada compra.</p>
@@ -31,7 +31,7 @@ git checkout feature/javascript
 ### Funcionalidades implementadas
 - [ ✓ ] Servicios integrados usando fetch, async y await.
 - [ ✓ ] Productos cargados de manera dinámica usando vanilla JavaScript.
-- [  ] Filtro de elementos, según lo escrito por el usuario en la caja de búsqueda, realizado con métodos de arrays.
+- [ ✓ ] Filtro de elementos, según lo escrito por el usuario en la caja de búsqueda, realizado con métodos de arrays.
 - [ ✓ ] Categorías cargadas de la API.
 - [ ✓ ] Filtro de elementos por categoría elegida en el selector.
 - [ ✓ ] Incremento del contador de carrito de compras por cada clic dado al botón "Add to cart".
