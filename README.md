@@ -7,12 +7,13 @@
 <br>
 
 ## Progreso y Tecnologías
-Entrega de la semana **JavaScript** del proyecto My Market, en la que se usaron las siguientes tecnologías:
+Entrega de la semana **TypeScript** del proyecto My Market, en la que se usaron las siguientes tecnologías:
 
 ![HTML5](https://img.shields.io/badge/HTML5-white?style=for-the-badge&logo=html5&logoColor=%23FFFFFF&color=%23E34F26)
 ![CSS3](https://img.shields.io/badge/CSS3-white?style=for-the-badge&logo=css3&color=%231572B6)
 ![Git](https://img.shields.io/badge/Git-white?style=for-the-badge&logo=git&logoColor=%23FFFFFF&color=%23F05032)
-![JavaScript](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript)
+![Vite](https://img.shields.io/badge/Vite-%23242424?style=for-the-badge&logo=vite&logoColor=%23646CFF)
+![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=%23FFFFFF)
 
 ## Instrucciones para ejecutar
 1. Clonar este repositorio con el siguiente comando:
@@ -21,7 +22,7 @@ git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
 2. Dentro del proyecto, cambiar a la rama `feature/javascript`:
 ```
-git checkout feature/javascript
+git checkout feature/typescript
 ```
 3. Abrir `index.html` en el navegador para ver el proyecto.
 
@@ -31,12 +32,9 @@ git checkout feature/javascript
 ![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
-- [ ✓ ] Servicios integrados usando fetch, async y await.
-- [ ✓ ] Productos cargados de manera dinámica usando vanilla JavaScript.
-- [ ✓ ] Filtro de elementos, según lo escrito por el usuario en la caja de búsqueda, realizado con métodos de arrays.
-- [ ✓ ] Categorías cargadas de la API.
-- [ ✓ ] Filtro de elementos por categoría elegida en el selector.
-- [ ✓ ] Incremento del contador de carrito de compras por cada clic dado al botón "Add to cart".
+- [ ✓ ] Migración del cógido, de JavaScript a TypeScript.
+- [  ] Uso correcto de interfaces y types.
+- [  ] Creación correcta de carpetas para separar la lógica de negocio de las estructuras definidas como las interfaces o types.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:
