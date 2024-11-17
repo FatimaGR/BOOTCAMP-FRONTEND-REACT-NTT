@@ -4,6 +4,8 @@
 <h1 align="center">My Market</h1>
 <p align="center">Una tienda amigable que crece contigo, asegurando una experiencia única en cada compra.</p>
 
+<br>
+
 ## Progreso y Tecnologías
 Entrega de la semana **JavaScript** del proyecto My Market, en la que se usaron las siguientes tecnologías:
 
@@ -26,7 +28,7 @@ git checkout feature/javascript
 > **Nota**: No se requiere configuración adicional por ahora.
 
 ## Descripción general
-![](readme-images)
+![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
 - [ ✓ ] Servicios integrados usando fetch, async y await.

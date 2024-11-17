@@ -1,7 +1,7 @@
 import { fetchData } from "./fetchData.js";
 
 export async function getProducts(){
-  let productsList = await fetchData("/products");
+  let productsList = await fetchData("/products?limit=0");
   return productsList.products
 }
 

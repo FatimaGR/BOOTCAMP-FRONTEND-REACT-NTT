@@ -12,8 +12,8 @@ export function initializeHomePage(){
   initializeProducts();
   createSearchInput(filterBySearch);
 
-  const menuButton = document.getElementById("menu-button");
-  const navbar = document.getElementById("navbar");
+  const menuButton = document.querySelector(".menu-button");
+  const navbar = document.querySelector(".navbar");
   
   menuButton.addEventListener("click", () => {
     navbar.classList.toggle("visible");
@@ -24,52 +24,77 @@ export function initializeHomePage(){
 function createProductsData(){
   let products;
   return{
-    updateProducts: function(updatedProducts){
+    update: function(updatedProducts){
       products = updatedProducts;
       createProductsList(products);
     },
-    getProducts: () => products
+    get: () => products
+  }
+}
+
+function createFilteredProducts(){
+  let filteredProducts;
+  return{
+    update: (newFilteredProducts) => (filteredProducts = newFilteredProducts),
+    get: () => filteredProducts
   }
 }
 
 const productsData = createProductsData();
+const filteredProductsData = createFilteredProducts();
 
 async function initializeProducts(){
   try{
     // getting products
     const initialProductsData = await getProducts();
-    productsData.updateProducts(initialProductsData);
+    productsData.update(initialProductsData);
+    filteredProductsData.update(initialProductsData);
 
     // getting categories
     const categoriesList = getCategories();
-    createCategoriesSelect(categoriesList, filterByCategory);
+    const productsCategories = getProductsCategories();
+    createCategoriesSelect(categoriesList, productsCategories, filterByCategory);
   } catch (error){
-    console.log("Error when obtaining the products:", error);
+    console.log("Error when initializing the products:", error);
   }
+}
+
+// products categories
+function getProductsCategories(){
+  const initialProductsData = productsData.get();
+  let productsCategories = [];
+
+  initialProductsData.forEach((product) => {
+    const productCategory = product.category;
+    if (!productsCategories.includes(productCategory)){
+      productsCategories.push(productCategory);
+    }
+  })
+
+  return productsCategories;
 }
 
 // categories select filter function
 export async function filterByCategory(categorySelected){
-  const initialProductsData = await getProducts();
+  const allProductsData = await getProducts();
 
-  if (categorySelected === "all categories"){
-    productsData.updateProducts(initialProductsData);
-  } else {
-    const filteredProducts = initialProductsData.filter(
-      product => product.category == categorySelected
-    );
-    productsData.updateProducts(filteredProducts);
-  }
+  const filtered =
+    categorySelected === "all categories"
+      ? allProductsData
+      : allProductsData.filter(
+        product => product.category == categorySelected
+        );
+  
+  filteredProductsData.update(filtered);
+  productsData.update(filtered);
 }
 
 // search form filter function
-export async function filterBySearch(searchInputValue){
-  const initialProductsData = await getProducts();
-  
-  const searchedProducts = initialProductsData.filter( product => {
+export function filterBySearch(searchInputValue){
+  const searchedProducts = filteredProductsData.get().filter( product => {
     const productName = product.title.toUpperCase();
     return productName.includes(searchInputValue);
   });
   
-  productsData.updateProducts(searchedProducts);
+  productsData.update(searchedProducts);
 }

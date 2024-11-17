@@ -1,6 +1,6 @@
 import { createElement } from "../utils/utils.js";
 
-export function categoryOption(value, text, selected = false){
+export function categoryOption(value, text, selected = false, disabled = false){
   // element variable
   const optionCard = createElement("option");
 
@@ -10,6 +10,10 @@ export function categoryOption(value, text, selected = false){
 
   if (selected) {
     optionCard.selected = selected;
+  }
+
+  if (disabled) {
+    optionCard.disabled = disabled;
   }
 
   return optionCard

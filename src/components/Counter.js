@@ -1,4 +1,4 @@
-const counterElement = document.getElementById("counter");
+const counterElement = document.querySelector(".counter");
 
 function createCounter(){
   let count = 0;

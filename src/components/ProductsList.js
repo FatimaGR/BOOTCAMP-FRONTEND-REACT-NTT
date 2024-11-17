@@ -10,6 +10,8 @@ export async function createProductsList(initialProductsData){
     productsList.remove();
   }
   productsList = createElement("section", "products-list");
+  const noProductsMessage = createElement("p");
+  noProductsMessage.textContent = "No products were found.";
   
   try{
     const productsData = await initialProductsData;
@@ -20,7 +22,11 @@ export async function createProductsList(initialProductsData){
       productsList.append(productElement);
     })
   
-    main.append(productsList);
+    if (productsData.length == 0 && noProductsMessage){
+      productsList.append(noProductsMessage);
+    }
+
+    main.append(productsList)
   } catch (error){
     console.log("Error creating product list:", error);
   }
