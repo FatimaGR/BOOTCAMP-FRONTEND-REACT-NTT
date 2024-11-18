@@ -24,11 +24,18 @@ git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
 git checkout feature/typescript
 ```
-3. Instalar las dependencias con el siguiente comando:
+3. **Nota importante:**
+  Si revisaste previamente la versión del proyecto en JavaScript Vanilla (rama feature/javascript) y tienes la carpeta node_modules, elimina esta carpeta antes de continuar. Esto asegurará que las dependencias correctas para la versión con TypeScript se instalen correctamente:
+
+```
+rm -rf node_modules
+```
+
+4. Instalar las dependencias con el siguiente comando:
 ```
 npm install
 ```
-4. Abrir en el navegador para ver el proyecto, con el siguiente comando:
+5. Abrir en el navegador para ver el proyecto, con el siguiente comando:
 ```
 npm run dev
 ```
