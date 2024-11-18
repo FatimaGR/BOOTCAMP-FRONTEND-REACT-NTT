@@ -55,9 +55,12 @@ async function initializeProducts(): Promise<void>{
     const initialProductsData = await getProducts();
     productsData.update(initialProductsData);
     filteredProductsData.update(initialProductsData);
-
+  } catch (error){
+    console.log("Error when initializing the products:", error);
+  }
+  try{
     // getting categories
-    const categoriesList = getCategories();
+    const categoriesList = await getCategories();
     const productsCategories = getProductsCategories();
     createCategoriesSelect({
       categoriesList: categoriesList, 
@@ -65,7 +68,7 @@ async function initializeProducts(): Promise<void>{
       filterByCategory: filterByCategory
     });
   } catch (error){
-    console.log("Error when initializing the products:", error);
+    console.log("Error when initializing the categories:", error);
   }
 }
 

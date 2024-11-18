@@ -20,6 +20,7 @@ export function createProductCard(productData: Product): HTMLDivElement{
   name.textContent = productData.title;
   description.textContent = productData.description;
   productImage.src = productData.images[0];
+  productImage.alt = productData.title;
   brand.textContent = `Brand: ${productData.brand || "Not specified"}`;
   buyButton.textContent = "Add to cart";
   price.textContent = "S/" + productData.price;
