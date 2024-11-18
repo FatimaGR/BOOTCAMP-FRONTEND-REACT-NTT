@@ -24,27 +24,36 @@ git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
 git checkout feature/typescript
 ```
-3. Abrir `index.html` en el navegador para ver el proyecto.
-
-> **Nota**: No se requiere configuración adicional por ahora.
+3. Instalar las dependencias con el siguiente comando:
+```
+npm install
+```
+4. Abrir en el navegador para ver el proyecto, con el siguiente comando:
+```
+npm run dev
+```
 
 ## Descripción general
 ![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
 - [ ✓ ] Migración del cógido, de JavaScript a TypeScript.
-- [  ] Uso correcto de interfaces y types.
-- [  ] Creación correcta de carpetas para separar la lógica de negocio de las estructuras definidas como las interfaces o types.
+- [ ✓ ] Uso correcto de interfaces y types.
+- [ ✓ ] Creación correcta de carpetas para separar la lógica de negocio de las estructuras definidas como las interfaces o types.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:
-- `readme-images/` almacena las imágenes que se utilizan exclusivamente en el archivo README.md para documentar el progreso y los resultados visuales del proyecto.
-- `assets/` agrupa todos los recursos visuales y de diseño utilizados en la interfaz del proyecto.
-  - `icons/` contiene los íconos SVG.
-  - `images/` almacena imágenes como fotos de productos u otros elementos visuales de contenido.
-- `README.md` archivo de documentación que describe la estructura, funcionalidad y tecnologías empleadas en el proyecto.
+- `src/` carpeta raíz del código fuente, contiene todo el código necesario para el proyecto, organizado en subcarpetas.
+  - `assets/` contiene todos los recursos visuales y de diseño utilizados en la interfaz del proyecto.
+  - `components` contiene todos los componentes UI reutilizables de la aplicación.
+  - `pages` contiene las páginas principales de la aplicación.
+  - `services` contiene todo el código relacionado con la lógica de la API.
+  - `styles` contiene los archivos con estilos CSS.
+  - `utils` contiene funciones reutilizables.
+- `readme-images/` contiene las imágenes que se utilizan exclusivamente en el archivo README.md para documentar el progreso y los resultados visuales del proyecto.
 - `index.html` incluye la estructura principal del proyecto.
-- `style.css` incluye los estilos de diseño, colores, tipografía, layout y efectos interactivos.
+- `package.json` incluye las dependencias y configuración del proyecto.
+- `README.md` archivo de documentación que describe la estructura, funcionalidad y tecnologías empleadas en el proyecto.
 
 ## ¡Sigue el progreso de My Market! 🚀
 
@@ -55,5 +64,6 @@ Este proyecto está en constante crecimiento, así que te invito a seguirlo para
 Para obtener una descripción general completa, puedes visitar el README principal en la [rama main](https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT/tree/main).
 
 ## Realizado por
+Hola, soy Fátima, una desarrolladora Front-end Jr. emocionada por hacer que sus ideas cobren vida a través de proyectos que ayuden a las personas. Puedes conocer más sobre mi perfil y mis proyectos en:
 - Website - [Fatima Gallardo](https://porfolio-website-gules.vercel.app)
 - GitHub - [@FatimaGR](https://github.com/FatimaGR)
