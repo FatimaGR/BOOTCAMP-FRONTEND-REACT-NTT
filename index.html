@@ -1,56 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="src/assets/images/my-market-logo.png" type="image/png">
-  <title>My Market</title>
-  <link rel="stylesheet" href="src/styles/style.css">
-</head>
-<body>
-  <header>
-    <div class="header-content">
-      <div class="my-market-logo">
-        <img src="src/assets/images/my-market-logo.png" alt="My Market logo">
-        <a href="#" aria-label="Go to My Market homepage">My Market</a>
-      </div>
-      <button class="header-item menu-button" aria-label="Display menu options">
-        <img src="src/assets/icons/menu.svg" alt="Menu icon">
-      </button>
-      <nav class="navbar">
-        <button class="header-item cart">
-          <img src="src/assets/icons/cart.svg" alt="Go to shopping cart">
-          <p>Cart</p>
-          <span class="counter">0</span>
-        </button>
-      </nav>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/assets/images/my-market-logo.png" type="image/png">
+    <title>My Market</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="header-content">
+          <div class="my-market-logo">
+            <img src="src/assets/images/my-market-logo.png" alt="My Market logo">
+            <a href="#" aria-label="Go to My Market homepage">My Market</a>
+          </div>
+          <button class="header-item menu-button" aria-label="Display menu options">
+            <img src="src/assets/icons/menu.svg" alt="Menu icon">
+          </button>
+          <nav class="navbar">
+            <button class="header-item cart">
+              <img src="src/assets/icons/cart.svg" alt="Go to shopping cart">
+              <p>Cart</p>
+              <span class="counter">0</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main id="main">
+      </main>
+      <footer>
+        <div class="social-media">
+          <a href="https://twitter.com/" aria-label="Go to My Market's Twitter">
+            <img src="src/assets/icons/twitter.svg" alt="twitter icon">
+          </a>
+          <a href="https://instagram.com/" aria-label="Go to My Market's Instagram">
+            <img src="src/assets/icons/instagram.svg" alt="instagram icon">
+          </a>
+          <a href="https://tiktok.com/" aria-label="Go to My Market's Tiktok">
+            <img src="src/assets/icons/tiktok.svg" alt="tiktok icon">
+          </a>
+        </div>
+        <p>My Market. All rights reserved.</p>
+        <ul class="legal-links">
+          <li><a href="#">Privacy Policy</a></li> 
+          <li>|</li> 
+          <li><a href="#">Terms of Service</a></li>
+          <li>|</li> 
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </footer>
     </div>
-  </header>
-  <main id="main">
-  </main>
-  <footer>
-    <div class="social-media">
-      <a href="https://twitter.com/" aria-label="Go to My Market's Twitter">
-        <img src="src/assets/icons/twitter.svg" alt="twitter icon">
-      </a>
-      <a href="https://instagram.com/" aria-label="Go to My Market's Instagram">
-        <img src="src/assets/icons/instagram.svg" alt="instagram icon">
-      </a>
-      <a href="https://tiktok.com/" aria-label="Go to My Market's Tiktok">
-        <img src="src/assets/icons/tiktok.svg" alt="tiktok icon">
-      </a>
-    </div>
-    <p>My Market. All rights reserved.</p>
-    <ul class="legal-links">
-      <li><a href="#">Privacy Policy</a></li> 
-      <li>|</li> 
-      <li><a href="#">Terms of Service</a></li>
-      <li>|</li> 
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-  </footer>
-
-  <!-- JavaScript files -->
-  <script type="module" src="src/main.js"></script>
-</body>
+    
+    <!-- JavaScript files -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

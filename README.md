@@ -20,7 +20,7 @@ Entrega de la semana **TypeScript** del proyecto My Market, en la que se usaron 
 ```
 git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
-2. Dentro del proyecto, cambiar a la rama `feature/javascript`:
+2. Dentro del proyecto, cambiar a la rama `feature/typescript`:
 ```
 git checkout feature/typescript
 ```
