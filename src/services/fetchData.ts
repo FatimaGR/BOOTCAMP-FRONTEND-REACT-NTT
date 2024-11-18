@@ -1,5 +1,10 @@
+interface FetchOptions{
+  method?: string;
+  headers?: Record<string, string>;
+  body?: unknown;
+}
 // API conection
-export async function fetchData(request, options = {}){
+export async function fetchData<T>(request:string, options: FetchOptions = {}): Promise<T>{
   const response = await fetch("https://dummyjson.com" + request, {
     method: options.method || "GET",
     headers: {

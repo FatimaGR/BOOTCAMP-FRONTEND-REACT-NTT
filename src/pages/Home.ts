@@ -3,11 +3,12 @@ import { createProductsList } from "../components/ProductsList.js";
 import { createSearchInput } from "../components/Search.js";
 import { getProducts, getCategories } from "../services/services.js";
 import { createElement } from "../utils/utils.js";
+import { Product } from "../types/interfaces.js";
 
-export function initializeHomePage(){
+export function initializeHomePage(): void{
   const productsListOptions = createElement("section", "products-list-options");
-  const main = document.getElementById("main");
-  main.append(productsListOptions);
+  const main: HTMLElement | null = document.getElementById("main");
+  main?.append(productsListOptions);
   
   initializeProducts();
   createSearchInput(filterBySearch);
@@ -15,16 +16,21 @@ export function initializeHomePage(){
   const menuButton = document.querySelector(".menu-button");
   const navbar = document.querySelector(".navbar");
   
-  menuButton.addEventListener("click", () => {
-    navbar.classList.toggle("visible");
+  menuButton?.addEventListener("click", () => {
+    navbar?.classList.toggle("visible");
   })
 }
 
+interface CreateProps {
+  update: (newData: Product[]) => void;
+  get: () => Product[];
+}
+
 // create products functions
-function createProductsData(){
-  let products;
+function createProductsData(): CreateProps{
+  let products: Product[] = [];
   return{
-    update: function(updatedProducts){
+    update: function(updatedProducts: Product[]){
       products = updatedProducts;
       createProductsList(products);
     },
@@ -32,18 +38,18 @@ function createProductsData(){
   }
 }
 
-function createFilteredProducts(){
-  let filteredProducts;
+function createFilteredProducts(): CreateProps{
+  let filteredProducts: Product[] = [];
   return{
-    update: (newFilteredProducts) => (filteredProducts = newFilteredProducts),
+    update: (newFilteredProducts: Product[]) => (filteredProducts = newFilteredProducts),
     get: () => filteredProducts
   }
 }
 
-const productsData = createProductsData();
-const filteredProductsData = createFilteredProducts();
+const productsData: CreateProps = createProductsData();
+const filteredProductsData: CreateProps = createFilteredProducts();
 
-async function initializeProducts(){
+async function initializeProducts(): Promise<void>{
   try{
     // getting products
     const initialProductsData = await getProducts();
@@ -53,16 +59,20 @@ async function initializeProducts(){
     // getting categories
     const categoriesList = getCategories();
     const productsCategories = getProductsCategories();
-    createCategoriesSelect(categoriesList, productsCategories, filterByCategory);
+    createCategoriesSelect({
+      categoriesList: categoriesList, 
+      productsCategoriesList: productsCategories, 
+      filterByCategory: filterByCategory
+    });
   } catch (error){
     console.log("Error when initializing the products:", error);
   }
 }
 
 // products categories
-function getProductsCategories(){
+function getProductsCategories(): string[]{
   const initialProductsData = productsData.get();
-  let productsCategories = [];
+  let productsCategories: string[] = [];
 
   initialProductsData.forEach((product) => {
     const productCategory = product.category;
@@ -75,22 +85,26 @@ function getProductsCategories(){
 }
 
 // categories select filter function
-export async function filterByCategory(categorySelected){
-  const allProductsData = await getProducts();
+export async function filterByCategory(categorySelected: string): Promise<void>{
+  try {
+      const allProductsData = await getProducts();
 
-  const filtered =
-    categorySelected === "all categories"
-      ? allProductsData
-      : allProductsData.filter(
-        product => product.category == categorySelected
-        );
-  
-  filteredProductsData.update(filtered);
-  productsData.update(filtered);
+    const filtered =
+      categorySelected === "all categories"
+        ? allProductsData
+        : allProductsData.filter(
+          product => product.category == categorySelected
+          );
+    
+    filteredProductsData.update(filtered);
+    productsData.update(filtered);
+  } catch (error){
+    console.log("Error filtering by category:", error);
+  }
 }
 
 // search form filter function
-export function filterBySearch(searchInputValue){
+export function filterBySearch(searchInputValue: string): void{
   const searchedProducts = filteredProductsData.get().filter( product => {
     const productName = product.title.toUpperCase();
     return productName.includes(searchInputValue);

@@ -1,7 +1,8 @@
 import { createElement } from "../utils/utils.js";
 import { counter } from "./Counter.js";
+import { Product } from "../types/interfaces.js";
 
-export function createProductCard(productData){
+export function createProductCard(productData: Product): HTMLDivElement{
   // elements variables
   const productCard = createElement("div", "product-card");
   const productImage = createElement("img");

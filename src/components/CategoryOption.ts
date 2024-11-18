@@ -1,6 +1,15 @@
 import { createElement } from "../utils/utils.js";
 
-export function categoryOption(value, text, selected = false, disabled = false){
+interface CategoryOptionProps {
+  value: string;
+  text: string;
+  selected?: boolean;
+  disabled?: boolean;
+}
+
+export function categoryOption({
+  value, text, selected = false, disabled = false
+}: CategoryOptionProps): HTMLOptionElement{
   // element variable
   const optionCard = createElement("option");
 
