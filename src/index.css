@@ -183,7 +183,7 @@ main{
   width: 15.556rem;
   height: 2.278rem;
   /*arrow styles*/
-  background-image: url("../assets/icons/down-arrow.svg");
+  background-image: url("./assets/icons/down-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 0.889rem center;
   background-size: 1.333rem;

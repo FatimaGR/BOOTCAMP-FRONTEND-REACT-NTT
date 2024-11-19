@@ -7,28 +7,36 @@
 <br>
 
 ## Progreso y Tecnologías
-Entrega de la semana **TypeScript** del proyecto My Market, en la que se usaron las siguientes tecnologías:
+Entrega de la semana **React Fundamentos** del proyecto My Market, en la que se usaron las siguientes tecnologías:
 
 ![HTML5](https://img.shields.io/badge/HTML5-white?style=for-the-badge&logo=html5&logoColor=%23FFFFFF&color=%23E34F26)
 ![CSS3](https://img.shields.io/badge/CSS3-white?style=for-the-badge&logo=css3&color=%231572B6)
 ![Git](https://img.shields.io/badge/Git-white?style=for-the-badge&logo=git&logoColor=%23FFFFFF&color=%23F05032)
 ![Vite](https://img.shields.io/badge/Vite-%23242424?style=for-the-badge&logo=vite&logoColor=%23646CFF)
 ![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=%23FFFFFF)
+![React](https://img.shields.io/badge/-React-%23282C34?style=for-the-badge&logo=react)
 
 ## Instrucciones para ejecutar
 1. Clonar este repositorio con el siguiente comando:
 ```
 git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
-2. Dentro del proyecto, cambiar a la rama `feature/javascript`:
+2. Dentro del proyecto, cambiar a la rama `feature/react-fundamentos`:
 ```
-git checkout feature/typescript
+git checkout feature/react-fundamentos
 ```
-3. Instalar las dependencias con el siguiente comando:
+3. **Nota importante:**
+  Si revisaste previamente la versión del proyecto en JavaScript Vanilla (rama feature/javascript) o TypeScript Vanilla (rama feature/typescript) y tienes la carpeta node_modules, elimina esta carpeta antes de continuar. Esto asegurará que las dependencias correctas para la versión con React + TypeScript se instalen correctamente:
+
+```
+rm -rf node_modules
+```
+
+4. Instalar las dependencias con el siguiente comando:
 ```
 npm install
 ```
-4. Abrir en el navegador para ver el proyecto, con el siguiente comando:
+5. Abrir en el navegador para ver el proyecto, con el siguiente comando:
 ```
 npm run dev
 ```
@@ -37,9 +45,12 @@ npm run dev
 ![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
-- [ ✓ ] Migración del cógido, de JavaScript a TypeScript.
-- [ ✓ ] Uso correcto de interfaces y types.
-- [ ✓ ] Creación correcta de carpetas para separar la lógica de negocio de las estructuras definidas como las interfaces o types.
+- [ ✓ ] Creación de una solución React + TypeScript.
+- [ ✓ ] Migración del proyecto creado en HTML, CSS y JavaScript a componentes con React.
+- [ ✓ ] Uso correcto de los hooks useEffect y useState.
+- [ ✓ ] Servicios integrados usando fetch, async y await.
+- [ ✓ ] Creación de una arquitectura de carpetas escalable separando la lógica de negocio, los hooks, los componentes, páginas y los utilitarios.
+- [ ✓ ] El proyecto funciona tal y como se describe en la semana de Javascript.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:
