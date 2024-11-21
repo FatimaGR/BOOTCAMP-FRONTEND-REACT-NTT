@@ -1,6 +1,8 @@
 import { createElement } from "../utils/utils.js";
 
-export function createSearchInput(filterBySearch:(searchInputValue: string) => void): void{
+type CreateSearchInputProp = (searchInputValue: string) => void;
+
+export function createSearchInput(filterBySearch: CreateSearchInputProp): void{
   // elements variables
   const productsListOptions: HTMLElement | null = document.querySelector(".products-list-options");
   const searchForm = createElement("div", "search-form");

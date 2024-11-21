@@ -4,8 +4,9 @@ import { Product } from "../types/interfaces.js";
 
 export function createProductsList(initialProductsData: Product[]): void{
   // elements variables
-  const main: HTMLElement | null = document.getElementById("main");
-  let productsList: HTMLElement | null = document.querySelector(".products-list");
+  // el tipaod es implicito el elementbyId ya lo retorna
+  const main = document.getElementById("main");
+  let productsList = document.querySelector(".products-list");
   
   if (productsList){
     productsList.remove();
@@ -17,9 +18,9 @@ export function createProductsList(initialProductsData: Product[]): void{
   const productsData = initialProductsData;
   
   // products cards
-  productsData.map((productData) => {
+  productsData.forEach((productData) => {
     const productElement = createProductCard(productData);
-    productsList.append(productElement);
+    productsList?.append(productElement);
   })
 
   if (productsData.length == 0 && noProductsMessage){

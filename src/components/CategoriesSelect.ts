@@ -27,6 +27,7 @@ export function createCategoriesSelect({
   categoriesSelect.append(defaultOption);
   
   categoriesData.forEach((categoryData) => {
+    // aqu'i el tipado es implicito no es necesario indicarle el tipo
     const categoryDataSlug: string = categoryData.slug;
     const isDisabled: boolean = productsCategories.includes(categoryDataSlug) ? false : true;
     const option = categoryOption({
@@ -41,6 +42,7 @@ export function createCategoriesSelect({
 
   // elements events
   categoriesSelect.addEventListener("change", function(){
+    // tipado implicito
     const categorySelected: string = categoriesSelect.value.toLowerCase();
     filterByCategory(categorySelected);
   });
