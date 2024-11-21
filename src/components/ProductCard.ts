@@ -16,6 +16,7 @@ export function createProductCard(productData: Product): HTMLDivElement{
   const price = createElement("p", "price");
 
   // elements content
+  // poner en enum el regex para que se pueda identificar que hace
   category.textContent = productData.category.replace(/-/g, " ");
   name.textContent = productData.title;
   description.textContent = productData.description;

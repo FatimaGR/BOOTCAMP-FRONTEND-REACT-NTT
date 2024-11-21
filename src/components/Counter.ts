@@ -1,15 +1,19 @@
-const counterElement: HTMLParagraphElement | null = document.querySelector(".counter");
+type CreateCounterResult = { increment: () => void; getCount: () => number };
 
-function createCounter(): {increment: () => void; getCount: () => number}{
+const counterElement: HTMLParagraphElement | null =
+  document.querySelector(".counter");
+
+function createCounter(): CreateCounterResult {
   let count: number = 0;
-  return{
+  return {
     increment: () => {
-      ++count;
-      if (counterElement != null){
+      count += 1;
+
+      if (counterElement) {
         counterElement.textContent = `${count}`;
       }
     },
-    getCount: () => count
+    getCount: () => count,
   };
 }
 

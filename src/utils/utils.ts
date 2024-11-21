@@ -1,4 +1,5 @@
 // Loops through the parameters to infer the specific HTML element type.
+// interesante 
 export function createElement<K extends keyof HTMLElementTagNameMap>(
   tagName: K, className?:string
 ): HTMLElementTagNameMap[K] {
