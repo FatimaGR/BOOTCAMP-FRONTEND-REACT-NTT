@@ -78,6 +78,8 @@ function getProductsCategories(){
 export async function filterByCategory(categorySelected){
   const allProductsData = await getProducts();
 
+  // los textos de este tipo deber'ian estar en una constante para evitar cualquier error al escribirlos
+  // el ternario hay que usarlo si la condici'on es corta si es extensa como este caso es mejor usar el if tradicional
   const filtered =
     categorySelected === "all categories"
       ? allProductsData

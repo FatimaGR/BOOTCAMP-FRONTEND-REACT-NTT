@@ -17,11 +17,13 @@ export async function createProductsList(initialProductsData){
     const productsData = await initialProductsData;
     
     // products cards
+    // por qu'e map?
     productsData.map((productData) => {
       const productElement = createProductCard(productData);
       productsList.append(productElement);
     })
   
+    // por qu'e en la condici'on est'a no noProductsMessage?
     if (productsData.length == 0 && noProductsMessage){
       productsList.append(noProductsMessage);
     }

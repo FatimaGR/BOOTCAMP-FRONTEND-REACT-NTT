@@ -1,3 +1,4 @@
+// deber'ia estar en otra carpeta ya que no es un componente
 const counterElement = document.querySelector(".counter");
 
 function createCounter(){
