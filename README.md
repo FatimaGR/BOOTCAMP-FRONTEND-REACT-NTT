@@ -7,7 +7,7 @@
 <br>
 
 ## Progreso y Tecnologías
-Entrega de la semana **React Fundamentos** del proyecto My Market, en la que se usaron las siguientes tecnologías:
+Entrega de la semana **React Implementación** del proyecto My Market, en la que se usaron las siguientes tecnologías:
 
 ![HTML5](https://img.shields.io/badge/HTML5-white?style=for-the-badge&logo=html5&logoColor=%23FFFFFF&color=%23E34F26)
 ![CSS3](https://img.shields.io/badge/CSS3-white?style=for-the-badge&logo=css3&color=%231572B6)
@@ -15,15 +15,17 @@ Entrega de la semana **React Fundamentos** del proyecto My Market, en la que se 
 ![Vite](https://img.shields.io/badge/Vite-%23242424?style=for-the-badge&logo=vite&logoColor=%23646CFF)
 ![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=%23FFFFFF)
 ![React](https://img.shields.io/badge/-React-%23282C34?style=for-the-badge&logo=react)
+![React Router](https://img.shields.io/badge/React%20Router-%23282C34?style=for-the-badge&logo=reactrouter)
+
 
 ## Instrucciones para ejecutar
 1. Clonar este repositorio con el siguiente comando:
 ```
 git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
-2. Dentro del proyecto, cambiar a la rama `feature/react-fundamentos`:
+2. Dentro del proyecto, cambiar a la rama `feature/react-implementacion`:
 ```
-git checkout feature/react-fundamentos
+git checkout feature/react-implementacion
 ```
 3. **Nota importante:**
   Si revisaste previamente la versión del proyecto en JavaScript Vanilla (rama feature/javascript) o TypeScript Vanilla (rama feature/typescript) y tienes la carpeta node_modules, elimina esta carpeta antes de continuar. Esto asegurará que las dependencias correctas para la versión con React + TypeScript se instalen correctamente:
@@ -36,7 +38,7 @@ rm -rf node_modules
 ```
 npm install
 ```
-5. Abrir en el navegador para ver el proyecto, con el siguiente comando:
+5. Ejecutar el siguiente comando y abrir el proyecto en el navegador:
 ```
 npm run dev
 ```
@@ -45,16 +47,26 @@ npm run dev
 ![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
-- [ ✓ ] Creación de una solución React + TypeScript.
-- [ ✓ ] Migración del proyecto creado en HTML, CSS y JavaScript a componentes con React.
-- [ ✓ ] Uso correcto de los hooks useEffect y useState.
-- [ ✓ ] Servicios integrados usando fetch, async y await.
-- [ ✓ ] Creación de una arquitectura de carpetas escalable separando la lógica de negocio, los hooks, los componentes, páginas y los utilitarios.
-- [ ✓ ] El proyecto funciona tal y como se describe en la semana de Javascript.
-
-### Funcionalidades adicionales
-- **Cart Reducer:** se optó por crear un reducer para manejar los estados del carrito de compras.
-- **Cart Context:** Se optó por crear un conexto al carrito de compras, donde se maneja el contador que se muestra en el componente Navbar.
+- [ ✓ ] Creación de una página donde se visualizan la lista de productos del carrito, y un formulario para el envío de los productos.
+- [ ✓ ] Creación de una tabla que muestra la lista de productos, con columnas para:
+    - La imagen miniatura
+    - Nombre del producto
+    - Precio del product
+    - Cantidad del producto con controles para aumentarla o disminuirla
+    - Botón para eliminar el producto de la lista. 
+  
+  Asi mismo se muestra el monto total a pagar en la parte inferior de la tabla.
+- [  ] Uso de react-router-dom para la gestión de rutas.
+- [ ✓ ] Actualización del valor del contador, al modificar la cantidad y eliminar productos del carrito.
+- [ ✓ ] Actualización de la lista de productos del carrito al eliminarlos.
+- [ ✓ ] Actualización del monto total a pagar, al carmbiar la cantidad de productos.
+- [ ✓ ] Uso de UseReducer, Context y Provider para el manejo de estados globales.
+- [  ] Creación de un formulario con los campos: nombres, apellidos, distrito, dirección, referencia y celular.
+- [  ] Validación de todos los campos del formulario, mostrando un mensaje que explique el error en cada campo.
+- [  ] Uso de un custom hook para cargar el contenido del desplegable de distrito.
+- [  ] Al presionar el botón de compra, si el formulario está vacío, se muestra un mensaje de error.
+- [  ] Al presionar el botón de compra, si el formulario está completo, se muestra una alerta personalizada en la pantalla, y a nivel de consola se muestra una estructura de datos con los valores que ingresó el usuario.
+- [  ] Al cerrar la alerta personalizada se limpian los datos del carrito, la tabla con la lista de productos, y se redirige a la página de inicio.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:

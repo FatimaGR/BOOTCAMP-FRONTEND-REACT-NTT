@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
 import { useCart } from "../../context/cart-context";
 import Button from "../../shared/Button/Button";
@@ -8,9 +9,14 @@ import "./navbar.css";
 const Navbar: FC = () => {
   const { cartProductsCounter } = useCart().state;
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleToggleMenu = (): void => {
     setMenuToggle(!menuToggle);
+  }
+
+  const onClick = (): void => {
+    navigate("/orderSummary");
   }
 
   return(
@@ -18,7 +24,7 @@ const Navbar: FC = () => {
       <div className="header-content">
         <div className="my-market-logo">
           <img src="src/assets/images/my-market-logo.png" alt="My Market logo"/>
-          <a href="#" aria-label="Go to My Market homepage">My Market</a>
+          <a href="/" aria-label="Go to My Market homepage">My Market</a>
         </div>
         <Button
           onClick={handleToggleMenu}
@@ -29,6 +35,7 @@ const Navbar: FC = () => {
         />
         <nav className={`navbar ${menuToggle && "visible"}`}>
           <Button 
+            onClick={onClick}
             className="header-item cart"
             text="Cart"
             icon={cartIcon} 
