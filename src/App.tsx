@@ -8,9 +8,9 @@ const App: FC = () => {
   
   return (
     <>
-      {<Navbar/>}
-      {<Home/>}
-      {<Footer/>}
+      <Navbar/>
+      <Home/>
+      <Footer/>
     </>
   )
 }

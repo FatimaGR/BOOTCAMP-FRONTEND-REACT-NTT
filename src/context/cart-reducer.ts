@@ -1,4 +1,4 @@
-import { CartActions } from "../domain/actions-type";
+import { CartActions } from "../domain/cart-store";
 import { CartProduct } from "../domain/interfaces";
 
 export interface DispatchObject<A, T = any> {
