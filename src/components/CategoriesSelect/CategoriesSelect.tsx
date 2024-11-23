@@ -1,6 +1,6 @@
-import CategoryOption from "./CategoryOption.tsx";
-import { Category } from "../types/interfaces.js";
-import { FC } from "react";
+import SelectOption from "../../shared/SelectOption/SelectOption.tsx";
+import { Category } from "../../domain/interfaces.ts";
+import { FC, useState } from "react";
 
 interface CategoriesSelectProps {
   categoriesList: Category[];
@@ -11,28 +11,30 @@ interface CategoriesSelectProps {
 const CategoriesSelect: FC<CategoriesSelectProps> = ({
   categoriesList, productsCategoriesList, filterByCategory
 }: CategoriesSelectProps) => {
+  const categoryDefault = "all-categories";
+  const [categorySelected, setCategorySelected] = useState(categoryDefault);
 
   const handleChange = ({target}: React.ChangeEvent<HTMLSelectElement>): void => {
-    const categorySelected: string = target.value.toLowerCase();
-    filterByCategory(categorySelected);
+    const newCategorySelected = target.value.toLowerCase()
+    setCategorySelected(newCategorySelected);
+    filterByCategory(newCategorySelected);
   }
 
   return(
-    <select onChange={handleChange} className="categories-select">
-      <CategoryOption 
-        value="all categories"
+    <select value={categorySelected} onChange={handleChange} className="categories-select">
+      <SelectOption
+        key={categoryDefault}
+        value={categoryDefault}
         text="All categories"
-        selected={true}
       />
       {categoriesList.map((categoryData) => {
         const categoryDataSlug: string = categoryData.slug;
         const isDisabled: boolean = productsCategoriesList.includes(categoryDataSlug) ? false : true;
         return (
-          <CategoryOption
-            key={categoryData.name}
+          <SelectOption
+            key={categoryData.slug}
             value={categoryData.slug}
             text={categoryData.name}
-            selected={false}
             disabled={isDisabled}
           />
         )

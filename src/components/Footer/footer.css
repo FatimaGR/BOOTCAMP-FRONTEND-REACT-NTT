@@ -1,0 +1,47 @@
+/*Footer styles*/
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.278rem;
+  border-radius: 1.667rem;
+  background: var(--white);
+  padding: 1.111rem;
+  margin-bottom: 1.111rem;
+  font-size: var(--font-size-xs);
+  position: absolute;
+  bottom: 0;
+  left: 0.833rem;
+  right: 0.833rem;
+  width: auto;
+  text-align: center;
+  box-shadow: var(--shadow-1);
+}
+.social-media{
+  display: flex;
+  gap: 1.111rem;
+}
+.social-media a{
+  background: var(--gray-1);
+  border-radius: 100%;
+  height: 2.111rem;
+  width: 2.111rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-media a:hover{
+  background: var(--yellow);
+  transform: scale(1.2);
+}
+.legal-links{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.278rem;
+}
+.legal-links a:hover{
+  color: var(--red);
+  font-weight: 500;
+}

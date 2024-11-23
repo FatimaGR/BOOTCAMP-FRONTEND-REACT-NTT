@@ -1,19 +1,19 @@
-import { Product } from "../types/interfaces.js";
+import { useCart } from "../../context/cart-context.tsx";
+import { CartProduct, Product } from "../../domain/interfaces.ts";
 import { FC } from "react";
+import Button from "../../shared/Button/Button.tsx";
 
 interface ProductCardProps {
   productData: Product,
-  addToCart: (product: Product) => void,
 }
 
-const ProductCard: FC<ProductCardProps> = ({productData, addToCart}) => {
-  const cartProduct: Product = {
+const ProductCard: FC<ProductCardProps> = ({productData}) => {
+  const { addToCart } = useCart();
+  const cartProduct: CartProduct = {
     id: productData.id,
-    title: productData.title,
-    description: productData.description,
-    category: productData.category,
-    images: productData.images,
-    brand: productData.brand,
+    name: productData.title,
+    image: productData.images[0],
+    quantity: 1,
     price: productData.price,
   };
 
@@ -30,7 +30,7 @@ const ProductCard: FC<ProductCardProps> = ({productData, addToCart}) => {
         <p className="description">{productData.description}</p>
         <p className="brand">{productData.brand}</p>
         <div className="buy-section">
-          <button className="buy-button" onClick={handleClick}>Add to cart</button>
+          <Button className="buy-button" onClick={handleClick} text="Add to cart"/>
           <p className="price">{"S/" + productData.price}</p>
         </div>
       </div>

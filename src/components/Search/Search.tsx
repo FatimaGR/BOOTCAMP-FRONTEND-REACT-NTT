@@ -1,5 +1,6 @@
 import { FC } from "react";
-import searchIcon from "../assets/icons/search.svg"
+import searchIcon from "../../assets/icons/search.svg"
+import Input from "../../shared/Input/Input";
 
 interface SearchInputProps {
   filterBySearch: (searchInputValue: string) => void
@@ -12,10 +13,14 @@ const SearchInput: FC<SearchInputProps> = ({filterBySearch}) => {
   }
 
   return(
-    <div className="search-form">
-      <input type="text" onChange={handleChange} name="search-input" placeholder="Search products..."/>
-      <img src={searchIcon} alt="Search icon" />
-    </div>
+    <Input 
+      firstContainerClassName="search-form"
+      onChange={handleChange}
+      name="search-input"
+      placeholder="Search products..."
+      icon={searchIcon}
+      iconAlt="Search for products"
+    />
   )
 }
 

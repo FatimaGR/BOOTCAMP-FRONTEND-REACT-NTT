@@ -52,17 +52,23 @@ npm run dev
 - [ ✓ ] Creación de una arquitectura de carpetas escalable separando la lógica de negocio, los hooks, los componentes, páginas y los utilitarios.
 - [ ✓ ] El proyecto funciona tal y como se describe en la semana de Javascript.
 
+### Funcionalidades adicionales
+- **Cart Reducer:** se optó por crear un reducer para manejar los estados del carrito de compras.
+- **Cart Context:** Se optó por crear un conexto al carrito de compras, donde se maneja el contador que se muestra en el componente Navbar.
+
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:
 - `src/` carpeta raíz del código fuente, contiene todo el código necesario para el proyecto, organizado en subcarpetas.
   - `assets/` contiene todos los recursos visuales y de diseño utilizados en la interfaz del proyecto.
-  - `components` contiene todos los componentes UI reutilizables de la aplicación.
-  - `pages` contiene las páginas principales de la aplicación.
-  - `services` contiene todo el código relacionado con la lógica de la API.
-  - `styles` contiene los archivos con estilos CSS.
-  - `utils` contiene funciones reutilizables.
+  - `components/` contiene todos los componentes UI reutilizables de la aplicación.
+  - `pages/` contiene las páginas principales de la aplicación.
+  - `services/` contiene todo el código relacionado con la lógica de la API.
+  - `domain/` contiene las interfaces y acciones.
+  - `context/` contiene el código relacionado con la gestión de estados globales y su distribución en toda la aplicación, se encuentran tanto los contextos como los reducers.
+  - `shared/`  contiene componentes que pueden ser utilizados en otros proyectos, diseñados para ser modulares y flexibles, como botones, formularios e inputs.
+  - `utils/` contiene funciones reutilizables.
 - `readme-images/` contiene las imágenes que se utilizan exclusivamente en el archivo README.md para documentar el progreso y los resultados visuales del proyecto.
-- `index.html` incluye la estructura principal del proyecto.
+- `main.tsx` incluye la estructura principal del proyecto.
 - `package.json` incluye las dependencias y configuración del proyecto.
 - `README.md` archivo de documentación que describe la estructura, funcionalidad y tecnologías empleadas en el proyecto.
 

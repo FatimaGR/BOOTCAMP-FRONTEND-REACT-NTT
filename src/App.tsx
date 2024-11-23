@@ -1,24 +1,17 @@
-import Home from "./pages/Home.tsx";
+import Home from "./pages/Home/Home.tsx";
 import "./index.css";
-import Navbar from "./components/Navbar.tsx";
-import Footer from "./components/Footer.tsx";
-import { useState } from "react";
-import { Product } from "./types/interfaces.ts";
+import Navbar from "./components/Navbar/Navbar.tsx";
+import Footer from "./components/Footer/Footer.tsx";
+import { FC } from "react";
 
-function App() {
-  const [cartProducts, setCartProducts] = useState<Product[]>([]);
-
-  const addToCart = (product: Product):void => {
-    const productsList = [...cartProducts, product];
-    setCartProducts(productsList);
-  }
-
+const App: FC = () => {
+  
   return (
-    <div>
-      {<Navbar cart={cartProducts}/>}
-      {<Home addToCart={addToCart}/>}
+    <>
+      {<Navbar/>}
+      {<Home/>}
       {<Footer/>}
-    </div>
+    </>
   )
 }
 

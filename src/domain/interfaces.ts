@@ -5,10 +5,18 @@ export interface Product {
   category: string;
   images: string[];
   brand: string;
-  price: string;
+  price: number;
 }
 
 export interface Category {
   name: string;
   slug: string;
+}
+
+export interface CartProduct {
+  id: number;
+  name: string;
+  image: string;
+  quantity: number;
+  price: number;
 }

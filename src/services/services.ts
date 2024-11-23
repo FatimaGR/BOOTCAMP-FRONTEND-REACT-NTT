@@ -1,5 +1,5 @@
 import { fetchData } from "./fetchData.js";
-import { Product, Category } from "../types/interfaces.js";
+import { Product, Category } from "../domain/interfaces.ts";
 
 interface ProductsResponse {
   products: Product[];

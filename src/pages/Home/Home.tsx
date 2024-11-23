@@ -1,15 +1,12 @@
 import { useEffect, useState, FC } from "react";
-import CategoriesSelect from "../components/CategoriesSelect.tsx";
-import { getProducts, getCategories } from "../services/services.ts";
-import { Category, Product } from "../types/interfaces.ts";
-import ProductsList from "../components/ProductsList.tsx";
-import SearchInput from "../components/Search.tsx";
+import CategoriesSelect from "../../components/CategoriesSelect/CategoriesSelect.tsx";
+import { getProducts, getCategories } from "../../services/services.ts";
+import { Category, Product } from "../../domain/interfaces.ts";
+import ProductsList from "../../components/ProductsList/ProductsList.tsx";
+import SearchInput from "../../components/Search/Search.tsx";
+import "./home.css";
 
-interface HomeProps {
-  addToCart: (product: Product) => void,
-}
-
-const Home: FC<HomeProps> = ({addToCart}) => {
+const Home: FC = () => {
   const [initialProducts, setInitialProducts] = useState<Product[]>([]);
   const [productsData, setProductsData] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -46,8 +43,9 @@ const Home: FC<HomeProps> = ({addToCart}) => {
 
   function filterByCategory(categorySelected: string): void{
     const allProductsData = initialProducts;
+    const categoryDefault = "all-categories";
     const filtered =
-      categorySelected === "all categories"
+      categorySelected === categoryDefault
         ? allProductsData
         : allProductsData.filter(product => product.category == categorySelected);
     
@@ -74,9 +72,9 @@ const Home: FC<HomeProps> = ({addToCart}) => {
           filterByCategory={filterByCategory}
         />
       </section>
-      <ProductsList initialProductsData={productsData} addToCart={addToCart}/>
+      <ProductsList initialProductsData={productsData}/>
     </main>
   )
 }
 
-export default Home
+export default Home;
