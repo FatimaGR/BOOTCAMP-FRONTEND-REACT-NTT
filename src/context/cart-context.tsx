@@ -2,6 +2,7 @@ import { createContext, FC, PropsWithChildren, useContext, useReducer } from "re
 import { cartReducer, CartState, initialCartState } from "./cart-reducer"
 import { CartActions } from "../domain/actions-type";
 import { CartProduct } from "../domain/interfaces";
+import { useLocalStorage } from "../shared/hooks/useLocalStorage";
 
 const CartContext = createContext<{
   state: CartState;
@@ -11,7 +12,8 @@ const CartContext = createContext<{
 } | undefined>(undefined);
 
 const CartProvider: FC<PropsWithChildren> = ({children}) => {
-  const [state, dispatch] = useReducer(cartReducer, initialCartState);
+  const { storedValue: localStorageCartState } = useLocalStorage<typeof initialCartState>("CartState", initialCartState);
+  const [state, dispatch] = useReducer(cartReducer, localStorageCartState);
 
   const updateQuantity = (amount: number, action: string, quantity?: number): void => {
     let newAmount = 0;

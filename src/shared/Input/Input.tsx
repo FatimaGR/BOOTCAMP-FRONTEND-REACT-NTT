@@ -42,7 +42,7 @@ const Input: FC<InputProps> = ({
       }
       {error && <p className="error-message">{error}</p>}
     </div>
-    )
-  }
+  )
+};
 
 export default Input;

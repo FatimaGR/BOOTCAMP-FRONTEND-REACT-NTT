@@ -8,7 +8,7 @@ interface SearchInputProps {
 
 const SearchInput: FC<SearchInputProps> = ({filterBySearch}) => {
   const handleChange = ({target}: React.ChangeEvent<HTMLInputElement>) => {
-    const searchInputValue: string = target.value.trim().toUpperCase();
+    const searchInputValue = target.value.trim().toUpperCase();
     filterBySearch(searchInputValue);
   }
 

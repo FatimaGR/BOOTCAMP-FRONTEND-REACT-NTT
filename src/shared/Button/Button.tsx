@@ -18,7 +18,7 @@ const Button: FC<ButtonProps> = ({
       {text && <p>{text}</p>}
       {children}
     </button>
-    )
-  }
+  )
+};
 
 export default Button;
