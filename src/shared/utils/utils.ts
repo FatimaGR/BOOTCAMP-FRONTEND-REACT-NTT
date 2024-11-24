@@ -8,3 +8,7 @@ export function createElement<K extends keyof HTMLElementTagNameMap>(
   };
   return element
 }
+
+export const replaceHyphensWithSpaces = (stringToFormat: string): string => {
+  return stringToFormat.replace(/-/g, " ");
+};

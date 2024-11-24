@@ -28,8 +28,8 @@ const CategoriesSelect: FC<CategoriesSelectProps> = ({
         text="All categories"
       />
       {categoriesList.map((categoryData) => {
-        const categoryDataSlug: string = categoryData.slug;
-        const isDisabled: boolean = productsCategoriesList.includes(categoryDataSlug) ? false : true;
+        const categoryDataSlug = categoryData.slug;
+        const isDisabled = productsCategoriesList.includes(categoryDataSlug) ? false : true;
         return (
           <SelectOption
             key={categoryData.slug}

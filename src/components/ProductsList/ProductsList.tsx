@@ -14,9 +14,7 @@ const ProductsList: FC<ProductsListProps> = ({initialProductsData}) => {
       {initialProductsData.map((productData) => (
         <ProductCard key={`${productData.id}`} productData={productData}/>
       ))}
-      {initialProductsData.length == 0 && noProductsMessage
-      ? <p>{noProductsMessage}</p>
-      : ""}
+      {initialProductsData.length === 0 && <p>{noProductsMessage}</p>}
     </section>
   )
 }

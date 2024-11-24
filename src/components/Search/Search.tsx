@@ -3,7 +3,7 @@ import searchIcon from "../../assets/icons/search.svg"
 import Input from "../../shared/Input/Input";
 
 interface SearchInputProps {
-  filterBySearch: (searchInputValue: string) => void
+  filterBySearch: (searchInputValue: string) => void,
 }
 
 const SearchInput: FC<SearchInputProps> = ({filterBySearch}) => {
