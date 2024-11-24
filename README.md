@@ -56,17 +56,17 @@ npm run dev
     - Botón para eliminar el producto de la lista. 
   
   Asi mismo se muestra el monto total a pagar en la parte inferior de la tabla.
-- [  ] Uso de react-router-dom para la gestión de rutas.
+- [ ✓ ] Uso de react-router-dom para la gestión de rutas.
 - [ ✓ ] Actualización del valor del contador, al modificar la cantidad y eliminar productos del carrito.
 - [ ✓ ] Actualización de la lista de productos del carrito al eliminarlos.
 - [ ✓ ] Actualización del monto total a pagar, al carmbiar la cantidad de productos.
 - [ ✓ ] Uso de UseReducer, Context y Provider para el manejo de estados globales.
-- [  ] Creación de un formulario con los campos: nombres, apellidos, distrito, dirección, referencia y celular.
-- [  ] Validación de todos los campos del formulario, mostrando un mensaje que explique el error en cada campo.
-- [  ] Uso de un custom hook para cargar el contenido del desplegable de distrito.
-- [  ] Al presionar el botón de compra, si el formulario está vacío, se muestra un mensaje de error.
-- [  ] Al presionar el botón de compra, si el formulario está completo, se muestra una alerta personalizada en la pantalla, y a nivel de consola se muestra una estructura de datos con los valores que ingresó el usuario.
-- [  ] Al cerrar la alerta personalizada se limpian los datos del carrito, la tabla con la lista de productos, y se redirige a la página de inicio.
+- [ ✓ ] Creación de un formulario con los campos: nombres, apellidos, distrito, dirección, referencia y celular.
+- [ ✓ ] Validación de todos los campos del formulario, mostrando un mensaje que explique el error en cada campo.
+- [ ✓ ] Uso de un custom hook para cargar el contenido del desplegable de distrito.
+- [ ✓ ] Al presionar el botón de compra, si el formulario está vacío, se muestra un mensaje de error.
+- [ ✓ ] Al presionar el botón de compra, si el formulario está completo, se muestra una alerta personalizada en la pantalla, y a nivel de consola se muestra una estructura de datos con los valores que ingresó el usuario.
+- [ ✓ ] Al cerrar la alerta personalizada se limpian los datos del carrito, la tabla con la lista de productos, y se redirige a la página de inicio.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:

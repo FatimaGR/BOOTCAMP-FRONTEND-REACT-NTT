@@ -1,22 +1,22 @@
 import { useState } from "react";
 
 export const useModal = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const openModal = () => {
-    setIsVisible(true);
+    setIsModalVisible(true);
   };
 
   const closeModal = () => {
-    setIsVisible(false);
+    setIsModalVisible(false);
   };
 
   const handleModal = () => {
-    setIsVisible(!isVisible);
+    setIsModalVisible(!isModalVisible);
   };
 
   return{
-    isVisible,
+    isModalVisible,
     openModal,
     closeModal,
     handleModal

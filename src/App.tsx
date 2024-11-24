@@ -14,7 +14,6 @@ const App: FC = () => {
   const { setStoredValue } = useLocalStorage<typeof initialCartState>("CartState", state);
 
   useEffect(() => {
-    console.log(state);
     setStoredValue(state);
   }, [state]);
   

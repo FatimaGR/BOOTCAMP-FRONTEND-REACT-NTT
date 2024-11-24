@@ -7,6 +7,7 @@ import { useLocalStorage } from "../shared/hooks/useLocalStorage";
 const CartContext = createContext<{
   state: CartState;
   addToCart: (product: CartProduct) => void,
+  resetCart: () => void,
   deleteFromCart: (productId: number) => void,
   updateQuantity: (amount: number, action: string, quantity?: number) => void,
 } | undefined>(undefined);
@@ -56,9 +57,13 @@ const CartProvider: FC<PropsWithChildren> = ({children}) => {
     }
   }
 
+  const resetCart = (): void => {
+    dispatch({type: CartActions.ResetCart});
+  }
+
   return(
     <CartContext.Provider value={{
-      state, addToCart, deleteFromCart, updateQuantity
+      state, addToCart, resetCart, deleteFromCart, updateQuantity
     }}>
       {children}
     </CartContext.Provider>

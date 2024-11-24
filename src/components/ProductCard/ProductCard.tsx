@@ -2,6 +2,7 @@ import { useCart } from "../../context/cart-context.tsx";
 import { CartProduct, Product } from "../../domain/interfaces.ts";
 import { FC } from "react";
 import Button from "../../shared/Button/Button.tsx";
+import { replaceHyphensWithSpaces } from "../../shared/utils/utils.ts";
 
 interface ProductCardProps {
   productData: Product,
@@ -25,7 +26,7 @@ const ProductCard: FC<ProductCardProps> = ({productData}) => {
     <div className="product-card">
       <img src={productData.images[0]} alt={productData.title}/>
       <div className="product-description">
-        <p className="category">{productData.category.replace(/-/g, " ")}</p>
+        <p className="category">{replaceHyphensWithSpaces(productData.category)}</p>
         <p className="name">{productData.title}</p>
         <p className="description">{productData.description}</p>
         <p className="brand">{productData.brand}</p>

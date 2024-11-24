@@ -39,8 +39,8 @@ const TableRow: FC<TableRowProps> = ({cartProduct}) => {
       <td className="cart-product-image"><img src={cartProduct.image} alt={cartProduct.name}/></td>
       <td className="cart-product-name">{cartProduct.name}</td>
       <td className="cart-product-price">
-        {((cartProduct.price) * cartProduct.quantity).toFixed(2)}
-        </td>
+        S/ {((cartProduct.price) * cartProduct.quantity).toFixed(2)}
+      </td>
       <td className="cart-product-quantity">
         <Button 
           onClick={handleDecreaseQuantity}

@@ -20,3 +20,12 @@ export interface CartProduct {
   quantity: number;
   price: number;
 }
+
+export interface ShippingData{
+  firstName: string,
+  lastName: string,
+  district: string,
+  address: string,
+  reference: string,
+  phoneNumber: string,
+}

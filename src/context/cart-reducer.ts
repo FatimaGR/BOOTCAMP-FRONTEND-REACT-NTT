@@ -23,6 +23,8 @@ export const cartReducer = <T>(
   {type, payload}: DispatchObject<T>
 ) => {
   switch (type){
+    case CartActions.ResetCart:
+      return initialCartState
     case CartActions.AddToCart:
       return{
         ...state,

@@ -17,13 +17,13 @@ const CartProductsTable: FC = () => {
             <th>Remove</th>
           </tr>
         </thead>
-        <tbody>
-          {cartProducts.map((cartProduct) => (
-            <TableRow key={cartProduct.id} cartProduct={cartProduct}/>
+        {cartProducts.length > 0 && <tbody>
+          {cartProducts.map((cartProduct, index) => (
+            <TableRow key={index} cartProduct={cartProduct}/>
           ))}
-        </tbody>
+        </tbody>}
       </table>
-      {cartProducts.length > 0
+      { cartProducts.length > 0
       ? <p className="cart-total-amount">Total amount: S/ {cartTotalAmount}</p>
       : <p className="cart-empty-message">Your cart is empty for now. <br /> Browse our products and find something you love!</p>
       }
