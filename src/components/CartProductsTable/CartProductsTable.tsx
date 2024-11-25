@@ -16,7 +16,9 @@ const CartProductsTable: FC = () => {
             <th>Quantity</th>
             <th>Remove</th>
           </tr>
-          <th className="small-thead">Products</th>
+          <tr>
+            <th className="small-thead">Products</th>
+          </tr>
         </thead>
         {cartProducts.length > 0 && <tbody>
           {cartProducts.map((cartProduct, index) => (

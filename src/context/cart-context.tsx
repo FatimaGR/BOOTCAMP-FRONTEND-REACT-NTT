@@ -1,6 +1,6 @@
 import { createContext, FC, PropsWithChildren, useContext, useReducer } from "react";
 import { cartReducer, CartState, initialCartState } from "./cart-reducer"
-import { CartActions } from "../domain/actions-type";
+import { CartActions } from "../domain/cart-store";
 import { CartProduct } from "../domain/interfaces";
 import { useLocalStorage } from "../shared/hooks/useLocalStorage";
 

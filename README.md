@@ -44,16 +44,16 @@ npm run dev
 ```
 
 ## Descripción general
-![](readme-images/my-market-diseños-y-estilos.png)
+![](readme-images/my-market-react-implementación.png)
 
 ### Funcionalidades implementadas
 - [ ✓ ] Creación de una página donde se visualizan la lista de productos del carrito, y un formulario para el envío de los productos.
 - [ ✓ ] Creación de una tabla que muestra la lista de productos, con columnas para:
     - La imagen miniatura
     - Nombre del producto
-    - Precio del product
+    - Precio del producto
     - Cantidad del producto con controles para aumentarla o disminuirla
-    - Botón para eliminar el producto de la lista. 
+    - Botón para eliminar el producto de la lista 
   
   Asi mismo se muestra el monto total a pagar en la parte inferior de la tabla.
 - [ ✓ ] Uso de react-router-dom para la gestión de rutas.
@@ -68,6 +68,15 @@ npm run dev
 - [ ✓ ] Al presionar el botón de compra, si el formulario está completo, se muestra una alerta personalizada en la pantalla, y a nivel de consola se muestra una estructura de datos con los valores que ingresó el usuario.
 - [ ✓ ] Al cerrar la alerta personalizada se limpian los datos del carrito, la tabla con la lista de productos, y se redirige a la página de inicio.
 
+### Funcionalidades adicionales
+- **Gestión de Home Reducer:** Se implementó un reducer dedicado para manejar de manera eficiente los estados relacionados con los productos y categorías en la página principal (Home).
+- **Visualización de productos en la confirmación de compra:** Se añadió una lista de los productos comprados al modal de confirmación, permitiendo al usuario verificar los detalles de su pedido y asegurándole que la compra se realizó correctamente.
+- **Mensaje de carrito vacío:** Se incluyó un mensaje informativo en la tabla de productos del carrito cuando este está vacío.
+- **Validación del carrito en el formulario:** Al intentar realizar una compra con el carrito vacío, el sistema muestra un mensaje de error al presionar el botón "Buy".
+- **Indicadores de confirmación en el formulario de envío:** Los campos del formulario cambian de color para indicar que el dato ingresado es válido, brindando al usuario una confirmación visual del éxito en el llenado de cada campo requerido.
+- **Persistencia con Local Storage:** Se implementó el hook useLocalStorage para guardar el carrito de compras, asegurando que la información se mantenga al recargar la página o navegar en el sitio.
+- **Validación en botones del carrito:** Se añadieron restricciones a los botones de cantidad en el carrito, impidiendo disminuir por debajo de 1, para evitar errores y garantizar una mejor experiencia de usuario.
+
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:
 - `src/` carpeta raíz del código fuente, contiene todo el código necesario para el proyecto, organizado en subcarpetas.
@@ -78,7 +87,6 @@ La estructura de carpetas se organizó de la siguiente manera:
   - `domain/` contiene las interfaces y acciones.
   - `context/` contiene el código relacionado con la gestión de estados globales y su distribución en toda la aplicación, se encuentran tanto los contextos como los reducers.
   - `shared/`  contiene componentes que pueden ser utilizados en otros proyectos, diseñados para ser modulares y flexibles, como botones, formularios e inputs.
-  - `utils/` contiene funciones reutilizables.
 - `readme-images/` contiene las imágenes que se utilizan exclusivamente en el archivo README.md para documentar el progreso y los resultados visuales del proyecto.
 - `main.tsx` incluye la estructura principal del proyecto.
 - `package.json` incluye las dependencias y configuración del proyecto.

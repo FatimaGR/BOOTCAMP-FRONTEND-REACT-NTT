@@ -1,45 +1,34 @@
-import { useEffect, useState, FC } from "react";
+import { useEffect, FC, useReducer } from "react";
 import CategoriesSelect from "../../components/CategoriesSelect/CategoriesSelect.tsx";
 import { getProducts, getCategories } from "../../services/services.ts";
-import { Category, Product } from "../../domain/interfaces.ts";
 import ProductsList from "../../components/ProductsList/ProductsList.tsx";
 import SearchInput from "../../components/Search/Search.tsx";
+import { homeReducer, initialHomeState } from "../../context/home-reducer.ts";
+import { HomeActions } from "../../domain/home-actions.ts";
 import "./home.css";
 
 const Home: FC = () => {
-  const [initialProducts, setInitialProducts] = useState<Product[]>([]);
-  const [productsData, setProductsData] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [categoriesList, setCategoriesList] = useState<Category[]>([]);
-  const [productsCategories, setProductsCategories] = useState<string[]>([]);
+  const [state, dispatch] = useReducer(homeReducer, initialHomeState);
+  const { initialProducts, productsData, filteredProducts, categoriesList, productsCategories } = state;
 
   useEffect(() => {
     getProducts()
     .then((products) => {
-      setInitialProducts(products);
-      setProductsData(products);
-      setFilteredProducts(products);
-      const productsCategories = getProductsCategories(products);
-      setProductsCategories(productsCategories);
+      dispatch({ type: HomeActions.SetInitialProducts, payload: products});
+      dispatch({ type: HomeActions.SetProductsData, payload: products});
+      dispatch({ type: HomeActions.SetFilteredProducts, payload: products});
+      
+      const productsCategories = Array.from(
+        new Set(products.map((product) => product.category))
+      );
+      
+      dispatch({ type: HomeActions.SetProductsCategories, payload: productsCategories});
     })
     getCategories()
     .then((categories) => {
-      setCategoriesList(categories);
+      dispatch({ type: HomeActions.SetCategories, payload: categories});
     })
   }, [])
-
-  function getProductsCategories(initialProductsData: Product[]): string[]{
-    let productsCategories: string[] = [];
-  
-    initialProductsData.forEach((product) => {
-      const productCategory = product.category;
-      if (!productsCategories.includes(productCategory)){
-        productsCategories.push(productCategory);
-      }
-    })
-  
-    return productsCategories;
-  }
 
   function filterByCategory(categorySelected: string): void{
     const allProductsData = initialProducts;
@@ -49,8 +38,8 @@ const Home: FC = () => {
         ? allProductsData
         : allProductsData.filter(product => product.category == categorySelected);
     
-    setFilteredProducts(filtered);
-    setProductsData(filtered);
+    dispatch({ type: HomeActions.SetFilteredProducts, payload: filtered});
+    dispatch({ type: HomeActions.SetProductsData, payload: filtered});
   }
 
   function filterBySearch(searchInputValue: string): void{
@@ -59,7 +48,7 @@ const Home: FC = () => {
       return productName.includes(searchInputValue);
     });
     
-    setProductsData(searchedProducts);
+    dispatch({ type: HomeActions.SetProductsData, payload: searchedProducts});
   }
 
   return(
