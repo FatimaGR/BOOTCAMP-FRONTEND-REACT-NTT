@@ -35,7 +35,7 @@ const TableRow: FC<TableRowProps> = ({cartProduct}) => {
   }
 
   return(
-    <tr key={cartProduct.id}>
+    <tr key={cartProduct.id} className="cart-products-table-tr">
       <td className="cart-product-image"><img src={cartProduct.image} alt={cartProduct.name}/></td>
       <td className="cart-product-name">{cartProduct.name}</td>
       <td className="cart-product-price">

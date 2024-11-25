@@ -18,7 +18,6 @@
 .search-form input,
 .search-form input::placeholder,
 .categories-select{
-  font-family: "Poppins", serif;
   font-size: var(--font-size-xs);
   color: var(--primary-color);
   width: 100%;

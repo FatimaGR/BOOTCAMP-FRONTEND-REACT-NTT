@@ -9,13 +9,14 @@ const CartProductsTable: FC = () => {
     <div className="order-container">
       <table className="cart-products-table">
         <thead>
-          <tr>
+          <tr className="big-thead">
             <th>Product</th>
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Remove</th>
           </tr>
+          <th className="small-thead">Products</th>
         </thead>
         {cartProducts.length > 0 && <tbody>
           {cartProducts.map((cartProduct, index) => (

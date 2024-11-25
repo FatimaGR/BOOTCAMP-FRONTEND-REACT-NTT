@@ -51,6 +51,10 @@ a{
 button,
 select{
   cursor: pointer;
+  font-family: "Poppins", serif;
+}
+input{
+  font-family: "Poppins", serif;
 }
 
 /*Main styles*/
@@ -68,9 +72,120 @@ main{
   flex: 1;
 }
 
+/* Form styles */
+form{
+  padding: 1.667rem 1.389rem;
+  background: #ffffff80;
+  border-radius: 1.389rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.111rem;
+  max-width: 100%;
+}
+.form-title{
+  color: var(--secondary-color);
+  font-size: var(--font-size-m);
+  font-weight: 500;
+}
+.form-button{
+  background: var(--yellow);
+  border: none;
+  border-radius: 0.556rem;
+  outline: none;
+  font-size: var(--font-size-xs);
+  color: var(--primary-color);
+  min-height: 2.5rem;
+  min-width: 5rem;
+  padding: 0.278rem 0.556rem;
+  font-weight: 500;
+}
+.form-button:hover{
+  color: var(--secondary-color);
+  box-shadow: var(--shadow-1);
+  background: #ffb951;
+}
+
+/* form inputs styles */
+.form-inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.111rem;
+  max-width: 41.111rem;
+}
+.form-input input,
+.error-form-input input,
+.confirmed-form-input input{
+  background: none;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-s);
+  color: var(--primary-color);
+}
+.form-input select,
+.error-form-input select,
+.confirmed-form-input select{
+  appearance: none;
+  background: var(--white);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-s);
+  color: var(--primary-color);
+  /*arrow styles*/
+  background-image: url("../src/assets/icons/down-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.889rem center;
+  background-size: 1.333rem;
+}
+.form-input,
+.error-form-input,
+.confirmed-form-input{
+  width: 20rem;
+  height: fit-content;
+  background: var(--white);
+  padding: 0.444rem 0.833rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.278rem;
+  border-radius: 0.556rem;
+}
+.form-input label,
+.error-form-input label,
+.confirmed-form-input label{
+  font-size: var(--font-size-2xs);
+}
+.error-form-input label{
+  /* border: solid 0.056rem var(--red); */
+  color: var(--red);
+}
+.confirmed-form-input label{
+  color: #88D498;
+  font-weight: 500;
+}
+.error-message{
+  font-size: var(--font-size-2xs);
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* Modal styles*/
+.body-no-scroll{
+  overflow: hidden;
+}
+
 /* Responsive styles */
 @media(max-width: 830px){
   html{
     font-size: 16px;
+  }
+  .form-input, 
+  .error-form-input, 
+  .confirmed-form-input {
+    width: 100%;
+  }
+  main{
+    padding: 2.222rem 1.111rem;
+    padding-bottom: 10rem;
   }
 }

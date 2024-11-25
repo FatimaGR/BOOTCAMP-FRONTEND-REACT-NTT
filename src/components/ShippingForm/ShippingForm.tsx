@@ -5,14 +5,18 @@ import { ShippingData } from "../../domain/interfaces";
 import { useJson } from "../../shared/hooks/useJson";
 import SelectOption from "../../shared/SelectOption/SelectOption";
 import { validateNumber, validateStrings } from "../../shared/utils/utils";
+import { useCart } from "../../context/cart-context";
 
 interface ShippingFormProps {
   openModal: () => void,
 }
 
 const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
+  const { cartProductsCounter } = useCart().state;
   const { data } = useJson<{ districts: string[] }>("/data/districts.json");
-  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [inputErrors, setInputErrors] = useState<{[key: string]: string}>({});
+  const [confirmedInputs, setConfirmedInputs] = useState<{[key: string]: boolean}>({});
+  const [formError, setFormError] = useState("");
   const [formData, setFormData] = useState<ShippingData>({
     firstName: "",
     lastName: "",
@@ -26,112 +30,136 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
     const {name, value} = target;
     setFormData({...formData, [name]: value});
 
-    let newErrors: {[key: string]: string} = {...errors};
+    let newErrors: {[key: string]: string} = {...inputErrors};
+    let newConfirmedInputs: {[key: string]: boolean} = {...confirmedInputs};
 
     if (!value){
       newErrors[name] = "This value is required";
+      newConfirmedInputs[name] = false;
     } else {
       if (name === "firstName" || name === "lastName"){
         if (!validateStrings(value)){
           newErrors[name] = "Enter a value only with letters";
+          newConfirmedInputs[name] = false;
         } else {
           delete newErrors[name];
+          newConfirmedInputs[name] = true;
         };
       } else if (name === "phoneNumber"){
         if (!validateNumber(value)){
           newErrors[name] = "Enter a value only with numbers";
+          newConfirmedInputs[name] = false;
         } else {
           delete newErrors[name];
+          newConfirmedInputs[name] = true;
         };
       } else {
         delete newErrors[name];
+        newConfirmedInputs[name] = true;
       };
     };
     
-    setErrors(newErrors);
+    setInputErrors(newErrors);
+    setConfirmedInputs(newConfirmedInputs);
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
-    let newErrors: {[key: string]: string} = {...errors};
+    let newErrors: {[key: string]: string} = {...inputErrors};
+    let newConfirmedInputs: {[key: string]: boolean} = {...confirmedInputs};
 
     Object.keys(formData).forEach((key) => {
       if (!formData[key as keyof ShippingData]){
         newErrors[key] = "This value is required";
+        newConfirmedInputs[key] = false;
       }
     });
 
-    setErrors(newErrors);
+    setInputErrors(newErrors);
+    setConfirmedInputs(newConfirmedInputs);
 
     if (Object.keys(newErrors).length === 0){
-      console.log(formData);
-      openModal();
+      if (cartProductsCounter === 0){
+        setFormError("To complete the order, you need buy products.");
+      } else {
+        console.log(formData);
+        openModal();
+        document.body.classList.add("body-no-scroll");
+      }
     };
   };
 
   return(
     <form onSubmit={handleSubmit}>
-      <p>Shipping Information</p>
-      <div>
+      <p className="form-title">Shipping Information</p>
+      <div className="form-inputs">
         <Input
-          firstContainerClassName=""
+          firstContainerClassName="form-input"
           onChange={handleChange}
           name="firstName"
           value={formData.firstName}
           placeholder="Enter your first name"
           label="First name"
           type="text"
-          error={errors.firstName}
+          error={inputErrors.firstName}
+          confirmed={confirmedInputs.firstName}
         />
         <Input
-          firstContainerClassName=""
+          firstContainerClassName="form-input"
           onChange={handleChange}
           name="lastName"
           value={formData.lastName}
           placeholder="Enter your last name"
           label="Last name"
           type="text"
-          error={errors.lastName}
+          error={inputErrors.lastName}
+          confirmed={confirmedInputs.lastName}
         />
-        <label htmlFor="district">Distric</label>
-        <select value={formData.district} id="district" name="district" onChange={handleChange}>
-          <SelectOption value="" text="Select your district" disabled/>
-          {data?.districts.map((district, index) => (
-            <SelectOption key={index} text={district} value={district}/>
-          ))}
-        </select>
-        {errors.district && <p>{errors.district}</p>}
+        <div className={inputErrors.district ? "error-form-input": confirmedInputs.district ? "confirmed-form-input": "form-input"}>
+          <label htmlFor="district">Distric</label>
+          <select value={formData.district} id="district" name="district" onChange={handleChange}>
+            <SelectOption value="" text="Select your district" disabled/>
+            {data?.districts.map((district, index) => (
+              <SelectOption key={index} text={district} value={district}/>
+            ))}
+          </select>
+          {inputErrors.district && <p className="error-message">{inputErrors.district}</p>}
+        </div>
         <Input
-          firstContainerClassName=""
+          firstContainerClassName="form-input"
           onChange={handleChange}
           name="address"
           value={formData.address}
           placeholder="Enter your address"
           label="Address"
-          error={errors.address}
+          error={inputErrors.address}
+          confirmed={confirmedInputs.address}
         />
         <Input
-          firstContainerClassName=""
+          firstContainerClassName="form-input"
           onChange={handleChange}
           name="reference"
           value={formData.reference}
           placeholder="Address reference"
           label="Refence"
-          error={errors.reference}
+          error={inputErrors.reference}
+          confirmed={confirmedInputs.reference}
         />
         <Input
-          firstContainerClassName=""
+          firstContainerClassName="form-input"
           onChange={handleChange}
           name="phoneNumber"
           value={formData.phoneNumber}
           placeholder="Enter your phone number"
           label="Phone number"
           type="tel"
-          error={errors.phoneNumber}
+          error={inputErrors.phoneNumber}
+          confirmed={confirmedInputs.phoneNumber}
         />
       </div>
-      <Button type="submit" text="Buy"/>
+      {formError && <p>{formError}</p>}
+      <Button type="submit" text="Buy" className="form-button"/>
     </form>
   )
 };

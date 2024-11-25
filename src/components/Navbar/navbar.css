@@ -41,7 +41,6 @@ header{
 .cart{
   background: none;
   border: none;
-  font-family: "Poppins", serif;
   font-size: var(--font-size-s);
   color: var(--primary-color);
   position: relative;

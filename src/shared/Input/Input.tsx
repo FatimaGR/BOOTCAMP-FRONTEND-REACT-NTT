@@ -7,7 +7,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   icon?: string,
   iconAlt?: string,
   error?: string,
-  confirmed?: string,
+  confirmed?: boolean,
 }
 
 const Input: FC<InputProps> = ({
