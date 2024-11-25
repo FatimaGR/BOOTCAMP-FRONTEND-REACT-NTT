@@ -1,7 +1,7 @@
 import { useCart } from "../../context/cart-context.tsx";
 import { CartProduct, Product } from "../../domain/interfaces.ts";
 import { FC } from "react";
-import Button from "../../shared/Button/Button.tsx";
+import Button from "../../shared/components/Button/Button.tsx";
 import { replaceHyphensWithSpaces } from "../../shared/utils/utils.ts";
 
 interface ProductCardProps {

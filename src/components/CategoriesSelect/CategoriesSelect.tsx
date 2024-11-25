@@ -1,6 +1,6 @@
-import SelectOption from "../../shared/SelectOption/SelectOption.tsx";
 import { Category } from "../../domain/interfaces.ts";
 import { FC, useState } from "react";
+import Select from "../../shared/components/Select/Select.tsx";
 
 interface CategoriesSelectProps {
   categoriesList: Category[];
@@ -21,25 +21,22 @@ const CategoriesSelect: FC<CategoriesSelectProps> = ({
   }
 
   return(
-    <select value={categorySelected} onChange={handleChange} className="categories-select">
-      <SelectOption
-        key={categoryDefault}
-        value={categoryDefault}
-        text="All categories"
-      />
-      {categoriesList.map((categoryData) => {
-        const categoryDataSlug = categoryData.slug;
-        const isDisabled = productsCategoriesList.includes(categoryDataSlug) ? false : true;
-        return (
-          <SelectOption
-            key={categoryData.slug}
-            value={categoryData.slug}
-            text={categoryData.name}
-            disabled={isDisabled}
-          />
-        )
+    <Select 
+      options={categoriesList.map((categoryData) => {
+        const isDisabled = !productsCategoriesList.includes(categoryData.slug);
+
+        return({
+          value: categoryData.slug,
+          text: categoryData.name,
+          disabled: isDisabled
+        })
       })}
-    </select>
+      value={categorySelected}
+      onChange={handleChange}
+      className="categories-select"
+      defaultValue={categoryDefault}
+      defaultValueText="All categories"
+    />
   )
 }
 

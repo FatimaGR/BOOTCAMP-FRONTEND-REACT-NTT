@@ -4,7 +4,7 @@ import sumIcon from "../../assets/icons/plus.svg";
 import restIcon from "../../assets/icons/minus.svg";
 import { CartProduct } from "../../domain/interfaces";
 import { useCart } from "../../context/cart-context";
-import Button from "../../shared/Button/Button";
+import Button from "../../shared/components/Button/Button";
 
 interface TableRowProps {
   cartProduct: CartProduct,

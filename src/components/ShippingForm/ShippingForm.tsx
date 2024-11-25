@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
-import Input from "../../shared/Input/Input";
-import Button from "../../shared/Button/Button";
+import Input from "../../shared/components/Input/Input";
+import Button from "../../shared/components/Button/Button";
 import { ShippingData } from "../../domain/interfaces";
 import { useJson } from "../../shared/hooks/useJson";
-import SelectOption from "../../shared/SelectOption/SelectOption";
 import { validateNumber, validateStrings } from "../../shared/utils/utils";
 import { useCart } from "../../context/cart-context";
+import Select from "../../shared/components/Select/Select";
 
 interface ShippingFormProps {
   openModal: () => void,
@@ -116,16 +116,23 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           error={inputErrors.lastName}
           confirmed={confirmedInputs.lastName}
         />
-        <div className={inputErrors.district ? "error-form-input": confirmedInputs.district ? "confirmed-form-input": "form-input"}>
-          <label htmlFor="district">Distric</label>
-          <select value={formData.district} id="district" name="district" onChange={handleChange}>
-            <SelectOption value="" text="Select your district" disabled/>
-            {data?.districts.map((district, index) => (
-              <SelectOption key={index} text={district} value={district}/>
-            ))}
-          </select>
-          {inputErrors.district && <p className="error-message">{inputErrors.district}</p>}
-        </div>
+        <Select 
+          options={data?.districts.map((district) => ({
+              value: district,
+              text: district
+          }))}
+          containerClassName="form-input"
+          label="District"
+          value={formData.district}
+          id="district"
+          name="district"
+          onChange={handleChange}
+          defaultValue=""
+          defaultValueText="Select your district"
+          defaultValueDisabled={true}
+          error={inputErrors.district}
+          confirmed={confirmedInputs.district}
+        />
         <Input
           firstContainerClassName="form-input"
           onChange={handleChange}

@@ -3,7 +3,8 @@ import { FC, OptionHTMLAttributes } from "react";
 interface SelectOptionProps extends OptionHTMLAttributes<HTMLOptionElement>{
   text: string;
 }
-const SelectOption: FC<SelectOptionProps> = ({
+
+export const SelectOption: FC<SelectOptionProps> = ({
   text, className = "", ...props
 }) => {
   return(
@@ -11,6 +12,6 @@ const SelectOption: FC<SelectOptionProps> = ({
       {text}
     </option>
   )
-}
+};
 
 export default SelectOption;

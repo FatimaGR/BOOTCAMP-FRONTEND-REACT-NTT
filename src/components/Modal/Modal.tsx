@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useCart } from "../../context/cart-context";
 import { useNavigate } from "react-router-dom";
-import Button from "../../shared/Button/Button";
+import Button from "../../shared/components/Button/Button";
 import CartProductCard from "../CartProductCart/CartProductCard";
 
 interface ModalProps {

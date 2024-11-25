@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
 import { useCart } from "../../context/cart-context";
-import Button from "../../shared/Button/Button";
+import Button from "../../shared/components/Button/Button";
 import cartIcon from "../../assets/icons/cart.svg";
 import "./navbar.css";
 
