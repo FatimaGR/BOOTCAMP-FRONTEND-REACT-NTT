@@ -8,10 +8,12 @@ interface CategoriesSelectProps {
   filterByCategory: (categorySelected: string) => void;
 }
 
+// esto puede ser un enum por qu'e me parece que esta en otro archivo
+const categoryDefault = "all-categories";
+
 const CategoriesSelect: FC<CategoriesSelectProps> = ({
   categoriesList, productsCategoriesList, filterByCategory
 }: CategoriesSelectProps) => {
-  const categoryDefault = "all-categories";
   const [categorySelected, setCategorySelected] = useState(categoryDefault);
 
   const handleChange = ({target}: React.ChangeEvent<HTMLSelectElement>): void => {

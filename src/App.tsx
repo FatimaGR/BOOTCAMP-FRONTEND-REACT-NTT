@@ -21,6 +21,7 @@ const App: FC = () => {
     <>
       <Navbar/>
       <Routes>
+        {/* usemos enum para las rutas */}
         <Route path="/" element={<Home/>}/>
         <Route path="/orderSummary" element={<OrderSummary/>}/>
       </Routes>
