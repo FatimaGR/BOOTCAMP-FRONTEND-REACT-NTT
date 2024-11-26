@@ -121,7 +121,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
               value: district,
               text: district
           }))}
-          containerClassName="form-input"
+          containerClassName="form-select"
           label="District"
           value={formData.district}
           id="district"
