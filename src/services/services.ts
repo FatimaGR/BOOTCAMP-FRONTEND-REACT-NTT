@@ -1,16 +1,24 @@
-import { fetchData } from "./fetchData.js";
 import { Product, Category } from "../domain/interfaces.ts";
+import { useApi } from "../shared/hooks/useApi.ts";
 
 interface ProductsResponse {
   products: Product[];
 }
 
-export async function getProducts(): Promise<Product[]>{
-  const productsList = await fetchData<ProductsResponse>("/products?limit=0");
-  return productsList.products
+export const getProducts = () => {
+  const { data, isLoading, error } = useApi<ProductsResponse>("https://dummyjson.com/products?limit=0");
+  return {
+    products: data?.products || [],
+    productsLoading: isLoading,
+    productsError: error
+  }
 }
 
-export async function getCategories(): Promise<Category[]>{
-  const productsCategories = await fetchData<Category[]>("/products/categories");
-  return productsCategories;
+export const getCategories = () => {
+  const { data, isLoading, error } =useApi<Category[]>("https://dummyjson.com/products/categories");
+  return {
+    categories: data || [],
+    categoriesLoading: isLoading,
+    categoriesError: error
+  }
 }

@@ -1,8 +1,9 @@
 import { useCart } from "../../context/cart-context.tsx";
 import { CartProduct, Product } from "../../domain/interfaces.ts";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Button from "../../shared/components/Button/Button.tsx";
 import { replaceHyphensWithSpaces } from "../../shared/utils/utils.ts";
+import defaultImage from "../../assets/images/product-default-image.svg";
 
 interface ProductCardProps {
   productData: Product,
@@ -17,14 +18,19 @@ const ProductCard: FC<ProductCardProps> = ({productData}) => {
     quantity: 1,
     price: productData.price,
   };
+  const [productImage, setProductImage] = useState(productData.images[0] || defaultImage);
 
   const handleClick = (): void => {
     addToCart(cartProduct);
   }
 
+  const handleImageError = () => {
+    setProductImage(defaultImage);
+  }
+
   return(
     <div className="product-card">
-      <img src={productData.images[0]} alt={productData.title}/>
+      <img src={productImage} alt={productData.title} onError={handleImageError}/>
       <div className="product-description">
         <p className="category">{replaceHyphensWithSpaces(productData.category)}</p>
         <p className="name">{productData.title}</p>

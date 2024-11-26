@@ -135,7 +135,7 @@ form{
   /*arrow styles*/
   background-image: url("../src/assets/icons/down-arrow.svg");
   background-repeat: no-repeat;
-  background-position: right 0.889rem center;
+  background-position: right 0.2rem center;
   background-size: 1.333rem;
 }
 .form-input,

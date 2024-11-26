@@ -29,3 +29,7 @@ export interface ShippingData{
   reference: string,
   phoneNumber: string,
 }
+
+export interface ProductsResponse {
+  products: Product[];
+}

@@ -133,3 +133,14 @@
   color: var(--secondary-color);
   font-weight: 500;
 }
+.loading-message,
+.no-products-message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading-message img,
+.no-products-message img{
+  height: 19.444rem;
+  object-fit: cover;
+}

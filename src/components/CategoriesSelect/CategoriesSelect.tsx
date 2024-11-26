@@ -35,7 +35,7 @@ const CategoriesSelect: FC<CategoriesSelectProps> = ({
       onChange={handleChange}
       className="categories-select"
       defaultValue={categoryDefault}
-      defaultValueText="All categories"
+      defaultValueText={"All categories"}
     />
   )
 }
