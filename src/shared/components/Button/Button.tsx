@@ -1,14 +1,13 @@
-import { FC, ButtonHTMLAttributes, ReactNode } from "react";
+import { FC, ButtonHTMLAttributes, PropsWithChildren } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   text?: string,
   icon?: string,
   iconAlt?: string,
   ariaLabel?: string,
-  children?: ReactNode,
 }
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<PropsWithChildren<ButtonProps>> = ({
   text, icon, iconAlt, ariaLabel, children, ...props
 }) => {
 

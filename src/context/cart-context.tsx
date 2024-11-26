@@ -20,6 +20,7 @@ const CartProvider: FC<PropsWithChildren> = ({children}) => {
     let newAmount = 0;
     let count = 0;
 
+    // no palabras m'agicas usemos enum
     if (action === "sum"){
       newAmount = state.cartTotalAmount + amount;
       count = state.cartProductsCounter + 1;
@@ -61,6 +62,7 @@ const CartProvider: FC<PropsWithChildren> = ({children}) => {
     dispatch({type: CartActions.ResetCart});
   }
 
+  // lo ideal es que el provider solo exporte su estado y el despachador y que sea el consumidor que indique funcionalidad usar porque al exportar todo as'i una p'agina no lo use ya lo esta consumiendo
   return(
     <CartContext.Provider value={{
       state, addToCart, resetCart, deleteFromCart, updateQuantity
