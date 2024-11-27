@@ -1,9 +1,9 @@
 import { FC } from "react";
 import TableRow from "../TableRow/TableRow";
-import { useCart } from "../../context/cart-context";
+import { useCartState } from "../../context/cart-context";
 
 const CartProductsTable: FC = () => {
-  const { cartProducts, cartTotalAmount } = useCart().state;
+  const { cartProducts, cartTotalAmount } = useCartState();
   
   return(
     <div className="order-container">

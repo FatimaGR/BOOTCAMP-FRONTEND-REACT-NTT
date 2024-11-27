@@ -1,16 +1,20 @@
-import { useCart } from "../../context/cart-context.tsx";
+import { useCartDispatch, useCartState } from "../../context/cart-context.tsx";
 import { CartProduct, Product } from "../../domain/interfaces.ts";
 import { FC, useState } from "react";
 import Button from "../../shared/components/Button/Button.tsx";
 import { replaceHyphensWithSpaces } from "../../shared/utils/utils.ts";
 import defaultImage from "../../assets/images/product-default-image.svg";
+import { updateQuantity } from "../../context/cart-utils.tsx";
+import { UpdateQuantity } from "../../enums/function-actions.ts";
+import { CartActions } from "../../domain/cart-store.ts";
 
 interface ProductCardProps {
   productData: Product,
 }
 
 const ProductCard: FC<ProductCardProps> = ({productData}) => {
-  const { addToCart } = useCart();
+  const { cartProducts } = useCartState();
+  const dispatch = useCartDispatch();
   const cartProduct: CartProduct = {
     id: productData.id,
     name: productData.title,
@@ -21,7 +25,15 @@ const ProductCard: FC<ProductCardProps> = ({productData}) => {
   const [productImage, setProductImage] = useState(productData.images[0] || defaultImage);
 
   const handleClick = (): void => {
-    addToCart(cartProduct);
+    const repeatedProduct = cartProducts.find((product) => product.id == cartProduct.id);
+    
+    if (repeatedProduct){
+      repeatedProduct.quantity++;
+      updateQuantity(repeatedProduct.price, UpdateQuantity.Increase);
+    } else {
+      dispatch({type: CartActions.AddToCart, payload: cartProduct});
+      updateQuantity(cartProduct.price, UpdateQuantity.Increase);
+    }
   }
 
   const handleImageError = () => {

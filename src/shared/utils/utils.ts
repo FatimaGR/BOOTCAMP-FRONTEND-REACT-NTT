@@ -1,24 +1,16 @@
-// Loops through the parameters to infer the specific HTML element type.
-export function createElement<K extends keyof HTMLElementTagNameMap>(
-  tagName: K, className?:string
-): HTMLElementTagNameMap[K] {
-  const element = document.createElement(tagName);
-  if (className){
-    element.classList.add(className);
-  };
-  return element
-}
+import { RegexEnum } from "./regex-enum";
 
 export const replaceHyphensWithSpaces = (stringToFormat: string): string => {
-  return stringToFormat.replace(/-/g, " ");
+  const hyphens = new RegExp(RegexEnum.Hyphens);
+  return stringToFormat.replace(hyphens, " ");
 };
 
 export const validateStrings = (valueToValidate: string) => {
-  const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+  const regex = new RegExp(RegexEnum.OnlyLetters);
   return regex.test(valueToValidate)
 }
 
 export const validateNumber = (numberToValidate: string) => {
-  const regex = /^[0-9]+$/;
+  const regex = new RegExp(RegexEnum.OnlyNumbers);
   return regex.test(numberToValidate);
 }

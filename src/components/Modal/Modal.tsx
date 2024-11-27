@@ -1,23 +1,25 @@
 import { FC } from "react";
-import { useCart } from "../../context/cart-context";
+import { useCartDispatch, useCartState } from "../../context/cart-context";
 import { useNavigate } from "react-router-dom";
 import Button from "../../shared/components/Button/Button";
 import CartProductCard from "../CartProductCart/CartProductCard";
+import { AppRoutes } from "../../enums/routes";
+import { CartActions } from "../../domain/cart-store";
 
 interface ModalProps {
   closeModal: () => void,
 }
 
 const Modal: FC<ModalProps> = ({closeModal}) => {
-  const { cartProducts, cartTotalAmount } = useCart().state;
-  const { resetCart } = useCart();
+  const { cartProducts, cartTotalAmount } = useCartState();
+  const dispatch = useCartDispatch();
   const navigate = useNavigate();
 
   const handleClick = () => {
-    resetCart();
+    dispatch({type: CartActions.ResetCart});
     closeModal();
     document.body.classList.remove("body-no-scroll");
-    navigate("/");
+    navigate(AppRoutes.Home);
   }
 
   return(

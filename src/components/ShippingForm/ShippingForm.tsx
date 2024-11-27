@@ -4,7 +4,7 @@ import Button from "../../shared/components/Button/Button";
 import { ShippingData } from "../../domain/interfaces";
 import { useJson } from "../../shared/hooks/useJson";
 import { validateNumber, validateStrings } from "../../shared/utils/utils";
-import { useCart } from "../../context/cart-context";
+import { useCartState } from "../../context/cart-context";
 import Select from "../../shared/components/Select/Select";
 
 interface ShippingFormProps {
@@ -12,7 +12,7 @@ interface ShippingFormProps {
 }
 
 const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
-  const { cartProductsCounter } = useCart().state;
+  const { cartProductsCounter } = useCartState();
   const { data } = useJson<{ districts: string[] }>("/data/districts.json");
   const [inputErrors, setInputErrors] = useState<{[key: string]: string}>({});
   const [confirmedInputs, setConfirmedInputs] = useState<{[key: string]: boolean}>({});

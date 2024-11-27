@@ -3,16 +3,20 @@ import deleteIcon from "../../assets/icons/trash.svg";
 import sumIcon from "../../assets/icons/plus.svg";
 import restIcon from "../../assets/icons/minus.svg";
 import { CartProduct } from "../../domain/interfaces";
-import { useCart } from "../../context/cart-context";
+import { useCartDispatch, useCartState } from "../../context/cart-context";
 import Button from "../../shared/components/Button/Button";
 import defaultImage from "../../assets/images/cart-product-default-image.svg";
+import { UpdateQuantity } from "../../enums/function-actions";
+import { updateQuantity } from "../../context/cart-utils";
+import { CartActions } from "../../domain/cart-store";
 
 interface TableRowProps {
   cartProduct: CartProduct,
 }
 
 const TableRow: FC<TableRowProps> = ({cartProduct}) => {
-  const { deleteFromCart, updateQuantity } = useCart();
+  const { cartProducts } = useCartState();
+  const dispatch = useCartDispatch();
   const [quantity, setQuantity] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
   const [cartProductImage, setCartProductImage] = useState(cartProduct.image || defaultImage);
@@ -23,16 +27,23 @@ const TableRow: FC<TableRowProps> = ({cartProduct}) => {
   }, [cartProduct.quantity]);
 
   const handleDelete = () => {
-    deleteFromCart(cartProduct.id);
+    const product = cartProducts.find((product) => product.id == cartProduct.id)
+
+    if (product){
+      const updatedCartProducts = cartProducts.filter((cartProduct) => cartProduct.id != cartProduct.id)
+      dispatch({type: CartActions.DeleteFromCart, payload: updatedCartProducts});
+      const amount = product.price * product.quantity;
+      updateQuantity(amount, "rest", product.quantity);
+    }
   }
 
   const handleIncreaseQuantity = () => {
-    updateQuantity(cartProduct.price, "sum");
+    updateQuantity(cartProduct.price, UpdateQuantity.Increase);
     cartProduct.quantity = cartProduct.quantity + 1;
   }
 
   const handleDecreaseQuantity = () => {
-    updateQuantity(cartProduct.price, "rest");
+    updateQuantity(cartProduct.price, UpdateQuantity.Decrease);
     cartProduct.quantity = cartProduct.quantity - 1;
   }
 

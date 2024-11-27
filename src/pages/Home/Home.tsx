@@ -7,6 +7,7 @@ import { homeReducer, initialHomeState } from "../../context/home-reducer.ts";
 import { HomeActions } from "../../domain/home-actions.ts";
 import "./home.css";
 import { useApi } from "../../shared/hooks/useApi.ts";
+import { CategoriesEnum } from "../../enums/categories.ts";
 
 const Home: FC = () => {
   const [state, dispatch] = useReducer(homeReducer, initialHomeState);
@@ -35,7 +36,7 @@ const Home: FC = () => {
 
   function filterByCategory(categorySelected: string): void{
     const allProductsData = initialProducts;
-    const categoryDefault = "all-categories";
+    const categoryDefault: string = CategoriesEnum.DefaultCategory;
     const filtered =
       categorySelected === categoryDefault
         ? allProductsData

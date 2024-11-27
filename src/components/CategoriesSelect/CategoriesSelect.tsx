@@ -1,6 +1,7 @@
 import { Category } from "../../domain/interfaces.ts";
 import { FC, useState } from "react";
 import Select from "../../shared/components/Select/Select.tsx";
+import { CategoriesEnum } from "../../enums/categories.ts";
 
 interface CategoriesSelectProps {
   categoriesList: Category[];
@@ -11,7 +12,7 @@ interface CategoriesSelectProps {
 const CategoriesSelect: FC<CategoriesSelectProps> = ({
   categoriesList, productsCategoriesList, filterByCategory
 }: CategoriesSelectProps) => {
-  const categoryDefault = "all-categories";
+  const categoryDefault: string = CategoriesEnum.DefaultCategory;
   const [categorySelected, setCategorySelected] = useState(categoryDefault);
 
   const handleChange = ({target}: React.ChangeEvent<HTMLSelectElement>): void => {
