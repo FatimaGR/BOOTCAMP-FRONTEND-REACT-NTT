@@ -13,7 +13,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: FC<ProductCardProps> = ({productData}) => {
-  const { cartProducts } = useCartState();
+  const { cartProducts, cartTotalAmount, cartProductsCounter } = useCartState();
   const dispatch = useCartDispatch();
   const cartProduct: CartProduct = {
     id: productData.id,
@@ -29,10 +29,10 @@ const ProductCard: FC<ProductCardProps> = ({productData}) => {
     
     if (repeatedProduct){
       repeatedProduct.quantity++;
-      updateQuantity(repeatedProduct.price, UpdateQuantity.Increase);
+      updateQuantity(repeatedProduct.price, UpdateQuantity.Increase, cartTotalAmount, cartProductsCounter, dispatch);
     } else {
       dispatch({type: CartActions.AddToCart, payload: cartProduct});
-      updateQuantity(cartProduct.price, UpdateQuantity.Increase);
+      updateQuantity(cartProduct.price, UpdateQuantity.Increase, cartTotalAmount, cartProductsCounter, dispatch);
     }
   }
 

@@ -1,10 +1,14 @@
-import { CartActions } from "../domain/cart-store";
+import { CartActions, CartDispatch } from "../domain/cart-store";
 import { UpdateQuantity } from "../enums/function-actions";
-import { useCartDispatch, useCartState } from "./cart-context";
 
-export const updateQuantity = (amount: number, action: string, quantity?: number): void => {
-  const { cartTotalAmount, cartProductsCounter } = useCartState();
-  const dispatch = useCartDispatch();
+export const updateQuantity = (
+  amount: number, 
+  action: string, 
+  cartTotalAmount: number,
+  cartProductsCounter: number,
+  dispatch: CartDispatch,
+  quantity?: number,
+): void => {
   let newAmount = 0;
   let count = 0;
 

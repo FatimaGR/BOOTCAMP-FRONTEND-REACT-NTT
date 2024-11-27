@@ -15,7 +15,7 @@ interface TableRowProps {
 }
 
 const TableRow: FC<TableRowProps> = ({cartProduct}) => {
-  const { cartProducts } = useCartState();
+  const { cartProducts, cartTotalAmount, cartProductsCounter } = useCartState();
   const dispatch = useCartDispatch();
   const [quantity, setQuantity] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -30,20 +30,20 @@ const TableRow: FC<TableRowProps> = ({cartProduct}) => {
     const product = cartProducts.find((product) => product.id == cartProduct.id)
 
     if (product){
-      const updatedCartProducts = cartProducts.filter((cartProduct) => cartProduct.id != cartProduct.id)
+      const updatedCartProducts = cartProducts.filter((product) => product.id != cartProduct.id)
       dispatch({type: CartActions.DeleteFromCart, payload: updatedCartProducts});
       const amount = product.price * product.quantity;
-      updateQuantity(amount, "rest", product.quantity);
+      updateQuantity(amount, UpdateQuantity.Decrease, cartTotalAmount, cartProductsCounter, dispatch, product.quantity);
     }
   }
 
   const handleIncreaseQuantity = () => {
-    updateQuantity(cartProduct.price, UpdateQuantity.Increase);
+    updateQuantity(cartProduct.price, UpdateQuantity.Increase, cartTotalAmount, cartProductsCounter, dispatch);
     cartProduct.quantity = cartProduct.quantity + 1;
   }
 
   const handleDecreaseQuantity = () => {
-    updateQuantity(cartProduct.price, UpdateQuantity.Decrease);
+    updateQuantity(cartProduct.price, UpdateQuantity.Decrease, cartTotalAmount, cartProductsCounter, dispatch);
     cartProduct.quantity = cartProduct.quantity - 1;
   }
 
