@@ -10,3 +10,9 @@ export const categoriesResponseMock = [
     slug: "furniture",
   }
 ]
+
+export const categoriesProductsMock = [
+  "beauty",
+  "fragances",
+  "furniture"
+]

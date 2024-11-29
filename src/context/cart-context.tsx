@@ -35,4 +35,4 @@ const useCartDispatch = () => {
   return context;
 };
 
-export { CartProvider, useCartState, useCartDispatch };
+export { CartProvider, CartStateContext, CartDispatchContext, useCartState, useCartDispatch };

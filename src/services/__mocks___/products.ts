@@ -29,5 +29,29 @@ export const productsResponseMock = [
     ],
     brand: "Velvet Touch",
     price: 14.99,
+  },{
+    id: 6,
+    title: "Calvin Klein CK One",
+    description: "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+    category: "fragrances",
+    images: [
+      "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
+      "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
+      "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png"
+    ],
+    brand: "Calvin Klein",
+    price: 49.99,
+  },{
+    id: 11,
+    title: "Annibale Colombo Bed",
+    description: "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
+    category: "furniture",
+    images: [
+      "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",
+      "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/2.png",
+      "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/3.png"
+    ],
+    brand: "Calvin Klein",
+    price: 1899.99,
   }
 ]
