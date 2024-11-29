@@ -7,8 +7,7 @@ import { useCartDispatch, useCartState } from "../../context/cart-context";
 import Button from "../../shared/components/Button/Button";
 import defaultImage from "../../assets/images/cart-product-default-image.svg";
 import { UpdateQuantity } from "../../enums/function-actions";
-import { updateQuantity } from "../../context/cart-utils";
-import { CartActions } from "../../domain/cart-store";
+import { deleteFromCart, updateQuantity } from "../../context/cart-utils";
 
 interface TableRowProps {
   cartProduct: CartProduct,
@@ -27,14 +26,7 @@ const TableRow: FC<TableRowProps> = ({cartProduct}) => {
   }, [cartProduct.quantity]);
 
   const handleDelete = () => {
-    const product = cartProducts.find((product) => product.id == cartProduct.id)
-
-    if (product){
-      const updatedCartProducts = cartProducts.filter((product) => product.id != cartProduct.id)
-      dispatch({type: CartActions.DeleteFromCart, payload: updatedCartProducts});
-      const amount = product.price * product.quantity;
-      updateQuantity(amount, UpdateQuantity.Decrease, cartTotalAmount, cartProductsCounter, dispatch, product.quantity);
-    }
+    deleteFromCart(cartProduct.id, cartProducts, cartTotalAmount, cartProductsCounter, dispatch);
   }
 
   const handleIncreaseQuantity = () => {

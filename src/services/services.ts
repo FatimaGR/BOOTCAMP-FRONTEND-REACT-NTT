@@ -1,5 +1,5 @@
 import { Product, Category } from "../domain/interfaces.ts";
-import { useApi } from "../shared/hooks/useApi.ts";
+import { useApi } from "../shared/hooks/useApi/useApi.ts";
 
 interface ProductsResponse {
   products: Product[];

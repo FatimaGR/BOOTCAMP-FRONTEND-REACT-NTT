@@ -5,7 +5,7 @@ interface SelectOptionProps extends OptionHTMLAttributes<HTMLOptionElement>{
 }
 
 export const SelectOption: FC<SelectOptionProps> = ({
-  text, className = "", ...props
+  text, ...props
 }) => {
   return(
     <option {...props}>

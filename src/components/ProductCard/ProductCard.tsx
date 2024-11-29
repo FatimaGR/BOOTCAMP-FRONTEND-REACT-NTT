@@ -4,9 +4,7 @@ import { FC, useState } from "react";
 import Button from "../../shared/components/Button/Button.tsx";
 import { replaceHyphensWithSpaces } from "../../shared/utils/utils.ts";
 import defaultImage from "../../assets/images/product-default-image.svg";
-import { updateQuantity } from "../../context/cart-utils.tsx";
-import { UpdateQuantity } from "../../enums/function-actions.ts";
-import { CartActions } from "../../domain/cart-store.ts";
+import { addToCart } from "../../context/cart-utils.ts";
 
 interface ProductCardProps {
   productData: Product,
@@ -25,15 +23,7 @@ const ProductCard: FC<ProductCardProps> = ({productData}) => {
   const [productImage, setProductImage] = useState(productData.images[0] || defaultImage);
 
   const handleClick = (): void => {
-    const repeatedProduct = cartProducts.find((product) => product.id == cartProduct.id);
-    
-    if (repeatedProduct){
-      repeatedProduct.quantity++;
-      updateQuantity(repeatedProduct.price, UpdateQuantity.Increase, cartTotalAmount, cartProductsCounter, dispatch);
-    } else {
-      dispatch({type: CartActions.AddToCart, payload: cartProduct});
-      updateQuantity(cartProduct.price, UpdateQuantity.Increase, cartTotalAmount, cartProductsCounter, dispatch);
-    }
+    addToCart(cartProduct, cartProducts, cartTotalAmount, cartProductsCounter, dispatch);
   }
 
   const handleImageError = () => {

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import OrderSummary from "./pages/OrderSummary/OrderSummary.tsx";
 import { useCartState } from "./context/cart-context.tsx";
-import { useLocalStorage } from "./shared/hooks/useLocalStorage.ts";
+import { useLocalStorage } from "./shared/hooks/useLocalStorage/useLocalStorage.ts";
 import { initialCartState } from "./context/cart-reducer.ts";
 import "./index.css";
 import { AppRoutes } from "./enums/routes.ts";

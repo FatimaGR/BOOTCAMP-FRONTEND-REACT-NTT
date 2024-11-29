@@ -11,7 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
 }
 
 const Input: FC<InputProps> = ({
-  firstContainerClassName="", secondContainerClassName="", label, icon, iconAlt, error, confirmed, ...props
+  firstContainerClassName, secondContainerClassName="", label, icon, iconAlt, error, confirmed, ...props
 }) => {
   const containerClassName = error
     ? `error-${firstContainerClassName}`
@@ -30,12 +30,12 @@ const Input: FC<InputProps> = ({
     <div className={containerClassName}>
       {label && icon ? (
           <>
-            <label>{label}</label>
+            <label htmlFor={props.id}>{label}</label>
             <div className={secondContainerClassName}>{inputElement}</div>
           </>
         ) : (
           <>
-            {label && <label>{label}</label>}
+            {label && <label htmlFor={props.id}>{label}</label>}
             {inputElement}
           </>
         )

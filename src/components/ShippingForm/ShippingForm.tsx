@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import Input from "../../shared/components/Input/Input";
 import Button from "../../shared/components/Button/Button";
 import { ShippingData } from "../../domain/interfaces";
-import { useJson } from "../../shared/hooks/useJson";
+import { useJson } from "../../shared/hooks/useJson/useJson";
 import { validateNumber, validateStrings } from "../../shared/utils/utils";
 import { useCartState } from "../../context/cart-context";
 import Select from "../../shared/components/Select/Select";
@@ -33,7 +33,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
     let newErrors: {[key: string]: string} = {...inputErrors};
     let newConfirmedInputs: {[key: string]: boolean} = {...confirmedInputs};
 
-    if (!value){
+    if (!value || value == " "){
       newErrors[name] = "This value is required";
       newConfirmedInputs[name] = false;
     } else {

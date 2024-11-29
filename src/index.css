@@ -140,6 +140,9 @@ form{
   background-position: right 0.2rem center;
   background-size: 1.333rem;
 }
+.error-form-select select{
+  padding: 0 0.833rem;
+}
 .form-input,
 .error-form-input,
 .confirmed-form-input{
@@ -171,7 +174,8 @@ form{
 .confirmed-form-select label{
   margin: 0.444rem 0.833rem 0 0.833rem;
 }
-.error-form-input label{
+.error-form-input label,
+.error-form-select label{
   color: var(--red);
 }
 .confirmed-form-input label{
@@ -182,6 +186,9 @@ form{
   font-size: var(--font-size-2xs);
   color: var(--red);
   font-weight: 500;
+}
+.error-form-select .error-message{
+  padding: 0 0.833rem 0.444rem 0.833rem;
 }
 
 /* Modal styles*/

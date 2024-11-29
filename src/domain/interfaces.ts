@@ -33,3 +33,16 @@ export interface ShippingData{
 export interface ProductsResponse {
   products: Product[];
 }
+
+export interface UserResponse{
+  id: number,
+  username: string,
+  email: string,
+  accessToken: string,
+  refreshToken: string,
+}
+
+export interface UserCredentials{
+  username: string,
+  password: string,
+}

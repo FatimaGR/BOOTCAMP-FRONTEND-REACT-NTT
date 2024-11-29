@@ -3,7 +3,7 @@ import CartProductsTable from "../../components/CartProductsTable/CartProductsTa
 import "./orderSummary.css";
 import ShippingForm from "../../components/ShippingForm/ShippingForm";
 import Modal from "../../components/Modal/Modal";
-import { useModal } from "../../shared/hooks/useModal";
+import { useModal } from "../../shared/hooks/useModal/useModal";
 
 const OrderSummary: FC = () => {
   const {isModalVisible, openModal, closeModal} = useModal();

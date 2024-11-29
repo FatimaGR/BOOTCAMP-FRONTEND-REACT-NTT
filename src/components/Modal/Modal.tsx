@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../shared/components/Button/Button";
 import CartProductCard from "../CartProductCart/CartProductCard";
 import { AppRoutes } from "../../enums/routes";
-import { CartActions } from "../../domain/cart-store";
+import { resetCart } from "@/context/cart-utils";
 
 interface ModalProps {
   closeModal: () => void,
@@ -16,7 +16,7 @@ const Modal: FC<ModalProps> = ({closeModal}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    dispatch({type: CartActions.ResetCart});
+    resetCart(dispatch);
     closeModal();
     document.body.classList.remove("body-no-scroll");
     navigate(AppRoutes.Home);

@@ -6,7 +6,7 @@ import { Category, ProductsResponse } from "../../domain/interfaces.ts";
 import { homeReducer, initialHomeState } from "../../context/home-reducer.ts";
 import { HomeActions } from "../../domain/home-actions.ts";
 import "./home.css";
-import { useApi } from "../../shared/hooks/useApi.ts";
+import { useApi } from "../../shared/hooks/useApi/useApi.ts";
 import { CategoriesEnum } from "../../enums/categories.ts";
 
 const Home: FC = () => {

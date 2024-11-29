@@ -49,11 +49,11 @@ npm run dev
 ![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
-- [  ] Uso de Jest + Testing library.
-- [  ] Teste de cada una de las funcionalidades creadas, componentes, hooks y páginas.
+- [ ✓ ] Uso de Jest + Testing library.
+- [  ] Test de cada una de las funcionalidades creadas, componentes, hooks y páginas.
 - [  ] El testing abarca la mayoría de archivos de la solución.
 - [  ] Definición correcta de los nombres en cada uno de los tests.
-- [  ] Testeo de la mayor cobertura de código posible mostrando el coverage.
+- [ ✓ ] Testeo de la mayor cobertura de código posible mostrando el coverage.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:

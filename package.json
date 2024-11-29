@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "jest",
     "coverage": "jest --coverage",
-    "test:file": "jest --watchAll --collectCoverageFrom='src/**/*.{js,jsx}'"
+    "test:file": "jest --watchAll --collectCoverageFrom='src/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "react": "^18.3.1",
