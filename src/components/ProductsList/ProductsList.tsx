@@ -4,30 +4,25 @@ import { FC, useState } from "react";
 import noProducts from "../../assets/images/no-products.svg";
 import loadingImage from "../../assets/images/loading.svg";
 import Button from "../../shared/components/Button/Button.tsx";
+import { pagination } from "@/shared/utils/utils.ts";
 
 interface ProductsListProps {
   initialProductsData: Product[],
   isLoading: boolean,
 }
 
-const pagination = (data:Product[], page:number, limit:number): Product[] => {
-  const startId = (page - 1) * limit;
-  const endId = page * limit;
-  const paginatedData: Product[] = data?.slice(startId, endId);
-  return paginatedData;
-};
-
 const ProductsList: FC<ProductsListProps> = ({initialProductsData, isLoading}) => {
   const noProductsMessage = "No products were found";
+  const loadingMessage = "Loading...";
   const [page, setPage] = useState(1);
-  const limit: number = 20;
-  const paginatedProducts: Product[] = pagination(initialProductsData, page, limit);
+  const limit = 20;
+  const paginatedProducts = pagination(initialProductsData, page, limit);
 
   return(
     <>
       {isLoading && 
         <div className="loading-message">
-          <p>Loading...</p>
+          <p>{loadingMessage}</p>
           <img src={loadingImage} alt="Loading image" />
         </div>
       }

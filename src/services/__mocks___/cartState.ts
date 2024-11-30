@@ -9,8 +9,8 @@ export const mockFullCartState = {
     id: 1,
     name: "Essence Mascara Lash Princess",
     image: "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
-    quantity: 1,
-    price: 9.99,
+    quantity: 2,
+    price: 19.98,
   },{
     id: 2,
     name: "Eyeshadow Palette with Mirror",

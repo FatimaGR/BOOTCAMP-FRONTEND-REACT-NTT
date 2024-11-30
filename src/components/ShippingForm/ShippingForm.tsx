@@ -98,6 +98,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           firstContainerClassName="form-input"
           onChange={handleChange}
           name="firstName"
+          id="firstName"
           value={formData.firstName}
           placeholder="Enter your first name"
           label="First name"
@@ -109,6 +110,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           firstContainerClassName="form-input"
           onChange={handleChange}
           name="lastName"
+          id="lastName"
           value={formData.lastName}
           placeholder="Enter your last name"
           label="Last name"
@@ -137,6 +139,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           firstContainerClassName="form-input"
           onChange={handleChange}
           name="address"
+          id="address"
           value={formData.address}
           placeholder="Enter your address"
           label="Address"
@@ -147,9 +150,10 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           firstContainerClassName="form-input"
           onChange={handleChange}
           name="reference"
+          id="reference"
           value={formData.reference}
           placeholder="Address reference"
-          label="Refence"
+          label="Reference"
           error={inputErrors.reference}
           confirmed={confirmedInputs.reference}
         />
@@ -157,6 +161,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           firstContainerClassName="form-input"
           onChange={handleChange}
           name="phoneNumber"
+          id="phoneNumber"
           value={formData.phoneNumber}
           placeholder="Enter your phone number"
           label="Phone number"

@@ -58,20 +58,23 @@ const TableRow: FC<TableRowProps> = ({cartProduct}) => {
           disabled={isDisabled}
           className={isDisabled? "disabled-button" : ""}
           icon={restIcon}
-          iconAlt="Decrease quantity of this product in the cart"
+          iconAlt="decrease quantity button"
+          ariaLabel="Decrease quantity of this product in the cart"
         />
         <p className="cart-product-quantity-number">{quantity}</p>
         <Button 
           onClick={handleIncreaseQuantity}
           icon={sumIcon}
-          iconAlt="Increase quantity of this product in the cart"
+          iconAlt="increase quantity button"
+          ariaLabel="Increase quantity of this product in the cart"
         />
       </td>
       <td className="cart-delete-product">
         <Button
           onClick={handleDelete}
           icon={deleteIcon}
-          iconAlt="Remove this product from the cart"
+          iconAlt="remove button"
+          ariaLabel="Remove this product from the cart"
         />
       </td>
     </tr>

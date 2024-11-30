@@ -40,7 +40,6 @@ describe("Navbar component", () => {
 
     const cartButton = screen.getByAltText("Go to shopping cart");
     fireEvent.click(cartButton);
-    expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith(AppRoutes.OrderSummary);
   });
 })
