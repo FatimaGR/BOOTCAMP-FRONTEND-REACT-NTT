@@ -1,7 +1,7 @@
 import { fireEvent, RenderResult, screen } from "@testing-library/react";
-import { mockFullCartState } from "@/services/__mocks___/cartState.ts";
-import { cartProductMock } from "@/services/__mocks___/cartProduct.ts";
-import { customRender } from "@/services/__wrappers__/cart-context.tsx";
+import { mockFullCartState } from "@/test-utils/__mocks___/cartState.ts";
+import { cartProductMock } from "@/test-utils/__mocks___/cartProduct.ts";
+import { customRender } from "@/test-utils/__wrappers__/cart-context.tsx";
 import { deleteFromCart, updateQuantity } from "../../../context/cart-utils.ts";
 import TableRow from "../TableRow.tsx";
 import { act } from "react";

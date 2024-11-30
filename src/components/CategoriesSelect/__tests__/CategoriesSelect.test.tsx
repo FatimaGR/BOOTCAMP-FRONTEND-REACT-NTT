@@ -1,6 +1,6 @@
 import { act } from "react";
 import CategoriesSelect from "../CategoriesSelect";
-import { categoriesProductsMock, categoriesResponseMock } from "@/services/__mocks___/categories";
+import { categoriesProductsMock, categoriesResponseMock } from "@/test-utils/__mocks___/categories";
 import { fireEvent, render, RenderResult, screen } from "@testing-library/react";
 
 const mockFilterByCategory = jest.fn();

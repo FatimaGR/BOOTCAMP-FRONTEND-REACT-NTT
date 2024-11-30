@@ -1,7 +1,7 @@
 import { CartActions } from "@/domain/cart-store";
 import { cartReducer } from "../cart-reducer";
-import { mockEmptyCartState, mockFullCartState } from "@/services/__mocks___/cartState";
-import { cartProductMock } from "@/services/__mocks___/cartProduct";
+import { mockEmptyCartState, mockFullCartState } from "@/test-utils/__mocks___/cartState";
+import { cartProductMock } from "@/test-utils/__mocks___/cartProduct";
 
 describe("Cart reducer", () => { 
   it("should reset cart", () => {

@@ -61,7 +61,7 @@ La estructura de carpetas se organizó de la siguiente manera:
   - `assets/` contiene todos los recursos visuales y de diseño utilizados en la interfaz del proyecto.
   - `components/` contiene todos los componentes UI reutilizables de la aplicación.
   - `pages/` contiene las páginas principales de la aplicación.
-  - `services/` contiene todo el código relacionado con la lógica de la API.
+  - `test-utils/` contiene mocks y wrappers para los tests.
   - `domain/` contiene las interfaces y acciones.
   - `context/` contiene el código relacionado con la gestión de estados globales y su distribución en toda la aplicación, se encuentran tanto los contextos como los reducers.
   - `shared/`  contiene componentes que pueden ser utilizados en otros proyectos, diseñados para ser modulares y flexibles, como botones, formularios e inputs.

@@ -1,9 +1,9 @@
-import { customRender } from "@/services/__wrappers__/cart-context";
+import { customRender } from "@/test-utils/__wrappers__/cart-context";
 import { RenderResult } from "@testing-library/react";
 import CartProductCard from "../CartProductCard";
-import { cartProductMock } from "@/services/__mocks___/cartProduct";
+import { cartProductMock } from "@/test-utils/__mocks___/cartProduct";
 import { act } from "react";
-import { mockFullCartState } from "@/services/__mocks___/cartState";
+import { mockFullCartState } from "@/test-utils/__mocks___/cartState";
 
 const mockDispatch = jest.fn();
 

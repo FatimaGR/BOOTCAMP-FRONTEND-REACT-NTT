@@ -1,5 +1,5 @@
-import { mockFullCartState } from "@/services/__mocks___/cartState";
-import { customRender } from "@/services/__wrappers__/cart-context";
+import { mockFullCartState } from "@/test-utils/__mocks___/cartState.ts";
+import { customRender } from "@/test-utils/__wrappers__/cart-context.tsx";
 import { fireEvent, RenderResult, screen } from "@testing-library/react";
 import { resetCart } from "../../../context/cart-utils.ts";
 import { act } from "react";

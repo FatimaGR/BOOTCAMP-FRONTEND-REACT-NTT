@@ -1,7 +1,7 @@
-import { mockEmptyCartState } from "@/services/__mocks___/cartState";
-import { customRender } from "@/services/__wrappers__/cart-context";
+import { mockEmptyCartState } from "@/test-utils/__mocks___/cartState.ts";
+import { customRender } from "@/test-utils/__wrappers__/cart-context.tsx";
 import { fireEvent, RenderResult, screen } from "@testing-library/react";
-import { productResponseMock } from "@/services/__mocks___/product";
+import { productResponseMock } from "@/test-utils/__mocks___/product.ts";
 import ProductCard from "../ProductCard";
 import { addToCart } from "../../../context/cart-utils.ts";
 import { act } from "react";

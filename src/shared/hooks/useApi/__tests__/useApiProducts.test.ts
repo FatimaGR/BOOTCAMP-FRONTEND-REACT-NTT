@@ -1,9 +1,9 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { useApi } from "../useApi"
-import { productsResponseMock } from "@/services/__mocks___/products";
-import { categoriesResponseMock } from "@/services/__mocks___/categories";
+import { productsResponseMock } from "@/test-utils/__mocks___/products";
+import { categoriesResponseMock } from "@/test-utils/__mocks___/categories";
 import { UserCredentials } from "@/domain/interfaces";
-import { loginResponseMock } from "@/services/__mocks___/login";
+import { loginResponseMock } from "@/test-utils/__mocks___/login";
 
 const mockFetch = (data: any, status = 200, ok = true): jest.Mock => {
   const fn = jest.fn().mockImplementationOnce(() => {

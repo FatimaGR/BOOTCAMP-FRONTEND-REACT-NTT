@@ -3,8 +3,8 @@ import { AppRoutes } from "./enums/routes";
 import { act } from "react";
 import { MemoryRouter } from "react-router-dom";
 import App from "./App";
-import { customRender } from "./services/__wrappers__/cart-context";
-import { mockEmptyCartState } from "./services/__mocks___/cartState";
+import { customRender } from "./test-utils/__wrappers__/cart-context";
+import { mockEmptyCartState } from "./test-utils/__mocks___/cartState";
 
 const mockDispatch = jest.fn();
 

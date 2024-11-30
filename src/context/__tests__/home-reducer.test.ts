@@ -1,7 +1,7 @@
 import { HomeActions } from "@/domain/home-actions"
-import { productsResponseMock } from "@/services/__mocks___/products"
+import { productsResponseMock } from "@/test-utils/__mocks___/products"
 import { homeReducer, initialHomeState } from "../home-reducer"
-import { categoriesProductsMock, categoriesResponseMock } from "@/services/__mocks___/categories";
+import { categoriesProductsMock, categoriesResponseMock } from "@/test-utils/__mocks___/categories";
 
 describe("Home reducer", () => { 
   it("should set products data", () => {

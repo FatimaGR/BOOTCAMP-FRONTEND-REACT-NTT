@@ -1,6 +1,6 @@
-import { customRender } from "@/services/__wrappers__/cart-context";
+import { customRender } from "@/test-utils/__wrappers__/cart-context";
 import { fireEvent, RenderResult, screen } from "@testing-library/react";
-import { mockEmptyCartState, mockFullCartState } from "@/services/__mocks___/cartState";
+import { mockEmptyCartState, mockFullCartState } from "@/test-utils/__mocks___/cartState";
 import ShippingForm from "../ShippingForm";
 import { act } from "react";
 

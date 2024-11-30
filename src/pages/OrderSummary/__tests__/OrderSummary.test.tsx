@@ -1,6 +1,6 @@
-import { customRender } from "@/services/__wrappers__/cart-context";
+import { customRender } from "@/test-utils/__wrappers__/cart-context";
 import OrderSummary from "../OrderSummary";
-import { mockEmptyCartState } from "@/services/__mocks___/cartState";
+import { mockEmptyCartState } from "@/test-utils/__mocks___/cartState";
 import { screen, RenderResult, act } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 

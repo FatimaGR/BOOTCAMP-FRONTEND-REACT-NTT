@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { useApi } from "../useApi";
-import { categoriesResponseMock } from "@/services/__mocks___/categories";
+import { categoriesResponseMock } from "@/test-utils/__mocks___/categories";
 
 const mockFetch = (data: any, status = 200, ok = true): jest.Mock => {
   const fn = jest.fn().mockImplementationOnce(() => {

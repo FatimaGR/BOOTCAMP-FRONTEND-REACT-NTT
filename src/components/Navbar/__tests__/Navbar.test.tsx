@@ -1,6 +1,6 @@
 import { fireEvent, RenderResult, screen, act } from "@testing-library/react";
-import { customRender } from "@/services/__wrappers__/cart-context";
-import { mockEmptyCartState } from "@/services/__mocks___/cartState";
+import { customRender } from "@/test-utils/__wrappers__/cart-context";
+import { mockEmptyCartState } from "@/test-utils/__mocks___/cartState";
 import { AppRoutes } from "@/enums/routes";
 import Navbar from "../Navbar";
 

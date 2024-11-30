@@ -1,12 +1,12 @@
-import { mockEmptyCartState } from "@/services/__mocks___/cartState";
-import { customRender } from "@/services/__wrappers__/cart-context";
+import { mockEmptyCartState } from "@/test-utils/__mocks___/cartState";
+import { customRender } from "@/test-utils/__wrappers__/cart-context";
 import * as React from "react";
 import Home from "../Home";
 import { fireEvent, RenderResult, screen, act } from "@testing-library/react";
 import { HomeActions } from "@/domain/home-actions";
-import { productsFiltered, productsResponseMock } from "@/services/__mocks___/products";
-import { categoriesProductsMock, categoriesResponseMock } from "@/services/__mocks___/categories";
-import { productResponseMock } from "@/services/__mocks___/product";
+import { productsFiltered, productsResponseMock } from "@/test-utils/__mocks___/products";
+import { categoriesProductsMock, categoriesResponseMock } from "@/test-utils/__mocks___/categories";
+import { productResponseMock } from "@/test-utils/__mocks___/product";
 
 const mockDispatch = jest.fn();
 
