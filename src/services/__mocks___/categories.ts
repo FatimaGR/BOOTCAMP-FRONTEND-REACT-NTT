@@ -13,6 +13,6 @@ export const categoriesResponseMock = [
 
 export const categoriesProductsMock = [
   "beauty",
-  "fragances",
+  "fragrances",
   "furniture"
 ]

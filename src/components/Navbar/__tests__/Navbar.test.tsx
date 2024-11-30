@@ -1,9 +1,8 @@
-import { fireEvent, RenderResult, screen } from "@testing-library/react";
+import { fireEvent, RenderResult, screen, act } from "@testing-library/react";
 import { customRender } from "@/services/__wrappers__/cart-context";
 import { mockEmptyCartState } from "@/services/__mocks___/cartState";
 import { AppRoutes } from "@/enums/routes";
 import Navbar from "../Navbar";
-import { act } from "react";
 
 const navigateMock = jest.fn();
 

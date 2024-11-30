@@ -26,4 +26,4 @@ export const mockFullCartState = {
   }],
   cartProductsCounter: 4,
   cartTotalAmount: 64.96,
-}
+};

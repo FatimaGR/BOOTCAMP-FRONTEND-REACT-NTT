@@ -9,7 +9,7 @@ export const updateQuantity = (
   cartProductsCounter: number,
   dispatch: CartDispatch,
   quantity?: number,
-): void => {
+): { newAmount: number, newCount: number } => {
   let newAmount = 0;
   let count = 0;
 
@@ -25,6 +25,8 @@ export const updateQuantity = (
   dispatch({type: CartActions.UpdateCartCounter, payload: count});
   const newAmountRounded = parseFloat(newAmount.toFixed(2));
   dispatch({type: CartActions.UpdateCartAmount, payload: newAmountRounded});
+
+  return { newAmount: newAmountRounded, newCount: count };
 };
 
 export const addToCart = (

@@ -36,7 +36,7 @@ const Home: FC = () => {
 
   function filterByCategory(categorySelected: string): void{
     const allProductsData = initialProducts;
-    const categoryDefault: string = CategoriesEnum.DefaultCategory;
+    const categoryDefault = CategoriesEnum.DefaultCategory;
     const filtered =
       categorySelected === categoryDefault
         ? allProductsData

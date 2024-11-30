@@ -30,7 +30,7 @@ const Modal: FC<ModalProps> = ({closeModal}) => {
         <p className="modal-subtitle">Order Summary:</p>
         <div className="order-products">
           {cartProducts.map((cartProduct) => (
-            <CartProductCard cartProductData={cartProduct}/>
+            <CartProductCard key={cartProduct.id} cartProductData={cartProduct}/>
           ))}
         </div>
         <p>Total amount: S/ {cartTotalAmount}</p>
