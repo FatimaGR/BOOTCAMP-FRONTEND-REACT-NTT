@@ -1,10 +1,10 @@
 import ProductCard from "../ProductCard/ProductCard.tsx";
 import { Product } from "../../domain/interfaces.ts";
-import { FC, useState } from "react";
+import { FC } from "react";
 import noProducts from "../../assets/images/no-products.svg";
 import loadingImage from "../../assets/images/loading.svg";
 import Button from "../../shared/components/Button/Button.tsx";
-import { pagination } from "@/shared/utils/utils.ts";
+import { usePagination } from "../../shared/hooks/usePagination/usePagination.ts";
 
 interface ProductsListProps {
   initialProductsData: Product[],
@@ -14,9 +14,8 @@ interface ProductsListProps {
 const ProductsList: FC<ProductsListProps> = ({initialProductsData, isLoading}) => {
   const noProductsMessage = "No products were found";
   const loadingMessage = "Loading...";
-  const [page, setPage] = useState(1);
   const limit = 20;
-  const paginatedProducts = pagination(initialProductsData, page, limit);
+  const { paginatedData: paginatedProducts, currentPage, nextPage, previousPage } = usePagination(initialProductsData, limit);
 
   return(
     <>
@@ -39,10 +38,10 @@ const ProductsList: FC<ProductsListProps> = ({initialProductsData, isLoading}) =
       </section>
       {initialProductsData.length > 0 && !isLoading ? (
         <div className="pages-container">
-          <Button disabled={page === 1} onClick={() => setPage(page - 1)} className="page-button">
-            Previus
+          <Button disabled={currentPage === 1} onClick={previousPage} className="page-button">
+            Previous
           </Button>
-          <Button disabled={paginatedProducts.length < limit} onClick={() => setPage(page + 1)} className="page-button">
+          <Button disabled={paginatedProducts.length < limit} onClick={nextPage} className="page-button">
             Next
           </Button>
         </div>) : (<></>)

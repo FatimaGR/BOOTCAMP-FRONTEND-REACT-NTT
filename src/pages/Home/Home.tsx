@@ -8,6 +8,9 @@ import { HomeActions } from "../../domain/home-actions.ts";
 import "./home.css";
 import { useApi } from "../../shared/hooks/useApi/useApi.ts";
 import { CategoriesEnum } from "../../enums/categories.ts";
+import withAuth from "../../hoc/withAuth.tsx";
+import Navbar from "@/components/Navbar/Navbar.tsx";
+import Footer from "@/components/Footer/Footer.tsx";
 
 const Home: FC = () => {
   const [state, dispatch] = useReducer(homeReducer, initialHomeState);
@@ -56,18 +59,22 @@ const Home: FC = () => {
   }
 
   return(
-    <main>
-      <section className="products-list-options">
-        <SearchInput filterBySearch={filterBySearch}/>
-        <CategoriesSelect 
-          categoriesList={categoriesList}
-          productsCategoriesList={productsCategories}
-          filterByCategory={filterByCategory}
-          />
-      </section>
-      <ProductsList initialProductsData={productsData} isLoading={productsLoading}/>
-    </main>
+    <>
+      <Navbar/>
+      <main>
+        <section className="products-list-options">
+          <SearchInput filterBySearch={filterBySearch}/>
+          <CategoriesSelect 
+            categoriesList={categoriesList}
+            productsCategoriesList={productsCategories}
+            filterByCategory={filterByCategory}
+            />
+        </section>
+        <ProductsList initialProductsData={productsData} isLoading={productsLoading}/>
+      </main>
+      <Footer/>
+    </>
   )
 }
 
-export default Home;
+export default withAuth(Home);

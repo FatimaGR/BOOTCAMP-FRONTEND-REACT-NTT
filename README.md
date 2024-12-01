@@ -7,7 +7,7 @@
 <br>
 
 ## Progreso y Tecnologías
-Entrega de la semana **Pruebas Unitarias** del proyecto My Market, en la que se usaron las siguientes tecnologías:
+Entrega de la semana **Proyecto Integrador** del proyecto My Market, en la que se usaron las siguientes tecnologías:
 
 ![HTML5](https://img.shields.io/badge/HTML5-white?style=for-the-badge&logo=html5&logoColor=%23FFFFFF&color=%23E34F26)
 ![CSS3](https://img.shields.io/badge/CSS3-white?style=for-the-badge&logo=css3&color=%231572B6)
@@ -25,9 +25,9 @@ Entrega de la semana **Pruebas Unitarias** del proyecto My Market, en la que se 
 ```
 git clone https://github.com/FatimaGR/BOOTCAMP-FRONTEND-REACT-NTT.git
 ```
-2. Dentro del proyecto, cambiar a la rama `feature/pruebas-unitarias`:
+2. Dentro del proyecto, cambiar a la rama `feature/proyecto-integrador`:
 ```
-git checkout feature/pruebas-unitarias
+git checkout feature/proyecto-integrador
 ```
 3. **Nota importante:**
   Si revisaste previamente la versión del proyecto en JavaScript Vanilla (rama feature/javascript) o TypeScript Vanilla (rama feature/typescript) y tienes la carpeta node_modules, elimina esta carpeta antes de continuar. Esto asegurará que las dependencias correctas para la versión con React + TypeScript se instalen correctamente:
@@ -49,11 +49,18 @@ npm run dev
 ![](readme-images/my-market-diseños-y-estilos.png)
 
 ### Funcionalidades implementadas
-- [ ✓ ] Uso de Jest + Testing library.
-- [ ✓ ] Test de cada una de las funcionalidades creadas, componentes, hooks y páginas.
-- [ ✓ ] El testing abarca la mayoría de archivos de la solución.
-- [ ✓ ] Definición correcta de los nombres en cada uno de los tests.
-- [ ✓ ] Testeo de la mayor cobertura de código posible mostrando el coverage.
+- [ ✓ ] Reutilización del proyecto My Market.
+- [  ] Solución responsive.
+- [  ] Creación de una pantalla Login integrando el servicio https://dummyjson.com/docs/auth#auth-login.
+- [  ] La pantalla login valida correctamente cada campo del formulario mostrando un mensaje en la parte inferior de cada input en caso estén vacíos.
+- [  ] Control de los errores generados por el servicio en caso la autenticación falle, se muestra un mensaje de error personalizado al usuario indicando que pasó.
+- [  ] La pantalla login tiene la opción "Olvidé mi Contraseña", la cual abre un modal donde el usuario debe ingresar su correo. El modal valida el formato del correo y al presionar el botón muestra un mensaje de confirmación.
+- [ ✓ ] Uso de react router dom para el manejo de las rutas.
+- [ ✓ ] Creación de un HOC para permitir visualizar la página Home solo si el usuario ha iniciado sesión, caso contrario es redireccionado a la página Login.
+- [  ] En la parte superior del menú se muestra el mensaje "Welcome: [NOMBRE DE USUARIO]" y este perdura durante la interacción con las pantallas Home y Order Summary.
+- [  ] En el menú se encuentra la opción "Logout", la cual elimina los datos guardados en el local storage, limpia el contexto usado y redirecciona al login.
+- [ ✓ ] Creación de un custom hook para el paginado del contenido.
+- [  ] Todas las funcionalidades agregadas están testeadas.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:
@@ -63,6 +70,8 @@ La estructura de carpetas se organizó de la siguiente manera:
   - `pages/` contiene las páginas principales de la aplicación.
   - `test-utils/` contiene mocks y wrappers para los tests.
   - `domain/` contiene las interfaces y acciones.
+  - `enums/` contiene los enums.
+  - `hoc/` contiene el HOC de autenticación.
   - `context/` contiene el código relacionado con la gestión de estados globales y su distribución en toda la aplicación, se encuentran tanto los contextos como los reducers.
   - `shared/`  contiene componentes que pueden ser utilizados en otros proyectos, diseñados para ser modulares y flexibles, como botones, formularios e inputs.
 - `readme-images/` contiene las imágenes que se utilizan exclusivamente en el archivo README.md para documentar el progreso y los resultados visuales del proyecto.

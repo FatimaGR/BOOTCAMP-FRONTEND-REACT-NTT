@@ -4,17 +4,24 @@ import "./orderSummary.css";
 import ShippingForm from "../../components/ShippingForm/ShippingForm";
 import Modal from "../../components/Modal/Modal";
 import { useModal } from "../../shared/hooks/useModal/useModal";
+import withAuth from "../../hoc/withAuth";
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
 
 const OrderSummary: FC = () => {
   const {isModalVisible, openModal, closeModal} = useModal();
 
   return(
-    <main>
-      <CartProductsTable/>
-      <ShippingForm openModal={openModal}/>
-      {isModalVisible && <Modal closeModal={closeModal}/>}
-    </main>
+    <>
+      <Navbar/>
+      <main>
+        <CartProductsTable/>
+        <ShippingForm openModal={openModal}/>
+        {isModalVisible && <Modal closeModal={closeModal}/>}
+      </main>
+      <Footer/>
+    </>
   )
 }
 
-export default OrderSummary;
+export default withAuth(OrderSummary);
