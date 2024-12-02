@@ -3,12 +3,12 @@ import { customRender } from "@/test-utils/__wrappers__/cart-context.tsx";
 import { fireEvent, RenderResult, screen } from "@testing-library/react";
 import { productResponseMock } from "@/test-utils/__mocks___/product.ts";
 import ProductCard from "../ProductCard";
-import { addToCart } from "../../../context/cart-utils.ts";
+import { addToCart } from "../../../context/cart/cart-utils.ts";
 import { act } from "react";
 
 const mockDispatch = jest.fn();
 
-jest.mock("../../../context/cart-utils.ts", () => ({
+jest.mock("../../../context/cart/cart-utils.ts", () => ({
   addToCart: jest.fn(),
 }));
 

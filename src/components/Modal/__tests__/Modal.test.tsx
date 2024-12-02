@@ -1,7 +1,7 @@
 import { mockFullCartState } from "@/test-utils/__mocks___/cartState.ts";
 import { customRender } from "@/test-utils/__wrappers__/cart-context.tsx";
 import { fireEvent, RenderResult, screen } from "@testing-library/react";
-import { resetCart } from "../../../context/cart-utils.ts";
+import { resetCart } from "../../../context/cart/cart-utils.ts";
 import { act } from "react";
 import Modal from "../Modal";
 import { AppRoutes } from "@/enums/routes";
@@ -10,7 +10,7 @@ const mockDispatch = jest.fn();
 const mockCloseModal = jest.fn();
 const navigateMock = jest.fn();
 
-jest.mock("../../../context/cart-utils.ts", () => ({
+jest.mock("../../../context/cart/cart-utils.ts", () => ({
   resetCart: jest.fn(),
 }));
 

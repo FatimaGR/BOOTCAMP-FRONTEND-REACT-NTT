@@ -1,5 +1,5 @@
-import { CartDispatchContext, CartStateContext } from "@/context/cart-context";
-import { CartState } from "@/context/cart-reducer"
+import { CartDispatchContext, CartStateContext } from "@/context/cart/cart-context";
+import { CartState } from "@/context/cart/cart-reducer"
 import { CartDispatch } from "@/domain/cart-store";
 import { render } from "@testing-library/react"
 import { ReactElement } from "react";
@@ -9,7 +9,10 @@ interface CustomRenderOptions {
   dispatch: CartDispatch,
 };
 
-export const customRender = (component: ReactElement, {cartState, dispatch}: CustomRenderOptions) => {
+export const customRender = (
+  component: ReactElement, 
+  {cartState, dispatch}: CustomRenderOptions
+) => {
   return render(
     <CartStateContext.Provider value={cartState}>
       <CartDispatchContext.Provider value={dispatch}>

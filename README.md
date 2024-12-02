@@ -46,7 +46,7 @@ npm run dev
 ```
 
 ## Descripción general
-![](readme-images/my-market-diseños-y-estilos.png)
+![](readme-images/my-market-ui-design.png)
 
 ### Funcionalidades implementadas
 - [ ✓ ] Reutilización del proyecto My Market.
@@ -60,7 +60,7 @@ npm run dev
 - [ ✓ ] En la parte superior del menú se muestra el mensaje "Welcome: [NOMBRE DE USUARIO]" y este perdura durante la interacción con las pantallas Home y Order Summary.
 - [ ✓ ] En el menú se encuentra la opción "Logout", la cual elimina los datos guardados en el local storage, limpia el contexto usado y redirecciona al login.
 - [ ✓ ] Creación de un custom hook para el paginado del contenido.
-- [  ] Todas las funcionalidades agregadas están testeadas.
+- [ ✓ ] Todas las funcionalidades agregadas están testeadas.
 
 ### Arquitectura de carpetas
 La estructura de carpetas se organizó de la siguiente manera:

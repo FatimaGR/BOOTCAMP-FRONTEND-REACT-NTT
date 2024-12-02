@@ -106,8 +106,8 @@ const Login: FC = () => {
         <Button text="Forgot your password?" className="forgot-password-button" onClick={openModal}/>
         <Button type="submit" text="Log in" className="form-button"/>
       </form>
-      {isLoading && <p>loading</p>}
-      {errorAfterConfirmed && Object.keys(inputErrors).length === 0 ? (<p>Incorrect username or password</p>) : ""}
+      {isLoading && <p>Loading</p>}
+      {errorAfterConfirmed && !isLoading && Object.keys(inputErrors).length === 0 ? (<p>Incorrect username or password</p>) : ""}
       {isModalVisible && <ResetModal closeModal={closeModal}/>}
     </div>
   )

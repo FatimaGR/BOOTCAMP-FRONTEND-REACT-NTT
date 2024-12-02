@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2.222rem 1.111rem;
 }
 .swal2-popup{
   font-family: "Poppins", serif;

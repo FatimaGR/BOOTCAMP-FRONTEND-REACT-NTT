@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   gap: 2.222rem;
+  padding: 2.222rem;
 }
 .login-form{
   box-shadow: var(--shadow-1);
@@ -31,4 +32,9 @@
 .login-icon{
   height: 2.667rem;
   width: 2.667rem;
+}
+@media(max-width: 830px){
+  .login-container{
+    padding: 2.222rem 1.111rem;
+  }
 }

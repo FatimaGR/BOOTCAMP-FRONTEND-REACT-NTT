@@ -1,5 +1,4 @@
 import { mockEmptyCartState } from "@/test-utils/__mocks___/cartState";
-import { customRender } from "@/test-utils/__wrappers__/cart-context";
 import * as React from "react";
 import Home from "../Home";
 import { fireEvent, RenderResult, screen, act } from "@testing-library/react";
@@ -7,8 +6,12 @@ import { HomeActions } from "@/domain/home-actions";
 import { productsFiltered, productsResponseMock } from "@/test-utils/__mocks___/products";
 import { categoriesProductsMock, categoriesResponseMock } from "@/test-utils/__mocks___/categories";
 import { productResponseMock } from "@/test-utils/__mocks___/product";
+import { customContextsRender } from "@/test-utils/__wrappers__/contexts";
+import { loginResponseMock } from "@/test-utils/__mocks___/login";
+import { MemoryRouter } from "react-router-dom";
 
-const mockDispatch = jest.fn();
+const mockCartDispatch = jest.fn();
+const mockUserDispatch = jest.fn();
 
 jest.spyOn(React, "useReducer").mockReturnValue([
   {
@@ -18,12 +21,22 @@ jest.spyOn(React, "useReducer").mockReturnValue([
     categoriesList: categoriesResponseMock,
     productsCategories: categoriesProductsMock,
   },
-  mockDispatch,
+  mockCartDispatch,
 ]);
 
 const renderComponent = async():Promise<RenderResult> => {
   const component = await act(async () => 
-    customRender(<Home/>, { cartState: mockEmptyCartState, dispatch: mockDispatch })
+    customContextsRender(
+      <MemoryRouter>
+        <Home/>
+      </MemoryRouter>,
+      { 
+        user: loginResponseMock,
+        userDispatch: mockUserDispatch,
+        cartState: mockEmptyCartState, 
+        cartDispatch: mockCartDispatch 
+      }
+    )
   );
   return component;
 };
@@ -45,12 +58,12 @@ describe("Home component", () => {
     fireEvent.change(categorySelect, { target: { value: "beauty" } });
     fireEvent.change(categorySelect, { target: { value: "all-categories" } });
     
-    expect(mockDispatch).toHaveBeenCalledWith({
+    expect(mockCartDispatch).toHaveBeenCalledWith({
       type: HomeActions.SetProductsData,
       payload: productsResponseMock,
     });
     
-    expect(mockDispatch).toHaveBeenCalledWith({
+    expect(mockCartDispatch).toHaveBeenCalledWith({
       type: HomeActions.SetFilteredProducts,
       payload: productsResponseMock,
     });
@@ -62,12 +75,12 @@ describe("Home component", () => {
     const categorySelect = screen.getByRole("combobox");
     fireEvent.change(categorySelect, { target: { value: "beauty" } });
     
-    expect(mockDispatch).toHaveBeenCalledWith({
+    expect(mockCartDispatch).toHaveBeenCalledWith({
       type: HomeActions.SetProductsData,
       payload: productsFiltered,
     });
     
-    expect(mockDispatch).toHaveBeenCalledWith({
+    expect(mockCartDispatch).toHaveBeenCalledWith({
       type: HomeActions.SetFilteredProducts,
       payload: productsFiltered,
     });
@@ -79,7 +92,7 @@ describe("Home component", () => {
     const searchInput = screen.getByPlaceholderText("Search products...");
     fireEvent.change(searchInput, { target: { value: "Essence" } });
     
-    expect(mockDispatch).toHaveBeenCalledWith({
+    expect(mockCartDispatch).toHaveBeenCalledWith({
       type: HomeActions.SetProductsData,
       payload: [productResponseMock],
     });

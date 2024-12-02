@@ -19,7 +19,7 @@ const ResetModal: FC<ResetModalProps> = ({closeModal}) => {
   const handleChange = ({target}: React.ChangeEvent<HTMLInputElement>) => {
     const emailValue = target.value;
     setEmail(emailValue);
-    if (!emailValue || emailValue == " "){
+    if (!emailValue.trim()){
       setError("This value is required");
     } else if (!validateEmail(emailValue)){
       setError("Enter a valid email");

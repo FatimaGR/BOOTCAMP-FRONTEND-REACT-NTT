@@ -33,6 +33,7 @@
   padding: 0.833rem;
   font-size: var(--font-size-xs);
   color: var(--secondary-color);
+  width: 100%;
 }
 .cart-empty-container{
   display: flex;

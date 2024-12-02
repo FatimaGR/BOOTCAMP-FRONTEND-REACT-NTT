@@ -38,7 +38,9 @@ export const useApi = <T>(url: string, options: FetchOptions = {}) => {
   }
 
   useEffect(() => {
-    fetchData();
+    if (url) {
+      fetchData();
+    }
   }, [url]);
 
   return { data, isLoading, error };

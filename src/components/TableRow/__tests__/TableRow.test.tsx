@@ -2,13 +2,13 @@ import { fireEvent, RenderResult, screen } from "@testing-library/react";
 import { mockFullCartState } from "@/test-utils/__mocks___/cartState.ts";
 import { cartProductMock } from "@/test-utils/__mocks___/cartProduct.ts";
 import { customRender } from "@/test-utils/__wrappers__/cart-context.tsx";
-import { deleteFromCart, updateQuantity } from "../../../context/cart-utils.ts";
+import { deleteFromCart, updateQuantity } from "../../../context/cart/cart-utils.ts";
 import TableRow from "../TableRow.tsx";
 import { act } from "react";
 
 const mockDispatch = jest.fn();
 
-jest.mock("../../../context/cart-utils.ts", () => ({
+jest.mock("../../../context/cart/cart-utils.ts", () => ({
   deleteFromCart: jest.fn(),
   updateQuantity: jest.fn(),
 }));

@@ -36,4 +36,4 @@ const useUserDispatch = () =>{
   return context;
 };
 
-export { UserProvider, useUser, useUserDispatch };
+export { UserProvider, UserContext, UserDispatchContext, useUser, useUserDispatch };

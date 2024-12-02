@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -95,9 +95,10 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -106,17 +107,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,32 +136,35 @@
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { FC, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.tsx";
-import Navbar from "./components/Navbar/Navbar.tsx";
-import Footer from "./components/Footer/Footer.tsx";
 import OrderSummary from "./pages/OrderSummary/OrderSummary.tsx";
-import { useCartState } from "./context/cart-context.tsx";
+import { useCartState } from "./context/cart/cart-context.tsx";
 import { useLocalStorage } from "./shared/hooks/useLocalStorage/useLocalStorage.ts";
-import { initialCartState } from "./context/cart-reducer.ts";
+import { initialCartState } from "./context/cart/cart-reducer.ts";
 import "./index.css";
 import { AppRoutes } from "./enums/routes.ts";
+import Login from "./pages/Login/Login.tsx";
+import { useUser } from "./context/user/user-context.tsx";
+import { initialUser } from "./context/user/user-reducer.ts";
 &nbsp;
 const App: FC = () =&gt; {
-  const state = useCartState();
-  const { setStoredValue } = useLocalStorage&lt;typeof initialCartState&gt;("CartState", state);
+  const user = useUser();
+  const { setStoredValue: setUserStorage } = useLocalStorage&lt;typeof initialUser&gt;("User", user);
+  const cartState = useCartState();
+  const { setStoredValue: setCartStorage } = useLocalStorage&lt;typeof initialCartState&gt;("CartState", cartState);
 &nbsp;
   useEffect(() =&gt; {
-    setStoredValue(state);
-  }, [state]);
+    setCartStorage(cartState);
+    setUserStorage(user);
+  }, [cartState, user]);
   
   return (
-    &lt;&gt;
-      &lt;Navbar/&gt;
-      &lt;Routes&gt;
-        &lt;Route path={AppRoutes.Home} element={&lt;Home/&gt;}/&gt;
-        &lt;Route path={AppRoutes.OrderSummary} element={&lt;OrderSummary/&gt;}/&gt;
-      &lt;/Routes&gt;
-      &lt;Footer/&gt;
-    &lt;/&gt;
+    &lt;Routes&gt;
+      {/* public routes */}
+      &lt;Route path={AppRoutes.Login} element={&lt;Login/&gt;}/&gt;
+      {/* private routes*/}
+      &lt;Route path={AppRoutes.Home} element={&lt;Home/&gt;}/&gt;
+      &lt;Route path={AppRoutes.OrderSummary} element={&lt;OrderSummary/&gt;}/&gt;
+    &lt;/Routes&gt;
   )
 }
 &nbsp;
@@ -166,7 +175,7 @@ export default App;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-30T18:16:09.118Z
+                at 2024-12-02T22:44:34.756Z
             </div>
         <script src="../prettify.js"></script>
         <script>

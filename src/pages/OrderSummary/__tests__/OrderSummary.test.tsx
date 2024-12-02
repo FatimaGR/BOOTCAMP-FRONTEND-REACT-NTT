@@ -1,10 +1,12 @@
-import { customRender } from "@/test-utils/__wrappers__/cart-context";
 import OrderSummary from "../OrderSummary";
 import { mockEmptyCartState } from "@/test-utils/__mocks___/cartState";
 import { screen, RenderResult, act } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { customContextsRender } from "@/test-utils/__wrappers__/contexts";
+import { loginResponseMock } from "@/test-utils/__mocks___/login";
 
-const mockDispatch = jest.fn();
+const mockCartDispatch = jest.fn();
+const mockUserDispatch = jest.fn();
 
 jest.mock("../../../shared/hooks/useModal/useModal", () => ({
   useModal: jest.fn().mockReturnValue({
@@ -16,11 +18,17 @@ jest.mock("../../../shared/hooks/useModal/useModal", () => ({
 
 const renderComponent = async():Promise<RenderResult> => {
   const component = await act(async () => 
-    customRender(
+    customContextsRender(
       <MemoryRouter>
         <OrderSummary/> 
       </MemoryRouter>,
-    { cartState: mockEmptyCartState, dispatch: mockDispatch })
+      { 
+        user: loginResponseMock,
+        userDispatch: mockUserDispatch,
+        cartState: mockEmptyCartState, 
+        cartDispatch: mockCartDispatch 
+      }
+    )
   );
   return component;
 };

@@ -51,6 +51,7 @@
   gap: 0.278rem;
   border-radius: 0.556rem;
   font-size: var(--font-size-2xs);
+  max-width: 100%;
 }
 .form-select,
 .error-form-select,
@@ -85,4 +86,10 @@
 }
 .error-form-select .error-message{
   padding: 0 0.833rem 0.444rem 0.833rem;
+}
+
+@media(max-width: 830px){
+  .form-inputs{
+    max-width: 100%;
+  }
 }

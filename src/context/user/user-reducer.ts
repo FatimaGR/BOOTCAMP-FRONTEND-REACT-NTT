@@ -28,7 +28,7 @@ export const userReducer = <T>(
         refreshToken: payload.refreshToken,
       };
     case UserActions.Logout:
-      return user = initialUser;
+      return initialUser;
     default:
       console.log("Invalid User Actions option");
       return user
