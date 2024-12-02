@@ -5,6 +5,7 @@ import noProducts from "../../assets/images/no-products.svg";
 import loadingImage from "../../assets/images/loading.svg";
 import Button from "../../shared/components/Button/Button.tsx";
 import { usePagination } from "../../shared/hooks/usePagination/usePagination.ts";
+import "./productsList.css";
 
 interface ProductsListProps {
   initialProductsData: Product[],

@@ -2,6 +2,7 @@ import { Category } from "../../domain/interfaces.ts";
 import { FC, useState } from "react";
 import Select from "../../shared/components/Select/Select.tsx";
 import { CategoriesEnum } from "../../enums/categories.ts";
+import "./categoriesSelect.css";
 
 interface CategoriesSelectProps {
   categoriesList: Category[];

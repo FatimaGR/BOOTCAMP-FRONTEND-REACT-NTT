@@ -3,7 +3,7 @@ import CategoriesSelect from "../../components/CategoriesSelect/CategoriesSelect
 import ProductsList from "../../components/ProductsList/ProductsList.tsx";
 import SearchInput from "../../components/Search/Search.tsx";
 import { Category, ProductsResponse } from "../../domain/interfaces.ts";
-import { homeReducer, initialHomeState } from "../../context/home-reducer.ts";
+import { homeReducer, initialHomeState } from "../../context/home/home-reducer.ts";
 import { HomeActions } from "../../domain/home-actions.ts";
 import "./home.css";
 import { useApi } from "../../shared/hooks/useApi/useApi.ts";

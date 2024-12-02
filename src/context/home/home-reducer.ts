@@ -1,5 +1,5 @@
-import { HomeActions } from "../domain/home-actions";
-import { Category, Product } from "../domain/interfaces";
+import { HomeActions } from "../../domain/home-actions";
+import { Category, Product } from "../../domain/interfaces";
 
 export interface DispatchObject<A, T = any> {
   type: A,

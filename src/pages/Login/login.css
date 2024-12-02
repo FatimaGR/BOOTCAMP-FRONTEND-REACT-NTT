@@ -11,10 +11,10 @@
   justify-content: center;
   gap: 2.222rem;
 }
-form{
+.login-form{
   box-shadow: var(--shadow-1);
 }
-.form-title{
+.login-form-title{
   color: var(--primary-color);
   font-size: var(--font-size-l);
   font-weight: 500;

@@ -1,7 +1,8 @@
 import { FC } from "react";
 import TableRow from "../TableRow/TableRow";
-import { useCartState } from "../../context/cart-context";
+import { useCartState } from "../../context/cart/cart-context";
 import addProductsImg from "../../assets/images/add-products.png";
+import "./cartProductsTable.css";
 
 const CartProductsTable: FC = () => {
   const { cartProducts, cartTotalAmount } = useCartState();

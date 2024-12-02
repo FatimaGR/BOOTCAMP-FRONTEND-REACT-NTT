@@ -4,8 +4,9 @@ import Button from "../../shared/components/Button/Button";
 import { ShippingData } from "../../domain/interfaces";
 import { useJson } from "../../shared/hooks/useJson/useJson";
 import { validateNumber, validateStrings } from "../../shared/utils/utils";
-import { useCartState } from "../../context/cart-context";
+import { useCartState } from "../../context/cart/cart-context";
 import Select from "../../shared/components/Select/Select";
+import "./shippingForm.css";
 
 interface ShippingFormProps {
   openModal: () => void,

@@ -2,14 +2,14 @@ import { FC, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.tsx";
 import OrderSummary from "./pages/OrderSummary/OrderSummary.tsx";
-import { useCartState } from "./context/cart-context.tsx";
+import { useCartState } from "./context/cart/cart-context.tsx";
 import { useLocalStorage } from "./shared/hooks/useLocalStorage/useLocalStorage.ts";
-import { initialCartState } from "./context/cart-reducer.ts";
+import { initialCartState } from "./context/cart/cart-reducer.ts";
 import "./index.css";
 import { AppRoutes } from "./enums/routes.ts";
 import Login from "./pages/Login/Login.tsx";
-import { useUser } from "./context/user-context.tsx";
-import { initialUser } from "./context/user-reducer.ts";
+import { useUser } from "./context/user/user-context.tsx";
+import { initialUser } from "./context/user/user-reducer.ts";
 
 const App: FC = () => {
   const user = useUser();

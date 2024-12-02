@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { CartProduct } from "../../domain/interfaces";
+import "./cartProductCard.css";
 
 interface CartProductCardProps {
   cartProductData: CartProduct,

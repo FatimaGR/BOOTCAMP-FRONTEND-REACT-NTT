@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { useCartDispatch, useCartState } from "../../context/cart-context";
+import { useCartDispatch, useCartState } from "../../context/cart/cart-context";
 import { useNavigate } from "react-router-dom";
 import Button from "../../shared/components/Button/Button";
 import CartProductCard from "../CartProductCart/CartProductCard";
 import { AppRoutes } from "../../enums/routes";
-import { resetCart } from "@/context/cart-utils";
+import { resetCart } from "../../context/cart/cart-utils";
+import "./modal.css";
 
 interface ModalProps {
   closeModal: () => void,

@@ -1,0 +1,37 @@
+.modal-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background: hsla(0, 0%, 31%, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.modal-content{
+  background: var(--gray-1);
+  padding: 1.875rem 1.563rem;
+  box-shadow: var(--shadow-1);
+  border-radius: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.938rem;
+  margin: 0.556rem;
+  width: fit-content;
+}
+.modal-title{
+  font-size: var(--font-size-l);
+}
+.modal-subtitle{
+  font-size: var(--font-size-m);
+  font-weight: 500;
+}
+.order-products{
+  max-height: 11.111rem;
+  width: fit-content;
+  overflow: auto;
+}

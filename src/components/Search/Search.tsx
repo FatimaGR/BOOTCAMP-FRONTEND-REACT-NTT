@@ -1,6 +1,7 @@
 import { FC } from "react";
 import searchIcon from "../../assets/icons/search.svg"
 import Input from "../../shared/components/Input/Input";
+import "./search.css";
 
 interface SearchInputProps {
   filterBySearch: (searchInputValue: string) => void,

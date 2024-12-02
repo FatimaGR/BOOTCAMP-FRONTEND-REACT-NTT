@@ -1,0 +1,24 @@
+.search-form{
+  display: flex;
+  justify-content: space-between;
+  width: 15.556rem;
+  height: 2.278rem;
+  background: var(--white);
+  border-radius: 0.833rem;
+  padding: 0.444rem 0.889rem;
+}
+.search-form input,
+.search-form input::placeholder{
+  font-size: var(--font-size-xs);
+  color: var(--primary-color);
+  width: 100%;
+}
+.search-form input,
+.search-button{
+  border: none;
+  background: none;
+  outline: none;
+}
+.search-form:hover {
+  box-shadow: var(--shadow-2);
+}

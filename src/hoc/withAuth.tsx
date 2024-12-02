@@ -1,7 +1,7 @@
-import { AppRoutes } from "@/enums/routes";
+import { AppRoutes } from "../enums/routes";
 import { Navigate } from "react-router-dom";
 import { ComponentType } from "react";
-import { useUser } from "@/context/user-context";
+import { useUser } from "../context/user/user-context";
 
 const withAuth = <T extends object>(Component: ComponentType<T>) => {
   return (props: T) => {

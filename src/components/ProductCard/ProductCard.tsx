@@ -1,10 +1,11 @@
-import { useCartDispatch, useCartState } from "../../context/cart-context.tsx";
+import { useCartDispatch, useCartState } from "../../context/cart/cart-context.tsx";
 import { CartProduct, Product } from "../../domain/interfaces.ts";
 import { FC, useState } from "react";
 import Button from "../../shared/components/Button/Button.tsx";
 import { replaceHyphensWithSpaces } from "../../shared/utils/utils.ts";
 import defaultImage from "../../assets/images/product-default-image.svg";
-import { addToCart } from "../../context/cart-utils.ts";
+import { addToCart } from "../../context/cart/cart-utils.ts";
+import "./productCard.css";
 
 interface ProductCardProps {
   productData: Product,

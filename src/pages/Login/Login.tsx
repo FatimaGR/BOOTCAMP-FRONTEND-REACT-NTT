@@ -6,9 +6,9 @@ import Button from "../../shared/components/Button/Button";
 import { useModal } from "../../shared/hooks/useModal/useModal";
 import ResetModal from "../../components/ResetModal/ResetModal";
 import { useApi } from "../../shared/hooks/useApi/useApi";
-import { useUserDispatch } from "@/context/user-context";
-import { UserActions } from "@/domain/user-store";
-import { AppRoutes } from "@/enums/routes";
+import { useUserDispatch } from "../../context/user/user-context";
+import { UserActions } from "../../domain/user-store";
+import { AppRoutes } from "../../enums/routes";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
@@ -76,8 +76,8 @@ const Login: FC = () => {
 
   return(
     <div className="login-container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-title">
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-form-title">
           <img src={loginIcon} alt="login icon" className="login-icon"/>
           <p>Login</p>
         </div>

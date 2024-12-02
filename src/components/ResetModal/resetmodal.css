@@ -35,9 +35,11 @@
   justify-content: center;
   gap: 10px;
   box-sizing: border-box;
+  font-size: var(--font-size-xs)
 }
 .swal2-title{
   color: var(--primary-color);
+  font-size: var(--font-size-l);
   font-family: "Poppins", serif;
   font-weight: 500;
 }

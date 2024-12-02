@@ -1,6 +1,6 @@
 import { CartProduct } from "@/domain/interfaces";
-import { CartActions, CartDispatch } from "../domain/cart-store";
-import { UpdateQuantity } from "../enums/function-actions";
+import { CartActions, CartDispatch } from "../../domain/cart-store";
+import { UpdateQuantity } from "../../enums/function-actions";
 
 export const updateQuantity = (
   amount: number, 

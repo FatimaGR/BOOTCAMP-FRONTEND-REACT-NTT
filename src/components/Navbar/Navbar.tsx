@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
-import { useCartState } from "../../context/cart-context";
+import { useCartState } from "../../context/cart/cart-context";
 import Button from "../../shared/components/Button/Button";
 import cartIcon from "../../assets/icons/cart.svg";
 import logoutIcon from "../../assets/icons/log-out.svg";
 import "./navbar.css";
 import { AppRoutes } from "../../enums/routes";
-import { useUser, useUserDispatch } from "@/context/user-context";
+import { useUser, useUserDispatch } from "../../context/user/user-context";
 import { UserActions } from "@/domain/user-store";
 
 const Navbar: FC = () => {

@@ -1,0 +1,23 @@
+.categories-select{
+  font-size: var(--font-size-xs);
+  color: var(--primary-color);
+  width: 100%;
+}
+.categories-select:hover {
+  box-shadow: var(--shadow-2);
+}
+.categories-select{
+  appearance: none;
+  background: var(--white);
+  border: none;
+  outline: none;
+  border-radius: 0.833rem;
+  padding: 0.444rem 0.889rem;
+  width: 15.556rem;
+  height: 2.278rem;
+  /*arrow styles*/
+  background-image: url("../../assets/icons/down-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.889rem center;
+  background-size: 1.333rem;
+}

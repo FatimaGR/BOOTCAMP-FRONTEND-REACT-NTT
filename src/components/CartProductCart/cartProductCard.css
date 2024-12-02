@@ -1,0 +1,17 @@
+.order-product{
+  display: flex;
+  gap: 0.938rem;
+  max-width: 100%;
+  margin-bottom: 0.938rem;
+}
+.order-product-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.313rem;
+}
+.order-product img{
+  height: 6.25rem;
+  object-fit: cover;
+}

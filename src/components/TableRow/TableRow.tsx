@@ -3,11 +3,12 @@ import deleteIcon from "../../assets/icons/trash.svg";
 import sumIcon from "../../assets/icons/plus.svg";
 import restIcon from "../../assets/icons/minus.svg";
 import { CartProduct } from "../../domain/interfaces";
-import { useCartDispatch, useCartState } from "../../context/cart-context";
+import { useCartDispatch, useCartState } from "../../context/cart/cart-context";
 import Button from "../../shared/components/Button/Button";
 import defaultImage from "../../assets/images/cart-product-default-image.svg";
 import { UpdateQuantity } from "../../enums/function-actions";
-import { deleteFromCart, updateQuantity } from "../../context/cart-utils";
+import { deleteFromCart, updateQuantity } from "../../context/cart/cart-utils";
+import "./tableRow.css";
 
 interface TableRowProps {
   cartProduct: CartProduct,
