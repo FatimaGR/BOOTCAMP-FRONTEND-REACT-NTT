@@ -24,6 +24,7 @@ const Login: FC = () => {
     submitConfirmed ? "https://dummyjson.com/auth/login" : "", 
     {method: "POST", body: formData}
   );
+  const [errorAfterConfirmed, setErrorAfterConfirm] = useState(false);
   const dispatch = useUserDispatch();
   const navigate = useNavigate();
   
@@ -66,6 +67,7 @@ const Login: FC = () => {
     });
 
     setInputErrors(newErrors);
+    setErrorAfterConfirm(true);
 
     if (Object.keys(newErrors).length === 0){
       setSubmitConfirmed(true);
@@ -105,7 +107,7 @@ const Login: FC = () => {
         <Button type="submit" text="Log in" className="form-button"/>
       </form>
       {isLoading && <p>loading</p>}
-      {submitConfirmed && Object.keys(inputErrors).length === 0 ? (<p>Incorrect username or password</p>) : ""}
+      {errorAfterConfirmed && Object.keys(inputErrors).length === 0 ? (<p>Incorrect username or password</p>) : ""}
       {isModalVisible && <ResetModal closeModal={closeModal}/>}
     </div>
   )

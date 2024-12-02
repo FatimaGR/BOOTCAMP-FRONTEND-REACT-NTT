@@ -75,7 +75,6 @@ header{
 @media(max-width: 830px){
   header{
     padding: 0.625rem;
-    padding-right: 1.875rem;
   }
   .my-market-logo{
     width: 2.188rem;

@@ -23,3 +23,42 @@
   align-items: center;
   justify-content: center;
 }
+.swal2-popup{
+  font-family: "Poppins", serif;
+  border-radius: 1.389rem;
+  background: #f5f5f5e6;
+  box-shadow: var(--shadow-1);
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.swal2-title{
+  color: var(--primary-color);
+  font-family: "Poppins", serif;
+  font-weight: 500;
+}
+.swal2-confirm{
+  background: var(--yellow);
+  border: none;
+  border-radius: 0.556rem;
+  outline: none;
+  font-size: var(--font-size-xs);
+  color: var(--primary-color);
+  min-height: 2.5rem;
+  min-width: 5rem;
+  padding: 0.278rem 0.556rem;
+  font-weight: 500;
+}
+.swal2-confirm:hover{
+  color: var(--secondary-color);
+  box-shadow: var(--shadow-1);
+  background: #ffb951 !important;
+}
+.confirm-alert-img{
+  width: 8.333rem;
+  height: 8.333rem;
+}

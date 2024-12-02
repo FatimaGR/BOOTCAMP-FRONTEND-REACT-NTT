@@ -14,3 +14,8 @@ export const validateNumber = (numberToValidate: string) => {
   const regex = new RegExp(RegexEnum.OnlyNumbers);
   return regex.test(numberToValidate);
 };
+
+export const validateEmail = (stringToValidate: string) => {
+  const regex = new RegExp(RegexEnum.Email);
+  return regex.test(stringToValidate);
+};

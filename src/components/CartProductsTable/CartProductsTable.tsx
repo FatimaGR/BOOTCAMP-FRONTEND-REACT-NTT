@@ -1,6 +1,7 @@
 import { FC } from "react";
 import TableRow from "../TableRow/TableRow";
 import { useCartState } from "../../context/cart-context";
+import addProductsImg from "../../assets/images/add-products.png";
 
 const CartProductsTable: FC = () => {
   const { cartProducts, cartTotalAmount } = useCartState();
@@ -28,7 +29,14 @@ const CartProductsTable: FC = () => {
       </table>
       { cartProducts.length > 0
       ? <p className="cart-total-amount">Total amount: S/ {cartTotalAmount}</p>
-      : <p className="cart-empty-message">Your cart is empty for now. <br /> Browse our products and find something you love!</p>
+      : <div className="cart-empty-container">
+          <p className="cart-empty-message">
+            Your cart is empty for now. 
+            <br /> 
+            Browse our products and find something you love!
+          </p>
+          <img src={addProductsImg} alt="Add products to cart image" className="add-products-image"/>
+        </div>
       }
     </div>
   )

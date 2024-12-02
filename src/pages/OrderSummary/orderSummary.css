@@ -84,10 +84,21 @@
   font-size: var(--font-size-xs);
   color: var(--secondary-color);
 }
+.cart-empty-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.667rem 0.833rem;
+  padding-bottom: 0;
+}
 .cart-empty-message{
   width: 100%;
-  padding: 1.667rem 0.833rem;
   text-align: center;
+}
+.add-products-image{
+  width: 11.111rem;
+  height: 11.111rem;
+  object-fit: cover;
 }
 
 /* modal styles */
