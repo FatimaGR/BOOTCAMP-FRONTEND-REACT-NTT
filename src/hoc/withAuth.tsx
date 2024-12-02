@@ -1,12 +1,13 @@
 import { AppRoutes } from "@/enums/routes";
 import { Navigate } from "react-router-dom";
 import { ComponentType } from "react";
+import { useUser } from "@/context/user-context";
 
 const withAuth = <T extends object>(Component: ComponentType<T>) => {
   return (props: T) => {
-    const user = true;
+    const user = useUser();
 
-    return user ? (
+    return user.accessToken ? (
       <Component {...props}/>
     ) : (
       <Navigate to={AppRoutes.Login} />

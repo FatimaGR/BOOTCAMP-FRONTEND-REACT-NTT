@@ -4,20 +4,30 @@ import menuIcon from "../../assets/icons/menu.svg";
 import { useCartState } from "../../context/cart-context";
 import Button from "../../shared/components/Button/Button";
 import cartIcon from "../../assets/icons/cart.svg";
+import logoutIcon from "../../assets/icons/log-out.svg";
 import "./navbar.css";
 import { AppRoutes } from "../../enums/routes";
+import { useUser, useUserDispatch } from "@/context/user-context";
+import { UserActions } from "@/domain/user-store";
 
 const Navbar: FC = () => {
   const { cartProductsCounter } = useCartState();
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
+  const user = useUser();
   const navigate = useNavigate();
+  const dispatch = useUserDispatch();
 
   const handleToggleMenu = (): void => {
     setMenuToggle(!menuToggle);
   }
 
-  const onClick = (): void => {
+  const handleNavigate = (): void => {
     navigate(AppRoutes.OrderSummary);
+  }
+
+  const handleLogout = (): void => {
+    dispatch({type: UserActions.Logout});
+    navigate(AppRoutes.Login);
   }
 
   return(
@@ -35,8 +45,9 @@ const Navbar: FC = () => {
           iconAlt="Menu icon"
         />
         <nav className={`navbar ${menuToggle && "visible"}`}>
+          <p className="welcome-message">Welcome: {user.username}</p>
           <Button 
-            onClick={onClick}
+            onClick={handleNavigate}
             className="header-item cart"
             text="Cart"
             icon={cartIcon} 
@@ -46,6 +57,13 @@ const Navbar: FC = () => {
               {cartProductsCounter}
             </span>
           </Button>
+          <Button 
+            onClick={handleLogout}
+            className="header-item logout"
+            text="Log out"
+            icon={logoutIcon} 
+            iconAlt="Log out icon"
+          />
         </nav>
       </div>
     </header>

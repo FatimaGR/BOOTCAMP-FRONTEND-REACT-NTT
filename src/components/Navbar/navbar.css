@@ -38,6 +38,7 @@ header{
   align-items: center;
   justify-content: center;
 }
+.logout,
 .cart{
   background: none;
   border: none;
@@ -66,6 +67,9 @@ header{
   background: none;
   padding: 0.5rem 0.6rem;
   display: none;
+}
+.welcome-message{
+  text-transform: capitalize;
 }
 
 @media(max-width: 830px){

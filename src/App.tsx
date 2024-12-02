@@ -8,14 +8,19 @@ import { initialCartState } from "./context/cart-reducer.ts";
 import "./index.css";
 import { AppRoutes } from "./enums/routes.ts";
 import Login from "./pages/Login/Login.tsx";
+import { useUser } from "./context/user-context.tsx";
+import { initialUser } from "./context/user-reducer.ts";
 
 const App: FC = () => {
-  const state = useCartState();
-  const { setStoredValue } = useLocalStorage<typeof initialCartState>("CartState", state);
+  const user = useUser();
+  const { setStoredValue: setUserStorage } = useLocalStorage<typeof initialUser>("User", user);
+  const cartState = useCartState();
+  const { setStoredValue: setCartStorage } = useLocalStorage<typeof initialCartState>("CartState", cartState);
 
   useEffect(() => {
-    setStoredValue(state);
-  }, [state]);
+    setCartStorage(cartState);
+    setUserStorage(user);
+  }, [cartState, user]);
   
   return (
     <Routes>

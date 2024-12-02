@@ -50,15 +50,15 @@ npm run dev
 
 ### Funcionalidades implementadas
 - [ ✓ ] Reutilización del proyecto My Market.
-- [  ] Solución responsive.
-- [  ] Creación de una pantalla Login integrando el servicio https://dummyjson.com/docs/auth#auth-login.
-- [  ] La pantalla login valida correctamente cada campo del formulario mostrando un mensaje en la parte inferior de cada input en caso estén vacíos.
-- [  ] Control de los errores generados por el servicio en caso la autenticación falle, se muestra un mensaje de error personalizado al usuario indicando que pasó.
+- [ ✓ ] Solución responsive.
+- [ ✓ ] Creación de una pantalla Login integrando el servicio https://dummyjson.com/docs/auth#auth-login.
+- [ ✓ ] La pantalla login valida correctamente cada campo del formulario mostrando un mensaje en la parte inferior de cada input en caso estén vacíos.
+- [ ✓ ] Control de los errores generados por el servicio en caso la autenticación falle, se muestra un mensaje de error personalizado al usuario indicando que pasó.
 - [  ] La pantalla login tiene la opción "Olvidé mi Contraseña", la cual abre un modal donde el usuario debe ingresar su correo. El modal valida el formato del correo y al presionar el botón muestra un mensaje de confirmación.
 - [ ✓ ] Uso de react router dom para el manejo de las rutas.
 - [ ✓ ] Creación de un HOC para permitir visualizar la página Home solo si el usuario ha iniciado sesión, caso contrario es redireccionado a la página Login.
-- [  ] En la parte superior del menú se muestra el mensaje "Welcome: [NOMBRE DE USUARIO]" y este perdura durante la interacción con las pantallas Home y Order Summary.
-- [  ] En el menú se encuentra la opción "Logout", la cual elimina los datos guardados en el local storage, limpia el contexto usado y redirecciona al login.
+- [ ✓ ] En la parte superior del menú se muestra el mensaje "Welcome: [NOMBRE DE USUARIO]" y este perdura durante la interacción con las pantallas Home y Order Summary.
+- [ ✓ ] En el menú se encuentra la opción "Logout", la cual elimina los datos guardados en el local storage, limpia el contexto usado y redirecciona al login.
 - [ ✓ ] Creación de un custom hook para el paginado del contenido.
 - [  ] Todas las funcionalidades agregadas están testeadas.
 
