@@ -94,9 +94,9 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
   return(
     <form onSubmit={handleSubmit}>
       <p className="form-title">Shipping Information</p>
-      <div className="form-inputs">
+      <div className="shipping-form-inputs">
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="shipping-form-input"
           onChange={handleChange}
           name="firstName"
           id="firstName"
@@ -108,7 +108,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           confirmed={confirmedInputs.firstName}
         />
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="shipping-form-input"
           onChange={handleChange}
           name="lastName"
           id="lastName"
@@ -124,7 +124,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
               value: district,
               text: district
           }))}
-          containerClassName="form-select"
+          containerClassName="shipping-form-select"
           label="District"
           value={formData.district}
           id="district"
@@ -137,7 +137,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           confirmed={confirmedInputs.district}
         />
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="shipping-form-input"
           onChange={handleChange}
           name="address"
           id="address"
@@ -148,7 +148,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           confirmed={confirmedInputs.address}
         />
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="shipping-form-input"
           onChange={handleChange}
           name="reference"
           id="reference"
@@ -159,7 +159,7 @@ const ShippingForm: FC<ShippingFormProps> = ({openModal}) => {
           confirmed={confirmedInputs.reference}
         />
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="shipping-form-input"
           onChange={handleChange}
           name="phoneNumber"
           id="phoneNumber"

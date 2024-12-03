@@ -82,7 +82,7 @@ const Login: FC = () => {
           <p>Login</p>
         </div>
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="login-form-input"
           onChange={handleChange}
           name="username"
           id="username"
@@ -93,7 +93,7 @@ const Login: FC = () => {
           error={inputErrors.username}
         />
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="login-form-input"
           onChange={handleChange}
           name="password"
           id="password"

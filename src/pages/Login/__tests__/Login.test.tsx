@@ -91,27 +91,6 @@ describe("Login component", () => {
     });
   });
 
-  // it("should show error message", async () => {
-  //   (useApi as jest.Mock).mockReturnValue({
-  //     data: null,
-  //     isLoading: false,
-  //     error: new Error("Network response was not ok"),
-  //   });
-
-  //   await renderComponent();
-
-  //   const username = screen.getByLabelText("Username");
-  //   fireEvent.change(username, { target: { value: "emilys" } });
-  //   const password = screen.getByLabelText("Password");
-  //   fireEvent.change(password, { target: { value: "emilyspass2" } });
-
-  //   const loginButton = screen.getByRole("button", {name: "Log in"});
-  //   fireEvent.click(loginButton);
-
-  //   const errorMessage = screen.getByText("Incorrect username or password");
-  //   expect(errorMessage).toBeInTheDocument();
-  // });
-
   it("should show loading message if isLoading is true", async () =>{
     (useApi as jest.Mock).mockReturnValue({
       data: undefined,

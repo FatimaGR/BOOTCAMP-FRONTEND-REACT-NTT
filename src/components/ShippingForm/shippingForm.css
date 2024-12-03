@@ -3,25 +3,52 @@
   font-size: var(--font-size-m);
   font-weight: 500;
 }
-.form-inputs{
+.shipping-form-inputs{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.111rem;
   max-width: 41.111rem;
 }
-.form-input input,
-.error-form-input input,
-.confirmed-form-input input{
+.shipping-form-input,
+.error-shipping-form-input,
+.confirmed-shipping-form-input{
+  width: 20rem;
+  height: fit-content;
+  background: var(--white);
+  padding: 0.444rem 0.833rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.278rem;
+  border-radius: 0.556rem;
+  font-size: var(--font-size-2xs);
+  max-width: 100%;
+}
+.shipping-form-select,
+.error-shipping-form-select,
+.confirmed-shipping-form-select{
+  width: 20rem;
+  height: fit-content;
+  background: var(--white);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.278rem;
+  border-radius: 0.556rem;
+  font-size: var(--font-size-2xs);
+}
+.shipping-form-input input,
+.error-shipping-form-input input,
+.confirmed-shipping-form-input input{
   background: none;
   border: none;
   outline: none;
   font-size: var(--font-size-s);
   color: var(--primary-color);
 }
-.form-select select,
-.error-form-select select,
-.confirmed-form-select select{
+.shipping-form-select select,
+.error-shipping-form-select select,
+.confirmed-shipping-form-select select{
   appearance: none;
   background: var(--white);
   border: none;
@@ -36,60 +63,28 @@
   background-position: right 0.2rem center;
   background-size: 1.333rem;
 }
-.error-form-select select{
+.error-shipping-form-select select{
   padding: 0 0.833rem;
 }
-.form-input,
-.error-form-input,
-.confirmed-form-input{
-  width: 20rem;
-  height: fit-content;
-  background: var(--white);
-  padding: 0.444rem 0.833rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.278rem;
-  border-radius: 0.556rem;
-  font-size: var(--font-size-2xs);
-  max-width: 100%;
-}
-.form-select,
-.error-form-select,
-.confirmed-form-select{
-  width: 20rem;
-  height: fit-content;
-  background: var(--white);
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.278rem;
-  border-radius: 0.556rem;
-  font-size: var(--font-size-2xs);
-}
-.form-select label,
-.error-form-select label,
-.confirmed-form-select label{
+.shipping-form-select label,
+.error-shipping-form-select label,
+.confirmed-shipping-form-select label{
   margin: 0.444rem 0.833rem 0 0.833rem;
 }
-.error-form-input label,
-.error-form-select label{
+.error-shipping-form-input label,
+.error-shipping-form-select label{
   color: var(--red);
 }
-.confirmed-form-input label{
+.confirmed-shipping-form-input label{
   color: #88D498;
   font-weight: 500;
 }
-.error-message{
-  font-size: var(--font-size-2xs);
-  color: var(--red);
-  font-weight: 500;
-}
-.error-form-select .error-message{
+.error-shipping-form-select .error-message{
   padding: 0 0.833rem 0.444rem 0.833rem;
 }
 
 @media(max-width: 830px){
-  .form-inputs{
+  .shipping-form-inputs{
     max-width: 100%;
   }
 }

@@ -101,8 +101,12 @@ form{
   background: #ffb951;
 }
 
-/* form inputs styles */
-
+/* general messages styles */
+.error-message{
+  font-size: var(--font-size-2xs);
+  color: var(--red);
+  font-weight: 500;
+}
 
 /* Modal styles*/
 .body-no-scroll{

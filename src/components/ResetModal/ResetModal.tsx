@@ -55,7 +55,7 @@ const ResetModal: FC<ResetModalProps> = ({closeModal}) => {
       <form onSubmit={handleSubmit} className="reset-form">
         <p>Reset your password</p>
         <Input
-          firstContainerClassName="form-input"
+          firstContainerClassName="reset-modal-form-input"
           onChange={handleChange}
           name="email"
           id="email"

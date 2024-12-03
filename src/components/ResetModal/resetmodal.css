@@ -24,6 +24,30 @@
   justify-content: center;
   padding: 2.222rem 1.111rem;
 }
+.reset-modal-form-input,
+.error-reset-modal-form-input{
+  width: 20rem;
+  height: fit-content;
+  background: var(--white);
+  padding: 0.444rem 0.833rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.278rem;
+  border-radius: 0.556rem;
+  font-size: var(--font-size-2xs);
+  max-width: 100%;
+}
+.reset-modal-form-input input,
+.error-reset-modal-form-input input{
+  background: none;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-s);
+  color: var(--primary-color);
+}
+.error-reset-modal-form-input label{
+  color: var(--red);
+}
 .swal2-popup{
   font-family: "Poppins", serif;
   border-radius: 1.389rem;
