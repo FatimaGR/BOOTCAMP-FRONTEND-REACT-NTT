@@ -20,6 +20,7 @@ const Login: FC = () => {
   });
   const [submitConfirmed, setSubmitConfirmed] = useState(false);
   const [inputErrors, setInputErrors] = useState<{[key: string]: string}>({});
+  // esto no deberia estar en la misma pagina, usemos un hook
   const {data, isLoading, error} = useApi(
     submitConfirmed ? "https://dummyjson.com/auth/login" : "", 
     {method: "POST", body: formData}

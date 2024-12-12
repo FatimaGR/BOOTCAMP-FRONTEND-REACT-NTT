@@ -10,6 +10,7 @@ const withAuth = <T extends object>(Component: ComponentType<T>) => {
     return user.accessToken ? (
       <Component {...props}/>
     ) : (
+      // esto no esta testeado
       <Navigate to={AppRoutes.Login} />
     );
   };
