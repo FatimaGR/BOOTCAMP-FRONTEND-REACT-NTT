@@ -19,6 +19,7 @@ const App: FC = () => {
 
   useEffect(() => {
     setCartStorage(cartState);
+    // no debe guardarse correo ni usuario no es necesario
     setUserStorage(user);
   }, [cartState, user]);
   
