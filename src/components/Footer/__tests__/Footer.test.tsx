@@ -10,6 +10,7 @@ const renderComponent = async():Promise<RenderResult> => {
 describe("Footer component", () => {
   it("should render footer", async () => {
     const component = await renderComponent();
+    // snap o tobeinthedocument
     expect(component).toBeDefined();
   })
 });
