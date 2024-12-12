@@ -15,6 +15,7 @@ export const validateNumber = (numberToValidate: string) => {
   return regex.test(numberToValidate);
 };
 
+// falta el test
 export const pagination = <T>(data:T[], page:number, limit:number): T[] => {
   const startId = (page - 1) * limit;
   const endId = page * limit;

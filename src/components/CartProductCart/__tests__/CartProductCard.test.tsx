@@ -17,6 +17,7 @@ const renderComponent = async():Promise<RenderResult> => {
 describe("Card product cart component", () => {
   it("should render card product cart", async () => {
     const component = await renderComponent();
+    // es mejor usar snapshot o tobeinthedocument
     expect(component).toBeDefined();
   });
 })

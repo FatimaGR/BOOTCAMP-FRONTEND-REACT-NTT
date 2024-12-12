@@ -33,6 +33,7 @@ describe("Modal component", () => {
   });
 
   it("should render modal", async () => {
+    // igual aqui es mejor snaps o tobeinthedocument recordemos que estos son elementos visuales no funciones internas
     const component = await renderComponent();
     expect(component).toBeDefined();
   });

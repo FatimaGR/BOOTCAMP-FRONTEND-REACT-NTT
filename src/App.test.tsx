@@ -1,3 +1,4 @@
+// el router debe tstear cada ruta definida y sus casuisticas
 import { RenderResult } from "@testing-library/react";
 import { AppRoutes } from "./enums/routes";
 import { act } from "react";
